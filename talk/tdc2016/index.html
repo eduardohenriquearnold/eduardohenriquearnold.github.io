@@ -28,17 +28,17 @@
   <link rel="stylesheet" href="/css/hugo-academic.css">
   
 
-  <link rel="alternate" href="https://example.com/index.xml" type="application/rss+xml" title="Eduardo Arnold">
-  <link rel="feed" href="https://example.com/index.xml" type="application/rss+xml" title="Eduardo Arnold">
+  <link rel="alternate" href="https://eduardohenriquearnold.github.io/index.xml" type="application/rss+xml" title="Eduardo Arnold">
+  <link rel="feed" href="https://eduardohenriquearnold.github.io/index.xml" type="application/rss+xml" title="Eduardo Arnold">
 
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/apple-touch-icon.png">
 
-  <link rel="canonical" href="https://example.com/post/migrate-from-jekyll/">
+  <link rel="canonical" href="https://eduardohenriquearnold.github.io/talk/tdc2016/">
 
   
 
-  <title>Migrate from Jekyll to Hugo | Eduardo Arnold</title>
+  <title>Computer vision with Python and OpenCV | Eduardo Arnold</title>
 
 </head>
 <body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71">
@@ -130,86 +130,117 @@
   </div>
 </nav>
 
-
-<article class="article" itemscope itemtype="http://schema.org/Article">
+<div class="pub" itemscope itemtype="http://schema.org/CreativeWork">
 
   
 
   <div class="article-container">
-    <h1 itemprop="name">Migrate from Jekyll to Hugo</h1>
+
+    <div class="pub-title">
+      <h1 itemprop="name">Computer vision with Python and OpenCV</h1>
+      <span class="pub-authors" itemprop="author">
+        
+      </span>
+      <span class="pull-right">
+        
+
+      </span>
+    </div>
+
+    
+      <h3>Abstract</h3>
+      <p class="pub-abstract" itemprop="text">A short presentation showing how to develop a simple augmented reality application with Python and OpenCV.</p>
     
 
-<div class="article-metadata">
+    <div class="row">
+      <div class="col-sm-1"></div>
+      <div class="col-sm-10">
+        <div class="row">
+          <div class="col-xs-12 col-sm-3 pub-row-heading">Date</div>
+          <div class="col-xs-12 col-sm-9" itemprop="datePublished">
+            Thu, May 12, 2016
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-1"></div>
+    </div>
+    <div class="visible-xs space-below"></div>
 
-  <span class="article-date">
-    <time datetime="2014-03-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">
-      Mon, Mar 10, 2014
-    </time>
-  </span>
+    <div class="row">
+      <div class="col-sm-1"></div>
+      <div class="col-sm-10">
+        <div class="row">
+          <div class="col-xs-12 col-sm-3 pub-row-heading">Event</div>
+          <div class="col-xs-12 col-sm-9">
+            <a href="http://www.thedevelopersconference.com.br/tdc/2016/florianopolis/trilhas" target="_blank">
+            The Developers Conference 2016
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-1"></div>
+    </div>
+    <div class="visible-xs space-below"></div>
 
-  
-
-  
-  
-  
-  <span class="article-tags">
-    <i class="fa fa-tags"></i>
     
-    <a href="/tags/jekyll">jekyll</a
-    >
+    <div class="row">
+      <div class="col-sm-1"></div>
+      <div class="col-sm-10">
+        <div class="row">
+          <div class="col-xs-12 col-sm-3 pub-row-heading">Location</div>
+          <div class="col-xs-12 col-sm-9">Florianópolis, Santa Catarina, Brazil.</div>
+        </div>
+      </div>
+      <div class="col-sm-1"></div>
+    </div>
+    <div class="visible-xs space-below"></div>
     
-  </span>
-  
-  
 
-  
-  
+    
+    <div class="row" style="padding-top: 10px">
+      <div class="col-sm-1"></div>
+      <div class="col-sm-10">
+        <div class="row">
+          <div class="col-xs-12 col-sm-3 pub-row-heading" style="line-height:34px;">Links</div>
+          <div class="col-xs-12 col-sm-9">
 
-  
+            
 
-</div>
 
-    <div class="article-style" itemprop="articleBody">
-      
 
-<p>Here are a few tips for migrating an existing website from Jekyll to Hugo. These tips can be applied in conjunction with following Hugo Academic&rsquo;s <a href="https://example.com/post/getting-started/" target="_blank">getting started guide</a>.</p>
 
-<h2 id="move-static-content-to-static">Move static content to <code>static</code></h2>
 
-<p>Jekyll has a rule that any directory not starting with <code>_</code> will be copied as-is to the <code>_site</code> output. Hugo keeps all static content under <code>static</code>. You should therefore move it all there.
-With Jekyll, something that looked like</p>
+<a class="btn btn-primary btn-outline" href="http://eduardohenriquearnold.github.io/tdcfloripa2016/">
+  Slides
+</a>
 
-<pre><code>▾ &lt;root&gt;/
-    ▾ images/
-        logo.png
-</code></pre>
 
-<p>should become</p>
+<a class="btn btn-primary btn-outline" href="https://www.youtube.com/watch?v=lmJxGmOAtq8">
+  Video
+</a>
 
-<pre><code>▾ &lt;root&gt;/
-    ▾ static/
-        ▾ images/
-            logo.png
-</code></pre>
 
-<p>Additionally, you&rsquo;ll want any files that should reside at the root (such as <code>CNAME</code>) to be moved to <code>static</code>.</p>
 
-<h2 id="fix-content">Fix content</h2>
 
-<p>Depending on the amount of customization that was done for each post in Jekyll, this step will require more or less effort. There are no hard and fast rules here except that <code>hugo server --watch</code> and the Hugo Academic example site are your friends. Test your changes and fix errors as needed.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-1"></div>
+    </div>
+    <div class="visible-xs space-below"></div>
+    
 
-<h2 id="publish">Publish</h2>
+    <div class="space-below"></div>
 
-<p>The default is for Jekyll to publish the website to a <code>_site</code> directory, whereas Hugo publishes to a <code>public</code> directory.</p>
+    <div class="article-style">
+      <p>A presentation introducing computer vision concepts and show how one can easily develop interesting applications such as augmented reality with Python. It was focused on implementation details for developers and was presented together with William Jamir Silva.</p>
 
-<h2 id="a-practical-example">A practical example</h2>
-
-<p>Alexandre Normand migrated his website from Jekyll to Hugo in less than a day. You can see all his changes by looking at this GitHub <a href="https://github.com/alexandre-normand/alexandre-normand/compare/869d69435bd2665c3fbf5b5c78d4c22759d7613a...b7f6605b1265e83b4b81495423294208cc74d610" target="_blank">diff</a>. However, bear in mind that this example is <strong>not specific to the Academic theme nor does it use the latest version of Hugo</strong>.</p>
+<p>The code can be divided into two sections, one focusing on computer vision and another on computer graphics. The first one uses image processing algorithms to extract the position and identification of markers put in front of a camera. The latter one uses such information to render 3D models over the marker in the image in real time.</p>
 
     </div>
-  </div>
 
-</article>
+  </div>
+</div>
 
 <div class="container">
   <nav>
@@ -217,16 +248,11 @@ With Jekyll, something that looked like</p>
     
 
     
-    <li class="next"><a href="https://example.com/post/writing-markdown-latex/">Writing content with Markdown, LaTeX, and Shortcodes <span
+    <li class="next"><a href="https://eduardohenriquearnold.github.io/talk/dsfloripa/">Detecting people using depth frames and deep classifiers <span
       aria-hidden="true">&rarr;</span></a></li>
     
   </ul>
 </nav>
-
-</div>
-
-<div class="article-container">
-  
 
 </div>
 
@@ -275,6 +301,11 @@ With Jekyll, something that looked like</p>
     
 
     
+    
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+    </script>
+    <script async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML"></script>
     
 
   </body>
