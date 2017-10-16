@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Publications on Eduardo Arnold</title>
-    <link>https://eduardohenriquearnold.github.io/publication/</link>
-    <description>Recent content in Publications on Eduardo Arnold</description>
+    <title>1 on Eduardo Arnold</title>
+    <link>https://eduardohenriquearnold.github.io/publication_types/1/</link>
+    <description>Recent content in 1 on Eduardo Arnold</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017 Eduardo Henrique Arnold</copyright>
-    <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/publication/" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 04 Sep 2017 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/publication_types/1/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Detecção de pessoas em um ambiente industrial utilizando imagens de profundidade e classificadores profundos</title>
