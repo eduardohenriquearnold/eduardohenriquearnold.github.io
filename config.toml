@@ -20,12 +20,12 @@ defaultContentLanguageInSubdir = false
 
 [params]
   name = "Eduardo Henrique Arnold"
-  role = "MSc Student"
-  organization = "Federal University of Santa Catarina"
-  organization_url = ""
+  role = "PhD Candidate"
+  organization = "University of Warwick"
+  organization_url = "https://warwick.ac.uk/fac/sci/wmg/research/cav/"
   avatar = "portrait.jpg"
-  email = "eduardo.henrique.arnold@grad.ufsc.br"
-  address = "LCS, Electrical Engineering Department, Campus Reitor João David Ferreira Lima, Florianópolis - Brazil"
+  email = "e.arnold@warwick.ac.uk"
+  address = "WMG, International Manufacturing Centre, University of Warwick, Coventry, CV4 7AL, United Kingdom"
   office_hours = ""
   phone = ""
   skype = ""
@@ -125,7 +125,7 @@ defaultContentLanguageInSubdir = false
   [[params.social]]
     icon = "envelope"
     icon_pack = "fa"
-    link = "mailto:eduardo.henrique.arnold@grad.ufsc.br"
+    link = "mailto:e.arnold@warwick.ac.uk"
 
   [[params.social]]
     icon = "twitter"

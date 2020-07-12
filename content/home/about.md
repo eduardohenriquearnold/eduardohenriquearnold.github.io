@@ -12,20 +12,25 @@ weight = 1
 # List your academic interests.
 [interests]
   interests = [
-    "Artificial Intelligence",
+    "Autonomous Driving",
     "Machine Learning",
-    "Computer Vision"
+    "Probabilistic Models"
   ]
 
 # List your qualifications (such as academic degrees).
 
+ [[education.courses]]
+  course = "PhD Engineering"
+  institution = "Univeristy of Warwick (UK)"
+  year = "2017 - present"
+
 [[education.courses]]
-  course = "BSc in Electrical Engineering"
-  institution = "Federal University of Santa Catarina (UFSC)"
+  course = "BSc in Electrical Engineering with Honours"
+  institution = "Federal University of Santa Catarina (Brazil)"
   year = 2017
- 
+
 +++
 
 # Biography
 
-Eduardo Henrique Arnold received his BSc Electrical Engineering degree with honours from Federal University of Santa Catarina in 2017. He is currently a Masters student at the same university. His research interests include machine learning and computer vision applications. 
+I'm a PhD candidate with the Intelligent Vehicles group at the University of Warwick. My research is focused on perception methods for autonomous driving, particularly 3D object detection. My research interests include probabilistic methods, mahcine learning and computer visoin. 
