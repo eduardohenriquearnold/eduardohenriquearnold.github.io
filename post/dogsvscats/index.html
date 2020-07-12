@@ -6,9 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="theme" content="hugo-academic">
-  <meta name="generator" content="Hugo 0.20.1" />
+  <meta name="generator" content="Hugo 0.40.1" />
   <meta name="author" content="Eduardo Henrique Arnold">
-  <meta name="description" content="MSc Student">
+  <meta name="description" content="PhD Candidate">
 
   
   
@@ -147,7 +147,7 @@
 <div class="article-metadata">
 
   <span class="article-date">
-    <time datetime="2017-05-15 14:51:59 -0300 -03" itemprop="datePublished">
+    <time datetime="2017-05-15 14:51:59 -0300 -0300" itemprop="datePublished">
       Mon, May 15, 2017
     </time>
   </span>
@@ -193,7 +193,7 @@
 <p>Before designing my own architecture I considered fine-tuning good performing models on hard challenges such as the ImageNet Large Scale Visual Recognition Challenge (ILSVRC). One of these models is the winner of the <a href="http://www.image-net.org/challenges/LSVRC/2014/" target="_blank">ILSVRC 2014</a> Classification+localization challenge, VGG-16 model, organized in 5 convolutional blocks and a dense block. The convolutional blocks group 2-3 convolutional layers in sequence with a max-pooling layer to reduce dimensionality. In total there are 13 convolutional layers and 3 dense layers. The original challenge data set had 1000 classes so the output layer has 1000 output units.</p>
 
 
-<figure >
+<figure>
     
         <img src="/img/posts/dogsvscats/vgg16.png" alt="VGG16 Macroarchitecture. Credits to Davi Frossard @ Stanford." />
     
@@ -241,7 +241,7 @@
 <p>In order to observe this effect in more detail we can observe the following figure, showing the progression of the model loss and accuracy as the training process evolve. It is clear that overfitting becomes pronounced around epoch 20, and the test accuracy becomes steady at 80% from this point forward.</p>
 
 
-<figure >
+<figure>
     
         <img src="/img/posts/dogsvscats/noreg_curves.png" alt="No regularization training curves." />
     
@@ -269,7 +269,7 @@
 <p>By applying this technique with moderate regularization $\lambda=10^{-3}$ on all layers, we obtained the following progression of model loss and accuracy. A note aside is that the model should be randomly initialized for training, if the previous weights (obtained without regularization) are used for initialization the model will not be able to improve generalization.</p>
 
 
-<figure >
+<figure>
     
         <img src="/img/posts/dogsvscats/l2_curves.png" alt="L2 moderate regularization training curves." />
     
@@ -297,7 +297,7 @@
 <p>Combining both L2-norm with $\lambda=10^{-3}$ on all layers and dropout regularization with ratio 0.5 (half units dropped) on convolutional layers, we obtain the following loss and accuracy:</p>
 
 
-<figure >
+<figure>
     
         <img src="/img/posts/dogsvscats/drop_l2_curves.png" alt="Dropout and L2 regularization training curves." />
     

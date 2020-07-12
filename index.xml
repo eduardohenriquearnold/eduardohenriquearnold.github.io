@@ -85,7 +85,7 @@ c.DockerSpawner.extra_host_config = { &amp;quot;devices&amp;quot;:[&amp;quot;/de
 &lt;p&gt;Before designing my own architecture I considered fine-tuning good performing models on hard challenges such as the ImageNet Large Scale Visual Recognition Challenge (ILSVRC). One of these models is the winner of the &lt;a href=&#34;http://www.image-net.org/challenges/LSVRC/2014/&#34; target=&#34;_blank&#34;&gt;ILSVRC 2014&lt;/a&gt; Classification+localization challenge, VGG-16 model, organized in 5 convolutional blocks and a dense block. The convolutional blocks group 2-3 convolutional layers in sequence with a max-pooling layer to reduce dimensionality. In total there are 13 convolutional layers and 3 dense layers. The original challenge data set had 1000 classes so the output layer has 1000 output units.&lt;/p&gt;
 
 
-&lt;figure &gt;
+&lt;figure&gt;
     
         &lt;img src=&#34;https://eduardohenriquearnold.github.io/img/posts/dogsvscats/vgg16.png&#34; alt=&#34;VGG16 Macroarchitecture. Credits to Davi Frossard @ Stanford.&#34; /&gt;
     
@@ -133,7 +133,7 @@ c.DockerSpawner.extra_host_config = { &amp;quot;devices&amp;quot;:[&amp;quot;/de
 &lt;p&gt;In order to observe this effect in more detail we can observe the following figure, showing the progression of the model loss and accuracy as the training process evolve. It is clear that overfitting becomes pronounced around epoch 20, and the test accuracy becomes steady at 80% from this point forward.&lt;/p&gt;
 
 
-&lt;figure &gt;
+&lt;figure&gt;
     
         &lt;img src=&#34;https://eduardohenriquearnold.github.io/img/posts/dogsvscats/noreg_curves.png&#34; alt=&#34;No regularization training curves.&#34; /&gt;
     
@@ -161,7 +161,7 @@ c.DockerSpawner.extra_host_config = { &amp;quot;devices&amp;quot;:[&amp;quot;/de
 &lt;p&gt;By applying this technique with moderate regularization $\lambda=10^{-3}$ on all layers, we obtained the following progression of model loss and accuracy. A note aside is that the model should be randomly initialized for training, if the previous weights (obtained without regularization) are used for initialization the model will not be able to improve generalization.&lt;/p&gt;
 
 
-&lt;figure &gt;
+&lt;figure&gt;
     
         &lt;img src=&#34;https://eduardohenriquearnold.github.io/img/posts/dogsvscats/l2_curves.png&#34; alt=&#34;L2 moderate regularization training curves.&#34; /&gt;
     
@@ -189,7 +189,7 @@ c.DockerSpawner.extra_host_config = { &amp;quot;devices&amp;quot;:[&amp;quot;/de
 &lt;p&gt;Combining both L2-norm with $\lambda=10^{-3}$ on all layers and dropout regularization with ratio 0.5 (half units dropped) on convolutional layers, we obtain the following loss and accuracy:&lt;/p&gt;
 
 
-&lt;figure &gt;
+&lt;figure&gt;
     
         &lt;img src=&#34;https://eduardohenriquearnold.github.io/img/posts/dogsvscats/drop_l2_curves.png&#34; alt=&#34;Dropout and L2 regularization training curves.&#34; /&gt;
     
