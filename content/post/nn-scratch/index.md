@@ -28,7 +28,7 @@ As for the hidden layer we can use a **RELU** activation function, because it is
 
 We define the weights of the connections between the input and hidden layer units as the matrix $W1 \in \mathbb{R}^{N\_x \times N\_h}$, where $W1\_{i,j}$ is the weight of the connection between the $i$-th input layer unit to the $j$-th hidden layer unit. The bias vector of the hidden layer is defined as $b1 \in \mathbb{R}^{N_h}$. Similarly we have the parameters of connection between the hidden layer to the output layer: $W2 \in \mathbb{R}^{N\_h \times N\_y}$ and $b2 \in \mathbb{R}^{N\_y}.$
 
-{{< figure src="nn-diagram.png" title="Diagram of a Neural Network" lightbox="true" >}}
+![nn-diagram](/notebooks/nn-diagram.png)
 
 ## Forward propagation
 
@@ -213,10 +213,4 @@ W2 -= lr*dW2
 b2 -= lr*db2
 ```
 
-To check the code and results, please visualise the Jupyter Notebook below: 
-<iframe
-       src="./nn-scratch.html"
-       width="95%"
-       height="1000px"
-       style="border:none;">
- </iframe>
+To check the code and results, please visit [this notebook](/notebooks/nn-scratch.html).

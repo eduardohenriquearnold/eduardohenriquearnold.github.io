@@ -1,36 +1,14 @@
 +++
-# About/Biography widget.
+# About widget.
+widget = "about"  # See https://sourcethemes.com/academic/docs/page-builder/
+headless = true  # This file represents a page section.
+active = true  # Activate this widget? true/false
+weight = 20  # Order that this section will appear in.
 
-date = "2016-04-20T00:00:00"
-draft = false
+title = "Biography"
 
-widget = "about"
-
-# Order that this section will appear in.
-weight = 1
-
-# List your academic interests.
-[interests]
-  interests = [
-    "Autonomous Driving",
-    "Machine Learning",
-    "Probabilistic Models"
-  ]
-
-# List your qualifications (such as academic degrees).
-
- [[education.courses]]
-  course = "PhD Engineering"
-  institution = "Univeristy of Warwick (UK)"
-  year = "2017 - present"
-
-[[education.courses]]
-  course = "BSc in Electrical Engineering with Honours"
-  institution = "Federal University of Santa Catarina (Brazil)"
-  year = 2017
-
+# Choose the user profile to display
+# This should be the username of a profile in your `content/authors/` folder.
+# See https://sourcethemes.com/academic/docs/get-started/#introduce-yourself
+author = "admin"
 +++
-
-# Biography
-
-I'm a PhD candidate with the Intelligent Vehicles group at the University of Warwick. My research is focused on perception methods for autonomous driving, particularly 3D object detection. My research interests include probabilistic methods, mahcine learning and computer visoin. 
