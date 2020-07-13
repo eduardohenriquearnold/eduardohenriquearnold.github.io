@@ -1,32 +1,30 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Projects on Eduardo Arnold</title>
-    <link>https://eduardohenriquearnold.github.io/project/</link>
-    <description>Recent content in Projects on Eduardo Arnold</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; 2017 Eduardo Henrique Arnold</copyright>
-    <lastBuildDate>Wed, 24 Jun 2015 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://eduardohenriquearnold.github.io/project/index.xml" rel="self" type="application/rss+xml" />
-    
+    <title>Projects | Eduardo Arnold</title>
+    <link>/project/</link>
+      <atom:link href="/project/index.xml" rel="self" type="application/rss+xml" />
+    <description>Projects</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 24 Jun 2015 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/images/icon_hu86725dfa3481f0beabea4a23db3db448_10764_512x512_fill_lanczos_center_2.png</url>
+      <title>Projects</title>
+      <link>/project/</link>
+    </image>
     
     <item>
       <title>TFlow</title>
-      <link>https://eduardohenriquearnold.github.io/project/tflow/</link>
+      <link>/project/tflow/</link>
       <pubDate>Wed, 24 Jun 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://eduardohenriquearnold.github.io/project/tflow/</guid>
+      <guid>/project/tflow/</guid>
       <description></description>
     </item>
     
     <item>
       <title>SudoSolver</title>
-      <link>https://eduardohenriquearnold.github.io/project/sudo-solver/</link>
+      <link>/project/sudosolver/</link>
       <pubDate>Sat, 17 Jan 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://eduardohenriquearnold.github.io/project/sudo-solver/</guid>
+      <guid>/project/sudosolver/</guid>
       <description></description>
     </item>
     

@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Recent &amp; Upcoming Talks on Eduardo Arnold</title>
-    <link>https://eduardohenriquearnold.github.io/talk/</link>
-    <description>Recent content in Recent &amp; Upcoming Talks on Eduardo Arnold</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; 2017 Eduardo Henrique Arnold</copyright>
-    <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://eduardohenriquearnold.github.io/talk/index.xml" rel="self" type="application/rss+xml" />
-    
+    <title>Recent &amp; Upcoming Talks | Eduardo Arnold</title>
+    <link>/talk/</link>
+      <atom:link href="/talk/index.xml" rel="self" type="application/rss+xml" />
+    <description>Recent &amp; Upcoming Talks</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 06 Apr 2017 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/images/icon_hu86725dfa3481f0beabea4a23db3db448_10764_512x512_fill_lanczos_center_2.png</url>
+      <title>Recent &amp; Upcoming Talks</title>
+      <link>/talk/</link>
+    </image>
     
     <item>
       <title>Detecting people using depth frames and deep classifiers</title>
-      <link>https://eduardohenriquearnold.github.io/talk/dsfloripa/</link>
+      <link>/talk/dsfloripa/</link>
       <pubDate>Thu, 06 Apr 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://eduardohenriquearnold.github.io/talk/dsfloripa/</guid>
-      <description>A short talk about a project I took part during my internship at Instituto SENAI de Tecnologia and which was also my final year project for my undergraduate program. My contribution was to elaborate an automatic human detection system for complex industrial environments. We used depth images from a overhead camera position to perform detection.
-Two approaches to the detection problem were implemented and evaluated: traditional learning algorithms with manual feature extraction and deep learning classifiers.</description>
+      <guid>/talk/dsfloripa/</guid>
+      <description>&lt;p&gt;A short talk about a project I took part during my internship at Instituto SENAI de Tecnologia and which was also my final year project for my undergraduate program. My contribution was to elaborate an automatic human detection system for complex industrial environments. We used depth images from a overhead camera position to perform detection.&lt;/p&gt;
+&lt;p&gt;Two approaches to the detection problem were implemented and evaluated: traditional learning algorithms with manual feature extraction and deep learning classifiers. During this talk I revealed details and tradeoffs of both methods as well as a quantitative evaluation of their performance.&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>Computer vision with Python and OpenCV</title>
-      <link>https://eduardohenriquearnold.github.io/talk/tdc2016/</link>
+      <link>/talk/tdc2016/</link>
       <pubDate>Thu, 12 May 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://eduardohenriquearnold.github.io/talk/tdc2016/</guid>
-      <description>A presentation introducing computer vision concepts and show how one can easily develop interesting applications such as augmented reality with Python. It was focused on implementation details for developers and was presented together with William Jamir Silva.
-The code can be divided into two sections, one focusing on computer vision and another on computer graphics. The first one uses image processing algorithms to extract the position and identification of markers put in front of a camera.</description>
+      <guid>/talk/tdc2016/</guid>
+      <description>&lt;p&gt;A presentation introducing computer vision concepts and show how one can easily develop interesting applications such as augmented reality with Python. It was focused on implementation details for developers and was presented together with William Jamir Silva.&lt;/p&gt;
+&lt;p&gt;The code can be divided into two sections, one focusing on computer vision and another on computer graphics. The first one uses image processing algorithms to extract the position and identification of markers put in front of a camera. The latter one uses such information to render 3D models over the marker in the image in real time.&lt;/p&gt;
+</description>
     </item>
     
   </channel>

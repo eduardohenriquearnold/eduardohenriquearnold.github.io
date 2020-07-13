@@ -1,25 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Publications on Eduardo Arnold</title>
-    <link>https://eduardohenriquearnold.github.io/publication/</link>
-    <description>Recent content in Publications on Eduardo Arnold</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; 2017 Eduardo Henrique Arnold</copyright>
-    <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://eduardohenriquearnold.github.io/publication/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Detecção de pessoas em um ambiente industrial utilizando imagens de profundidade e classificadores profundos</title>
-      <link>https://eduardohenriquearnold.github.io/publication/sbrt2017/</link>
-      <pubDate>Mon, 04 Sep 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://eduardohenriquearnold.github.io/publication/sbrt2017/</guid>
-      <description></description>
-    </item>
+    <title>Publications | Eduardo Arnold</title>
+    <link>/publication/</link>
+      <atom:link href="/publication/index.xml" rel="self" type="application/rss+xml" />
+    <description>Publications</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language>
+    <image>
+      <url>/images/icon_hu86725dfa3481f0beabea4a23db3db448_10764_512x512_fill_lanczos_center_2.png</url>
+      <title>Publications</title>
+      <link>/publication/</link>
+    </image>
     
   </channel>
 </rss>

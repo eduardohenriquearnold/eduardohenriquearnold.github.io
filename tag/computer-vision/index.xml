@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>computer-vision | Eduardo Arnold</title>
+    <link>/tag/computer-vision/</link>
+      <atom:link href="/tag/computer-vision/index.xml" rel="self" type="application/rss+xml" />
+    <description>computer-vision</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 24 Jun 2015 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/images/icon_hu86725dfa3481f0beabea4a23db3db448_10764_512x512_fill_lanczos_center_2.png</url>
+      <title>computer-vision</title>
+      <link>/tag/computer-vision/</link>
+    </image>
+    
+    <item>
+      <title>TFlow</title>
+      <link>/project/tflow/</link>
+      <pubDate>Wed, 24 Jun 2015 00:00:00 +0000</pubDate>
+      <guid>/project/tflow/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SudoSolver</title>
+      <link>/project/sudosolver/</link>
+      <pubDate>Sat, 17 Jan 2015 00:00:00 +0000</pubDate>
+      <guid>/project/sudosolver/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
