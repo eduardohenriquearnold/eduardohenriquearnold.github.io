@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>docker | Eduardo Arnold</title>
-    <link>/tag/docker/</link>
-      <atom:link href="/tag/docker/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://earnold.me/tag/docker/</link>
+      <atom:link href="https://earnold.me/tag/docker/index.xml" rel="self" type="application/rss+xml" />
     <description>docker</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 09 Oct 2017 09:44:42 -0200</lastBuildDate>
     <image>
-      <url>/images/icon_hu86725dfa3481f0beabea4a23db3db448_10764_512x512_fill_lanczos_center_2.png</url>
+      <url>https://earnold.me/images/icon_hu86725dfa3481f0beabea4a23db3db448_10764_512x512_fill_lanczos_center_2.png</url>
       <title>docker</title>
-      <link>/tag/docker/</link>
+      <link>https://earnold.me/tag/docker/</link>
     </image>
     
     <item>
       <title>Deploying JupyterHub with Docker and CUDA support</title>
-      <link>/post/jupyterhub/</link>
+      <link>https://earnold.me/post/jupyterhub/</link>
       <pubDate>Mon, 09 Oct 2017 09:44:42 -0200</pubDate>
-      <guid>/post/jupyterhub/</guid>
+      <guid>https://earnold.me/post/jupyterhub/</guid>
       <description>&lt;p&gt;People doing research nowadays can benefit a lot from using 
 &lt;a href=&#34;http://jupyter.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Jupyter notebooks&lt;/a&gt;. It is the case specially with machine learning and data science, where experimentation is frequent and code changes rapidly, as well as new insights are drawn from data and previous experience. In these cases it is useful to have proper documentation of the decision making process and some history of previous attempts to solve a problem.&lt;/p&gt;
 &lt;p&gt;At 

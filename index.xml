@@ -2,21 +2,61 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Eduardo Arnold</title>
-    <link>/</link>
-      <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://earnold.me/</link>
+      <atom:link href="https://earnold.me/index.xml" rel="self" type="application/rss+xml" />
     <description>Eduardo Arnold</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 09 Oct 2017 09:44:42 -0200</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 01 May 2020 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/images/icon_hu86725dfa3481f0beabea4a23db3db448_10764_512x512_fill_lanczos_center_2.png</url>
+      <url>https://earnold.me/images/icon_hu86725dfa3481f0beabea4a23db3db448_10764_512x512_fill_lanczos_center_2.png</url>
       <title>Eduardo Arnold</title>
-      <link>/</link>
+      <link>https://earnold.me/</link>
     </image>
     
     <item>
+      <title>The L3Pilot Data Management Toolchain for a Level 3 Vehicle Automation Pilot</title>
+      <link>https://earnold.me/publication/hiller-2020-l-3-pilot/</link>
+      <pubDate>Fri, 01 May 2020 00:00:00 +0000</pubDate>
+      <guid>https://earnold.me/publication/hiller-2020-l-3-pilot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cooperative Perception for 3D Object Detection in Driving Scenarios using Infrastructure Sensors</title>
+      <link>https://earnold.me/publication/arnold-2019-coop3dod/</link>
+      <pubDate>Wed, 18 Dec 2019 00:00:00 +0000</pubDate>
+      <guid>https://earnold.me/publication/arnold-2019-coop3dod/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cooperative Object Classification for Driving Applications</title>
+      <link>https://earnold.me/publication/arnold-2019-cooperative/</link>
+      <pubDate>Sun, 09 Jun 2019 00:00:00 +0000</pubDate>
+      <guid>https://earnold.me/publication/arnold-2019-cooperative/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Designing an IoT Framework for Automated Driving Impact Analysis</title>
+      <link>https://earnold.me/publication/bellotti-2019-designing/</link>
+      <pubDate>Sun, 09 Jun 2019 00:00:00 +0000</pubDate>
+      <guid>https://earnold.me/publication/bellotti-2019-designing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A Survey on 3D Object Detection Methods for Autonomous Driving Applications</title>
+      <link>https://earnold.me/publication/arnold-2019-survey/</link>
+      <pubDate>Sat, 19 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://earnold.me/publication/arnold-2019-survey/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Deploying JupyterHub with Docker and CUDA support</title>
-      <link>/post/jupyterhub/</link>
+      <link>https://earnold.me/post/jupyterhub/</link>
       <pubDate>Mon, 09 Oct 2017 09:44:42 -0200</pubDate>
-      <guid>/post/jupyterhub/</guid>
+      <guid>https://earnold.me/post/jupyterhub/</guid>
       <description>&lt;p&gt;People doing research nowadays can benefit a lot from using 
 &lt;a href=&#34;http://jupyter.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Jupyter notebooks&lt;/a&gt;. It is the case specially with machine learning and data science, where experimentation is frequent and code changes rapidly, as well as new insights are drawn from data and previous experience. In these cases it is useful to have proper documentation of the decision making process and some history of previous attempts to solve a problem.&lt;/p&gt;
 &lt;p&gt;At 
@@ -54,9 +94,9 @@ c.DockerSpawner.extra_host_config = { &amp;quot;devices&amp;quot;:[&amp;quot;/de
     
     <item>
       <title>What I have learnt from dogs and cats</title>
-      <link>/post/dogsvscats/</link>
+      <link>https://earnold.me/post/dogsvscats/</link>
       <pubDate>Mon, 15 May 2017 14:51:59 -0300</pubDate>
-      <guid>/post/dogsvscats/</guid>
+      <guid>https://earnold.me/post/dogsvscats/</guid>
       <description>&lt;h2 id=&#34;motivation&#34;&gt;Motivation&lt;/h2&gt;
 &lt;p&gt;To specialize further in image classification I decided to try a classic challenge in this area: the Kaggle competition 
 &lt;a href=&#34;https://www.kaggle.com/c/dogs-vs-cats-redux-kernels-edition&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Dogs vs Cats&lt;/a&gt;. By taking part in the challenge we can easily use their data set (25k labeled images) and 12.5k unlabeled test images. Each sample from the data set is a varied-sized RGB image containing either a dog or a cat and our task is to decide to which class the sample belongs. We can also compare our results to other users and have some indicatives of where our model could improve.&lt;/p&gt;
@@ -86,10 +126,10 @@ c.DockerSpawner.extra_host_config = { &amp;quot;devices&amp;quot;:[&amp;quot;/de
 &lt;figure id=&#34;figure-vgg16-macroarchitecture-credits-to-davi-frossard--stanford&#34;&gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;/post/dogsvscats/vgg16_hud79ff886a16ffd04df83ec83fc5585c1_46325_2000x2000_fit_lanczos_2.png&#34; data-caption=&#34;VGG16 Macroarchitecture. Credits to Davi Frossard @ Stanford.&#34;&gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://earnold.me/post/dogsvscats/vgg16_hud79ff886a16ffd04df83ec83fc5585c1_46325_2000x2000_fit_lanczos_2.png&#34; data-caption=&#34;VGG16 Macroarchitecture. Credits to Davi Frossard @ Stanford.&#34;&gt;
 
 
-  &lt;img data-src=&#34;/post/dogsvscats/vgg16_hud79ff886a16ffd04df83ec83fc5585c1_46325_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;470&#34; height=&#34;276&#34;&gt;
+  &lt;img data-src=&#34;https://earnold.me/post/dogsvscats/vgg16_hud79ff886a16ffd04df83ec83fc5585c1_46325_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;470&#34; height=&#34;276&#34;&gt;
 &lt;/a&gt;
 
 
@@ -106,7 +146,7 @@ c.DockerSpawner.extra_host_config = { &amp;quot;devices&amp;quot;:[&amp;quot;/de
 &lt;p&gt;To fine tune the model parameters to dogs-vs-cats classification we assume the 13 conv-layers provide good enough features, so we freeze their parameters and allow only the last layer parameters to be updated. This model has a large number of parameters: the 13 conv-layers provide 14,714,688 parameters while the final dense layer has 50,178 parameters. Clearly it is much simpler to fit just these final layer parameters instead of the whole network, which allows us to use our modest data set on this structure.&lt;/p&gt;
 &lt;p&gt;The original model image input size was 224 x 224, and although this changes the dimension of the following convolutional layers, their filter sizes are kept the same, so we can still use the weights from the original model, except for the final dense layers, where the weights depend upon the number of units in each layer. Since we replaced the final dense layers we could have chosen any given input size. To keep the original design we kept the standard input dimension. Another consideration is that the pre-processing should be the same assumed by the VGG model, that is, the pixel intensities are not normalized and are kept in the original range $[0,255]$.&lt;/p&gt;
 &lt;p&gt;In order to evaluate the model we split the labeled samples into 20k training samples and 5k test samples, since the 12.5k samples provided for evaluation are not labeled. After 10 training epochs we achieved great performance on both the training and test set, as seen on the learning curve below. You can check the notebook with this experiment 
-&lt;a href=&#34;/notebooks/dogsvscats/vgg16.html&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;a href=&#34;https://earnold.me/notebooks/dogsvscats/vgg16.html&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Analyzing the results we clearly see that the model performs very well both on training and test sets with accuracy higher than 95% on the test set. This performance can be explained by the complexity of the model and the amount of information it has been trained upon. Even though it performs well and was quite simple to implement, it is a rather heavy model with ~14 million parameters. This leads to the question of whether we can get a similar performance using a simpler, more computational efficient model.&lt;/p&gt;
 &lt;h2 id=&#34;custom-model-architecture-dognet&#34;&gt;Custom model architecture: dognet&lt;/h2&gt;
 &lt;p&gt;Since the VGG model was successful in the previous attempt, it is worth considering its architecture as base to a simpler custom model called dognet. Similarly, we organize the convolutional blocks with two conv layers followed by a max-pooling layer, and a final single filter conv layer to merge all feature maps into one. So the new model architecture will have 7 convolutional layers, all using 3x3 filters and RELU activation, with decreasing number of filters: 32, 32, 16, 16, 4, 4, 1. After flattening the last conv layer, a dense layer with 2 outputs and &lt;strong&gt;softmax&lt;/strong&gt; activation is used as the network output, interpreted as class probabilities.&lt;/p&gt;
@@ -140,10 +180,10 @@ c.DockerSpawner.extra_host_config = { &amp;quot;devices&amp;quot;:[&amp;quot;/de
 &lt;figure id=&#34;figure-no-regularization-training-curves&#34;&gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;/post/dogsvscats/noreg_curves_huaf098c93fa039b1ecd5816f499cb8c10_29098_2000x2000_fit_lanczos_2.png&#34; data-caption=&#34;No regularization training curves.&#34;&gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://earnold.me/post/dogsvscats/noreg_curves_huaf098c93fa039b1ecd5816f499cb8c10_29098_2000x2000_fit_lanczos_2.png&#34; data-caption=&#34;No regularization training curves.&#34;&gt;
 
 
-  &lt;img data-src=&#34;/post/dogsvscats/noreg_curves_huaf098c93fa039b1ecd5816f499cb8c10_29098_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;648&#34; height=&#34;288&#34;&gt;
+  &lt;img data-src=&#34;https://earnold.me/post/dogsvscats/noreg_curves_huaf098c93fa039b1ecd5816f499cb8c10_29098_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;648&#34; height=&#34;288&#34;&gt;
 &lt;/a&gt;
 
 
@@ -182,10 +222,10 @@ c.DockerSpawner.extra_host_config = { &amp;quot;devices&amp;quot;:[&amp;quot;/de
 &lt;figure id=&#34;figure-l2-moderate-regularization-training-curves&#34;&gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;/post/dogsvscats/l2_curves_hu6251224a84b2eeb8f0d5bbf670207ed3_34589_2000x2000_fit_lanczos_2.png&#34; data-caption=&#34;L2 moderate regularization training curves.&#34;&gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://earnold.me/post/dogsvscats/l2_curves_hu6251224a84b2eeb8f0d5bbf670207ed3_34589_2000x2000_fit_lanczos_2.png&#34; data-caption=&#34;L2 moderate regularization training curves.&#34;&gt;
 
 
-  &lt;img data-src=&#34;/post/dogsvscats/l2_curves_hu6251224a84b2eeb8f0d5bbf670207ed3_34589_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;648&#34; height=&#34;288&#34;&gt;
+  &lt;img data-src=&#34;https://earnold.me/post/dogsvscats/l2_curves_hu6251224a84b2eeb8f0d5bbf670207ed3_34589_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;648&#34; height=&#34;288&#34;&gt;
 &lt;/a&gt;
 
 
@@ -224,10 +264,10 @@ c.DockerSpawner.extra_host_config = { &amp;quot;devices&amp;quot;:[&amp;quot;/de
 &lt;figure id=&#34;figure-dropout-and-l2-regularization-training-curves&#34;&gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;/post/dogsvscats/drop_l2_curves_hu6860b813fdd25c9060498295d82a4fd5_39702_2000x2000_fit_lanczos_2.png&#34; data-caption=&#34;Dropout and L2 regularization training curves.&#34;&gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://earnold.me/post/dogsvscats/drop_l2_curves_hu6860b813fdd25c9060498295d82a4fd5_39702_2000x2000_fit_lanczos_2.png&#34; data-caption=&#34;Dropout and L2 regularization training curves.&#34;&gt;
 
 
-  &lt;img data-src=&#34;/post/dogsvscats/drop_l2_curves_hu6860b813fdd25c9060498295d82a4fd5_39702_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;648&#34; height=&#34;288&#34;&gt;
+  &lt;img data-src=&#34;https://earnold.me/post/dogsvscats/drop_l2_curves_hu6860b813fdd25c9060498295d82a4fd5_39702_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;648&#34; height=&#34;288&#34;&gt;
 &lt;/a&gt;
 
 
@@ -241,7 +281,7 @@ c.DockerSpawner.extra_host_config = { &amp;quot;devices&amp;quot;:[&amp;quot;/de
 &lt;/figure&gt;
 
 &lt;p&gt;The results show that combining L2 and dropout regularization provides a good solution to prevent model overfitting. Even though the model did not overfit we did not observe any improvement on the test set accuracy if compared to L2 only regularization. Another interesting characteristic is the chaotic behavior of the test loss function, which is due to the probabilistic nature of the unit drops, albeit the mean value of the test loss seems to follow the train loss, which is a good indicative. The notebook containing the dognet architecture along with regularizers is available 
-&lt;a href=&#34;/notebooks/dogsvscats/dognet.html&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;a href=&#34;https://earnold.me/notebooks/dogsvscats/dognet.html&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
 &lt;p&gt;In this specific application the downscaling of input image size did not have a bad impact on model performance and was actually capable of greatly decreasing the training time. Although this may not be the case when dealing with samples containing fine details where two distinct classes look similar to one another.&lt;/p&gt;
 &lt;p&gt;Through the series of experiments applying regularization techniques it was possible to prevent model overfiting and improve generalization measured as an increase on test set accuracy, getting up to 85% accuracy. Combining both L2 and dropout proved to be a good idea.&lt;/p&gt;
@@ -253,9 +293,9 @@ c.DockerSpawner.extra_host_config = { &amp;quot;devices&amp;quot;:[&amp;quot;/de
     
     <item>
       <title>Neural networks from scratch</title>
-      <link>/post/nn-scratch/</link>
+      <link>https://earnold.me/post/nn-scratch/</link>
       <pubDate>Wed, 12 Apr 2017 12:00:00 +0000</pubDate>
-      <guid>/post/nn-scratch/</guid>
+      <guid>https://earnold.me/post/nn-scratch/</guid>
       <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;I have used a handful of machine learning models in the past. These include simple linear regression models, support vector machines (SVMs) and neural networks. While working on different projects I was mostly concerned in solving a specific application problem and did not worry about the inner workings of the models I was using. I have delved into more details of SVM during my final undergraduate project but did not have the time to do the same for neural networks.&lt;/p&gt;
 &lt;p&gt;After reading and learning about it in more detail it has come the time for me to share it. In this post I will give some brief introduction to neural nets and derive some of the maths behind a simple architecture as well as its implementation using only 
@@ -267,7 +307,7 @@ c.DockerSpawner.extra_host_config = { &amp;quot;devices&amp;quot;:[&amp;quot;/de
 &lt;p&gt;We could specify this architecture to perform multi-class classification, so the output layer would give the probability the sample belongs to each of the available classes. In this case we use $N_y$ as the number of classes and to enforce a probabilistic output we use an activation function called &lt;strong&gt;softmax&lt;/strong&gt; on the output layer, which also guarantess that the sum of the classes probabilities sums to 1.&lt;/p&gt;
 &lt;p&gt;As for the hidden layer we can use a &lt;strong&gt;RELU&lt;/strong&gt; activation function, because it is avery simple to evaluate non-linear function: $\text{RELU}(z) = \max(0, z)$. There are other reasons why we would use it, mostly to avoid a problem called vanishing gradient, but in a shallow network such as this one this would not be a problem.&lt;/p&gt;
 &lt;p&gt;We define the weights of the connections between the input and hidden layer units as the matrix $W1 \in \mathbb{R}^{N_x \times N_h}$, where $W1_{i,j}$ is the weight of the connection between the $i$-th input layer unit to the $j$-th hidden layer unit. The bias vector of the hidden layer is defined as $b1 \in \mathbb{R}^{N_h}$. Similarly we have the parameters of connection between the hidden layer to the output layer: $W2 \in \mathbb{R}^{N_h \times N_y}$ and $b2 \in \mathbb{R}^{N_y}.$&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/notebooks/nn-diagram.png&#34; alt=&#34;nn-diagram&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://earnold.me/notebooks/nn-diagram.png&#34; alt=&#34;nn-diagram&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;forward-propagation&#34;&gt;Forward propagation&lt;/h2&gt;
 &lt;p&gt;Assuming we have all the ideal model parameters $W1, W2, b1, b2$, how do we get the output of the network for a given input sample? This is called forward propagation, since the data flows from the input layer, through the hidden layers and finally to the output layer as presented in the following equations.&lt;/p&gt;
 &lt;p&gt;$$\begin{align*} \\&lt;br&gt;
@@ -402,15 +442,15 @@ W2 -= lr*dW2
 b2 -= lr*db2
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;To check the code and results, please visit 
-&lt;a href=&#34;/notebooks/nn-scratch.html&#34;&gt;this notebook&lt;/a&gt;.&lt;/p&gt;
+&lt;a href=&#34;https://earnold.me/notebooks/nn-scratch.html&#34;&gt;this notebook&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Detecting people using depth frames and deep classifiers</title>
-      <link>/talk/dsfloripa/</link>
+      <link>https://earnold.me/talk/dsfloripa/</link>
       <pubDate>Thu, 06 Apr 2017 00:00:00 +0000</pubDate>
-      <guid>/talk/dsfloripa/</guid>
+      <guid>https://earnold.me/talk/dsfloripa/</guid>
       <description>&lt;p&gt;A short talk about a project I took part during my internship at Instituto SENAI de Tecnologia and which was also my final year project for my undergraduate program. My contribution was to elaborate an automatic human detection system for complex industrial environments. We used depth images from a overhead camera position to perform detection.&lt;/p&gt;
 &lt;p&gt;Two approaches to the detection problem were implemented and evaluated: traditional learning algorithms with manual feature extraction and deep learning classifiers. During this talk I revealed details and tradeoffs of both methods as well as a quantitative evaluation of their performance.&lt;/p&gt;
 </description>
@@ -418,9 +458,9 @@ b2 -= lr*db2
     
     <item>
       <title>Computer vision with Python and OpenCV</title>
-      <link>/talk/tdc2016/</link>
+      <link>https://earnold.me/talk/tdc2016/</link>
       <pubDate>Thu, 12 May 2016 00:00:00 +0000</pubDate>
-      <guid>/talk/tdc2016/</guid>
+      <guid>https://earnold.me/talk/tdc2016/</guid>
       <description>&lt;p&gt;A presentation introducing computer vision concepts and show how one can easily develop interesting applications such as augmented reality with Python. It was focused on implementation details for developers and was presented together with William Jamir Silva.&lt;/p&gt;
 &lt;p&gt;The code can be divided into two sections, one focusing on computer vision and another on computer graphics. The first one uses image processing algorithms to extract the position and identification of markers put in front of a camera. The latter one uses such information to render 3D models over the marker in the image in real time.&lt;/p&gt;
 </description>
@@ -428,17 +468,17 @@ b2 -= lr*db2
     
     <item>
       <title>TFlow</title>
-      <link>/project/tflow/</link>
+      <link>https://earnold.me/project/tflow/</link>
       <pubDate>Wed, 24 Jun 2015 00:00:00 +0000</pubDate>
-      <guid>/project/tflow/</guid>
+      <guid>https://earnold.me/project/tflow/</guid>
       <description></description>
     </item>
     
     <item>
       <title>SudoSolver</title>
-      <link>/project/sudosolver/</link>
+      <link>https://earnold.me/project/sudosolver/</link>
       <pubDate>Sat, 17 Jan 2015 00:00:00 +0000</pubDate>
-      <guid>/project/sudosolver/</guid>
+      <guid>https://earnold.me/project/sudosolver/</guid>
       <description></description>
     </item>
     

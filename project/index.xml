@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Projects | Eduardo Arnold</title>
-    <link>/project/</link>
-      <atom:link href="/project/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://earnold.me/project/</link>
+      <atom:link href="https://earnold.me/project/index.xml" rel="self" type="application/rss+xml" />
     <description>Projects</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 24 Jun 2015 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/images/icon_hu86725dfa3481f0beabea4a23db3db448_10764_512x512_fill_lanczos_center_2.png</url>
+      <url>https://earnold.me/images/icon_hu86725dfa3481f0beabea4a23db3db448_10764_512x512_fill_lanczos_center_2.png</url>
       <title>Projects</title>
-      <link>/project/</link>
+      <link>https://earnold.me/project/</link>
     </image>
     
     <item>
       <title>TFlow</title>
-      <link>/project/tflow/</link>
+      <link>https://earnold.me/project/tflow/</link>
       <pubDate>Wed, 24 Jun 2015 00:00:00 +0000</pubDate>
-      <guid>/project/tflow/</guid>
+      <guid>https://earnold.me/project/tflow/</guid>
       <description></description>
     </item>
     
     <item>
       <title>SudoSolver</title>
-      <link>/project/sudosolver/</link>
+      <link>https://earnold.me/project/sudosolver/</link>
       <pubDate>Sat, 17 Jan 2015 00:00:00 +0000</pubDate>
-      <guid>/project/sudosolver/</guid>
+      <guid>https://earnold.me/project/sudosolver/</guid>
       <description></description>
     </item>
     
