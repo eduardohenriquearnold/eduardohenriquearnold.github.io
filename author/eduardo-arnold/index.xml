@@ -5,12 +5,44 @@
     <link>https://earnold.me/author/eduardo-arnold/</link>
       <atom:link href="https://earnold.me/author/eduardo-arnold/index.xml" rel="self" type="application/rss+xml" />
     <description>Eduardo Arnold</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 18 Dec 2019 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://earnold.me/images/icon_hu86725dfa3481f0beabea4a23db3db448_10764_512x512_fill_lanczos_center_2.png</url>
       <title>Eduardo Arnold</title>
       <link>https://earnold.me/author/eduardo-arnold/</link>
     </image>
+    
+    <item>
+      <title>Cooperative Perception for 3D Object Detection in Driving Scenarios using Infrastructure Sensors</title>
+      <link>https://earnold.me/publication/arnold-2019-coop3dod/</link>
+      <pubDate>Wed, 18 Dec 2019 00:00:00 +0000</pubDate>
+      <guid>https://earnold.me/publication/arnold-2019-coop3dod/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cooperative Object Classification for Driving Applications</title>
+      <link>https://earnold.me/publication/arnold-2019-cooperative/</link>
+      <pubDate>Sun, 09 Jun 2019 00:00:00 +0000</pubDate>
+      <guid>https://earnold.me/publication/arnold-2019-cooperative/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Designing an IoT Framework for Automated Driving Impact Analysis</title>
+      <link>https://earnold.me/publication/bellotti-2019-designing/</link>
+      <pubDate>Sun, 09 Jun 2019 00:00:00 +0000</pubDate>
+      <guid>https://earnold.me/publication/bellotti-2019-designing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A Survey on 3D Object Detection Methods for Autonomous Driving Applications</title>
+      <link>https://earnold.me/publication/arnold-2019-survey/</link>
+      <pubDate>Sat, 19 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://earnold.me/publication/arnold-2019-survey/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>
