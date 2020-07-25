@@ -29,8 +29,8 @@
 &lt;p&gt;Sales forecasting is a very common problem faced by many companies. Given a history of sales of a certain product we would like to predict the demand of that product for a time window in the future. This is useful as it allows companies and industries to plan their workload and reduce waste of resources. This problem is a common example of time series forecasting and there are many approaches to tackle it.&lt;/p&gt;
 &lt;p&gt;Today we will learn a bit more about this with a practical example: the 
 &lt;a href=&#34;https://www.kaggle.com/c/competitive-data-science-predict-future-sales/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Kaggle Predict Future Sales dataset&lt;/a&gt;. This challenge aims to predict future sales of different products for the next month in different shops of a retail chain. In this notebook we do not aim at solving this challenge, rather, we will explore some concepts of time series forecasting that could be used to solve such problem.&lt;/p&gt;
-&lt;p&gt;This post was generated from a Jupyter notebook. If you prefer to use the notebook directly, please download it 
-&lt;a href=&#34;https://earnold.me/notebooks/timeseriesforecast.ipynb&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You can download the Jupyter notebook version of this tutorial 
+&lt;a href=&#34;https://github.com/eduardohenriquearnold/eduardohenriquearnold.github.io/blob/master/notebooks/timeseriesforecast.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;h1 id=&#34;exploring-the-dataset&#34;&gt;Exploring the dataset&lt;/h1&gt;
 &lt;p&gt;First we need to download the whole dataset and extract it to a &lt;code&gt;data&lt;/code&gt; folder in the root of this notebook path.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import numpy as np
@@ -290,12 +290,27 @@ def plot_product_record_frequency(shop_id):
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;interactive(children=(IntSlider(value=29, description=&#39;shop_id&#39;, max=59), Button(description=&#39;Run Interact&#39;, s…
 &lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;However, this interactive visualisation will not work unless you have a notebook running, so we will plot the sales frequency for some of the stores below:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def plot_product_record_frequency(shop_id):
+    count_months = gsales.reset_index().groupby([&#39;shop_id&#39;,&#39;item_id&#39;]).size()[shop_id]
+    plt.bar(count_months.keys(), count_months)
+    plt.xlabel(&#39;product_id&#39;)
+    plt.ylabel(&#39;Num months available&#39;)
+    plt.title(f&#39;shop_id {shop_id}&#39;)
+    
+fig=plt.figure(figsize=(12, 8), dpi= 80, facecolor=&#39;w&#39;, edgecolor=&#39;k&#39;)    
+for i, shop_id in enumerate([0,1,29,31]):
+    plt.subplot(2,2,i+1)
+    plot_product_record_frequency(shop_id)
+plt.tight_layout()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;output_15_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;We can observe that some shops have a very limited record of sales, e.g. shop 0 and 1. On the other hand, shop 29 and 31 have a considerable number of items with a record above 10 weeks.&lt;/p&gt;
 &lt;p&gt;Perhaps we should look into the shops with the larger number of sales, which we can inspect by observing the distribution of &lt;code&gt;shop_id&lt;/code&gt;:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;sales[&#39;shop_id&#39;].plot.hist(bins=60)
 plt.xlabel(&#39;product_id&#39;);
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;output_16_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;output_18_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;If we observe the previous histogram for the number of weeks of records for each product of a given shop, we will observe indeed that the shop 31 has a comprehensive number of products with a significant history of sales.&lt;/p&gt;
 &lt;p&gt;Considering the behaviour of multiple shops introduce complexity steaming from this biased distribution of sales. Some shops will have very little preior information about their sales, so it would be difficult to make a good prediction of sales in these shops. For this reason we will neglect different shops and instead try to estimate a new volume of sales for all products in the whole supermarket chain. So, we modify our aggregated sales DataFrame &lt;code&gt;gsales&lt;/code&gt; accordingly:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;gsales = sales.groupby([&#39;item_id&#39;,&#39;month&#39;]).agg({&#39;item_price&#39;:np.mean, &#39;sold&#39;:np.sum})
@@ -306,7 +321,7 @@ plt.bar(count_months.keys(),count_months);
 plt.xlabel(&#39;product_id&#39;)
 plt.ylabel(&#39;Num months available&#39;);
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;output_21_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;output_23_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Although in a real forecast scenario we would like to have a good prediction of sales even when the history for a given product is minimal, in this example we will focus on products with full history for all 34 months.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;productsIdx = count_months[count_months == 34].index.values
 selected_sales = gsales.loc[productsIdx]
@@ -662,7 +677,7 @@ for i, idx in enumerate(selected_sales.index.get_level_values(0).unique()[10:20]
     plt.title(f&#39;Sales for item_id {idx}&#39;)
     plt.tight_layout()
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;output_29_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;output_31_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;We can see some seasonality patterns in the plotted data, so we will decompose one of the observed time series into a trend and seasonal effects with a multiplicative model $Y(t) = T(t) S(t) r(t)$ where $T(t)$ is the trend, $S(t)$ the the seasonal component and $r(t)$ is the residual.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from statsmodels.tsa.seasonal import seasonal_decompose
 item_id = 491
@@ -670,7 +685,7 @@ sales_product = selected_sales.loc[item_id][&#39;sold&#39;].values
 dec = seasonal_decompose(sales_product, model=&#39;multiplicative&#39;, period=12)
 dec.plot();
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;output_31_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;output_33_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;We observed that the residual values tend to be close to 1, which means the observed series has a good fit to the seasonal and trend decomposition.&lt;/p&gt;
 &lt;p&gt;This analysis shows that the observed time series have a trend that decreases throughout the months, and a seasonal component, which seems to peak around August and December. This decomposition could be exploited to improve prediction results, however we would require a model that incorporate this seasonality pattern.&lt;/p&gt;
 &lt;h1 id=&#34;time-series-forecasting&#34;&gt;Time series forecasting&lt;/h1&gt;
@@ -679,21 +694,22 @@ dec.plot();
 &lt;h3 id=&#34;gaussian-processes&#34;&gt;Gaussian Processes&lt;/h3&gt;
 &lt;p&gt;GPs are non-parametric models that can represent a posterior over functions. They work well when we do not wish to impose strong assumptions on the generative data process. For a more detailed explanation of GPs, please visit this 
 &lt;a href=&#34;https://distill.pub/2019/visual-exploration-gaussian-processes/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;distill post&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;We chose a multiplication of a constant kernel and a exponential sine kernel. This kernel approximately (we assume a constant trend) models the trend and seasonal components seen during our previous analysis. Note that the parameters of these kernels are optimised (within the given bounds) during the &lt;code&gt;fit&lt;/code&gt; process.&lt;/p&gt;
+&lt;p&gt;We chose experimented with a multitude of kernels, the best performing were the simpler ones: RBF and Matern. Note that the parameters of these kernels are optimised (within the given bounds) during the &lt;code&gt;fit&lt;/code&gt; process. Please note that we normalise the target sales by the maximum value such that the target number of sales ranges from [0,1].&lt;/p&gt;
 &lt;p&gt;First, let&amp;rsquo;s observe what happens using a single item_id and extrapolating between the months:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from sklearn.gaussian_process import GaussianProcessRegressor
 from sklearn.gaussian_process.kernels import WhiteKernel, RBF, Matern, ExpSineSquared, ConstantKernel
+
+kernel = RBF()
+gp = GaussianProcessRegressor(kernel = kernel, n_restarts_optimizer=2, alpha = 1e-5, normalize_y=True)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;item_id = 53
+X = np.arange(0,34,0.05).reshape(-1,1)
 Y = selected_sales[&#39;sold&#39;][item_id].values.reshape(-1,1)
+ymax = Y.max()
 
-kernel = ConstantKernel(constant_value_bounds=[1e-2, 1e2]) * ExpSineSquared(periodicity_bounds=[1,13])
-gp = GaussianProcessRegressor(kernel = kernel, n_restarts_optimizer=2, alpha = 1e-5, normalize_y=True)
-gp.fit(np.arange(30).reshape(-1,1), Y[:30])
-
-X = np.arange(34).reshape(-1,1)
+gp.fit(np.arange(30).reshape(-1,1), Y[:30]/ymax)
 Y_pred, Y_pred_std = gp.predict(X, return_std=True)
-Y_pred = Y_pred.reshape(-1)
+Y_pred = Y_pred.reshape(-1)*ymax
 
 fig=plt.figure(figsize=(6, 4), dpi= 80, facecolor=&#39;w&#39;, edgecolor=&#39;k&#39;)
 plt.plot(X, Y_pred, &#39;r.&#39;, label=&#39;Pred&#39;)
@@ -702,7 +718,7 @@ plt.plot(np.arange(34), Y, &#39;bx&#39;, label=&#39;GT&#39;)
 plt.axvline(29.5, 0, 1, color=&#39;black&#39;, ls=&#39;--&#39;, label=&#39;Train/Test split&#39;)
 plt.legend();
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;output_42_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;output_44_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Now we will create a GP for each item_id time series within our selected sales:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;Y_preds_gp = []
 Y_gts = []
@@ -712,11 +728,12 @@ for item_id in selected_sales.index.get_level_values(0).unique():
     
     Y = selected_sales[&#39;sold&#39;][item_id].values.reshape(-1,1)
     Y_train, Y_test = Y[:30], Y[30:]
+    ymax = Y_train.max()
     
-    kernel = ConstantKernel(constant_value_bounds=[1e-2, 1e2]) * ExpSineSquared(periodicity_bounds=[1,13])
+    kernel = RBF()
     gp = GaussianProcessRegressor(kernel = kernel, n_restarts_optimizer=0, alpha = 1e-2, normalize_y=True)
-    gp.fit(X_train, Y_train)
-    ypred = gp.predict(X_test)
+    gp.fit(X_train, Y_train/ymax)
+    ypred = gp.predict(X_test)*ymax
     
     Y_preds_gp.append(ypred)
     Y_gts.append(Y_test)
@@ -731,6 +748,10 @@ where $\epsilon(t)$ is the residual from the ground-truth and estimated value. T
 &lt;p&gt;For simplicity, we assume our time-series are stationary and use $p=1$, $q=0$, $d=0$&lt;/p&gt;
 &lt;p&gt;Again, let&amp;rsquo;s start by visualising a single time-series and the resulting ARIMA prediction.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from statsmodels.tsa.arima_model import ARIMA
+
+item_id = 53
+Y = selected_sales[&#39;sold&#39;][item_id].values.reshape(-1,1)
+
 model = ARIMA(Y[:30], order=(1,0,0)).fit(trend=&#39;nc&#39;)
 Y_pred = model.predict(0,33)
 
@@ -740,7 +761,12 @@ plt.plot(np.arange(34), Y, &#39;bx&#39;, label=&#39;GT&#39;)
 plt.axvline(29.5, 0, 1, color=&#39;black&#39;, ls=&#39;--&#39;, label=&#39;Train/Test split&#39;)
 plt.legend();
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;output_49_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;output_51_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;We may also observe the approximate distribution of the residuals:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;residuals = pd.DataFrame(model.resid)
+residuals.plot.kde();
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;output_53_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Next, we forecast for all items in the selected sales for the remaining 4 months (30,31,32,33):&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;Y_preds_arima = []
 for item_id in selected_sales.index.get_level_values(0).unique():  
@@ -762,7 +788,7 @@ rmse_gp = mse(Y_gts, Y_preds_gp, squared=False)
 rmse_arima = mse(Y_gts, Y_preds_arima, squared=False)
 print(f&amp;quot;RMSE GP {rmse_gp} \nRMSE ARIMA {rmse_arima}&amp;quot;)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;RMSE GP 61.861506088879246 
+&lt;pre&gt;&lt;code&gt;RMSE GP 58.58414105624866 
 RMSE ARIMA 50.27118697649368
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Knowingly, forecasting 4 months into the future would be difficult. Instead we could consider only the 30th month forecast of all items:&lt;/p&gt;
@@ -770,7 +796,7 @@ RMSE ARIMA 50.27118697649368
 rmse_arima = mse(Y_gts[::4], Y_preds_arima[::4], squared=False)
 print(f&amp;quot;RMSE GP {rmse_gp} \nRMSE ARIMA {rmse_arima}&amp;quot;)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;RMSE GP 38.624441564615985 
+&lt;pre&gt;&lt;code&gt;RMSE GP 28.212626816686967 
 RMSE ARIMA 7.92125195871772
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h1 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h1&gt;
