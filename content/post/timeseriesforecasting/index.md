@@ -20,14 +20,13 @@ image:
   preview_only: false
 
 ---
-
 # Problem definition
 
 Sales forecasting is a very common problem faced by many companies. Given a history of sales of a certain product we would like to predict the demand of that product for a time window in the future. This is useful as it allows companies and industries to plan their workload and reduce waste of resources. This problem is a common example of time series forecasting and there are many approaches to tackle it.
 
 Today we will learn a bit more about this with a practical example: the [Kaggle Predict Future Sales dataset](https://www.kaggle.com/c/competitive-data-science-predict-future-sales/). This challenge aims to predict future sales of different products for the next month in different shops of a retail chain. In this notebook we do not aim at solving this challenge, rather, we will explore some concepts of time series forecasting that could be used to solve such problem.
 
-This post was generated from a Jupyter notebook. If you prefer to use the notebook directly, please download it [here](/notebooks/timeseriesforecast.ipynb).
+You can download the Jupyter notebook version of this tutorial [here](https://github.com/eduardohenriquearnold/eduardohenriquearnold.github.io/blob/master/notebooks/timeseriesforecast.ipynb).
 
 # Exploring the dataset
 
@@ -325,6 +324,28 @@ def plot_product_record_frequency(shop_id):
     interactive(children=(IntSlider(value=29, description='shop_id', max=59), Button(description='Run Interact', s…
 
 
+However, this interactive visualisation will not work unless you have a notebook running, so we will plot the sales frequency for some of the stores below:
+
+
+```python
+def plot_product_record_frequency(shop_id):
+    count_months = gsales.reset_index().groupby(['shop_id','item_id']).size()[shop_id]
+    plt.bar(count_months.keys(), count_months)
+    plt.xlabel('product_id')
+    plt.ylabel('Num months available')
+    plt.title(f'shop_id {shop_id}')
+    
+fig=plt.figure(figsize=(12, 8), dpi= 80, facecolor='w', edgecolor='k')    
+for i, shop_id in enumerate([0,1,29,31]):
+    plt.subplot(2,2,i+1)
+    plot_product_record_frequency(shop_id)
+plt.tight_layout()
+```
+
+
+![png](output_15_0.png)
+
+
 We can observe that some shops have a very limited record of sales, e.g. shop 0 and 1. On the other hand, shop 29 and 31 have a considerable number of items with a record above 10 weeks.
 
 Perhaps we should look into the shops with the larger number of sales, which we can inspect by observing the distribution of `shop_id`:
@@ -336,7 +357,7 @@ plt.xlabel('product_id');
 ```
 
 
-![png](output_16_0.png)
+![png](output_18_0.png)
 
 
 If we observe the previous histogram for the number of weeks of records for each product of a given shop, we will observe indeed that the shop 31 has a comprehensive number of products with a significant history of sales.
@@ -359,7 +380,7 @@ plt.ylabel('Num months available');
 ```
 
 
-![png](output_21_0.png)
+![png](output_23_0.png)
 
 
 Although in a real forecast scenario we would like to have a good prediction of sales even when the history for a given product is minimal, in this example we will focus on products with full history for all 34 months.
@@ -743,7 +764,7 @@ for i, idx in enumerate(selected_sales.index.get_level_values(0).unique()[10:20]
 ```
 
 
-![png](output_29_0.png)
+![png](output_31_0.png)
 
 
 We can see some seasonality patterns in the plotted data, so we will decompose one of the observed time series into a trend and seasonal effects with a multiplicative model $Y(t) = T(t) S(t) r(t)$ where $T(t)$ is the trend, $S(t)$ the the seasonal component and $r(t)$ is the residual.
@@ -758,7 +779,7 @@ dec.plot();
 ```
 
 
-![png](output_31_0.png)
+![png](output_33_0.png)
 
 
 We observed that the residual values tend to be close to 1, which means the observed series has a good fit to the seasonal and trend decomposition. 
@@ -775,7 +796,7 @@ Firstly, we train the models on each product time series up to month 30. Then, w
 
 GPs are non-parametric models that can represent a posterior over functions. They work well when we do not wish to impose strong assumptions on the generative data process. For a more detailed explanation of GPs, please visit this [distill post](https://distill.pub/2019/visual-exploration-gaussian-processes/).
 
-We chose a multiplication of a constant kernel and a exponential sine kernel. This kernel approximately (we assume a constant trend) models the trend and seasonal components seen during our previous analysis. Note that the parameters of these kernels are optimised (within the given bounds) during the `fit` process.
+We chose experimented with a multitude of kernels, the best performing were the simpler ones: RBF and Matern. Note that the parameters of these kernels are optimised (within the given bounds) during the `fit` process. Please note that we normalise the target sales by the maximum value such that the target number of sales ranges from [0,1].
 
 First, let's observe what happens using a single item_id and extrapolating between the months:
 
@@ -784,20 +805,21 @@ First, let's observe what happens using a single item_id and extrapolating betwe
 ```python
 from sklearn.gaussian_process import GaussianProcessRegressor
 from sklearn.gaussian_process.kernels import WhiteKernel, RBF, Matern, ExpSineSquared, ConstantKernel
+
+kernel = RBF()
+gp = GaussianProcessRegressor(kernel = kernel, n_restarts_optimizer=2, alpha = 1e-5, normalize_y=True)
 ```
 
 
 ```python
 item_id = 53
+X = np.arange(0,34,0.05).reshape(-1,1)
 Y = selected_sales['sold'][item_id].values.reshape(-1,1)
+ymax = Y.max()
 
-kernel = ConstantKernel(constant_value_bounds=[1e-2, 1e2]) * ExpSineSquared(periodicity_bounds=[1,13])
-gp = GaussianProcessRegressor(kernel = kernel, n_restarts_optimizer=2, alpha = 1e-5, normalize_y=True)
-gp.fit(np.arange(30).reshape(-1,1), Y[:30])
-
-X = np.arange(34).reshape(-1,1)
+gp.fit(np.arange(30).reshape(-1,1), Y[:30]/ymax)
 Y_pred, Y_pred_std = gp.predict(X, return_std=True)
-Y_pred = Y_pred.reshape(-1)
+Y_pred = Y_pred.reshape(-1)*ymax
 
 fig=plt.figure(figsize=(6, 4), dpi= 80, facecolor='w', edgecolor='k')
 plt.plot(X, Y_pred, 'r.', label='Pred')
@@ -808,7 +830,7 @@ plt.legend();
 ```
 
 
-![png](output_42_0.png)
+![png](output_44_0.png)
 
 
 Now we will create a GP for each item_id time series within our selected sales:
@@ -823,11 +845,12 @@ for item_id in selected_sales.index.get_level_values(0).unique():
     
     Y = selected_sales['sold'][item_id].values.reshape(-1,1)
     Y_train, Y_test = Y[:30], Y[30:]
+    ymax = Y_train.max()
     
-    kernel = ConstantKernel(constant_value_bounds=[1e-2, 1e2]) * ExpSineSquared(periodicity_bounds=[1,13])
+    kernel = RBF()
     gp = GaussianProcessRegressor(kernel = kernel, n_restarts_optimizer=0, alpha = 1e-2, normalize_y=True)
-    gp.fit(X_train, Y_train)
-    ypred = gp.predict(X_test)
+    gp.fit(X_train, Y_train/ymax)
+    ypred = gp.predict(X_test)*ymax
     
     Y_preds_gp.append(ypred)
     Y_gts.append(Y_test)
@@ -839,7 +862,7 @@ Y_gts = np.concatenate(Y_gts, axis=0)
 ### ARIMA
 
 Auto Regressive Integrated Moving Average models the time series using
-$$Y(t) = \alpha + \beta\_1 Y(t-1) + \beta\_2 Y(t-2) + \dots + \beta\_p Y(t-p) + \gamma\_1 \epsilon(t-1) + \gamma\_2 \epsilon(t-2) + \dots + \gamma\_q \epsilon(t-q) + \epsilon(t)$$
+$$Y(t) = \alpha + \beta_1 Y(t-1) + \beta_2 Y(t-2) + \dots + \beta_p Y(t-p) + \gamma_1 \epsilon(t-1) + \gamma_2 \epsilon(t-2) + \dots + \gamma_q \epsilon(t-q) + \epsilon(t)$$
 where $\epsilon(t)$ is the residual from the ground-truth and estimated value. The parameters $\alpha, \beta, \gamma$ are optimised during fitting. The hyper-parameters $p,d,q$ correspond to the order of the process, **i.e.** how many terms of previous timestamps, how many previous error terms and how many times to differentiate the time series until it becomes stationary.
 
 For simplicity, we assume our time-series are stationary and use $p=1$, $q=0$, $d=0$
@@ -849,6 +872,10 @@ Again, let's start by visualising a single time-series and the resulting ARIMA p
 
 ```python
 from statsmodels.tsa.arima_model import ARIMA
+
+item_id = 53
+Y = selected_sales['sold'][item_id].values.reshape(-1,1)
+
 model = ARIMA(Y[:30], order=(1,0,0)).fit(trend='nc')
 Y_pred = model.predict(0,33)
 
@@ -860,7 +887,19 @@ plt.legend();
 ```
 
 
-![png](output_49_0.png)
+![png](output_51_0.png)
+
+
+We may also observe the approximate distribution of the residuals:
+
+
+```python
+residuals = pd.DataFrame(model.resid)
+residuals.plot.kde();
+```
+
+
+![png](output_53_0.png)
 
 
 Next, we forecast for all items in the selected sales for the remaining 4 months (30,31,32,33):
@@ -893,7 +932,7 @@ rmse_arima = mse(Y_gts, Y_preds_arima, squared=False)
 print(f"RMSE GP {rmse_gp} \nRMSE ARIMA {rmse_arima}")
 ```
 
-    RMSE GP 61.861506088879246 
+    RMSE GP 58.58414105624866 
     RMSE ARIMA 50.27118697649368
 
 
@@ -906,7 +945,7 @@ rmse_arima = mse(Y_gts[::4], Y_preds_arima[::4], squared=False)
 print(f"RMSE GP {rmse_gp} \nRMSE ARIMA {rmse_arima}")
 ```
 
-    RMSE GP 38.624441564615985 
+    RMSE GP 28.212626816686967 
     RMSE ARIMA 7.92125195871772
 
 
