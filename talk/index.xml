@@ -5,20 +5,12 @@
     <link>https://earnold.me/talk/</link>
       <atom:link href="https://earnold.me/talk/index.xml" rel="self" type="application/rss+xml" />
     <description>Recent &amp; Upcoming Talks</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 24 Aug 2020 10:30:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 27 Feb 2020 18:30:00 +0100</lastBuildDate>
     <image>
       <url>https://earnold.me/images/icon_hu86725dfa3481f0beabea4a23db3db448_10764_512x512_fill_lanczos_center_2.png</url>
       <title>Recent &amp; Upcoming Talks</title>
       <link>https://earnold.me/talk/</link>
     </image>
-    
-    <item>
-      <title>Cooperative perception for 3D object detection in challenging driving scenarios using infrastructure sensors</title>
-      <link>https://earnold.me/talk/ieeeufsc2020/</link>
-      <pubDate>Mon, 24 Aug 2020 10:30:00 +0000</pubDate>
-      <guid>https://earnold.me/talk/ieeeufsc2020/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>IET Talk - Challenges and Opportunities in Connected and Autonomous Vehicles</title>
