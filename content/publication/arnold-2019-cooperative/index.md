@@ -8,5 +8,6 @@ abstract: "3D object classification can be realised by rendering views of the sa
 featured: false
 publication: "*2019 IEEE Intelligent Vehicles Symposium (IV)*"
 url_pdf: https://ieeexplore.ieee.org/abstract/document/8813811
+url_code: https://github.com/eduardohenriquearnold/coopObjectClassification
 ---
 
