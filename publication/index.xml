@@ -5,7 +5,7 @@
     <link>https://earnold.me/publication/</link>
       <atom:link href="https://earnold.me/publication/index.xml" rel="self" type="application/rss+xml" />
     <description>Publications</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 01 May 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 16 Oct 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://earnold.me/images/icon_hu86725dfa3481f0beabea4a23db3db448_10764_512x512_fill_lanczos_center_2.png</url>
       <title>Publications</title>
@@ -13,18 +13,18 @@
     </image>
     
     <item>
-      <title>The L3Pilot Data Management Toolchain for a Level 3 Vehicle Automation Pilot</title>
-      <link>https://earnold.me/publication/hiller-2020-l-3-pilot/</link>
-      <pubDate>Fri, 01 May 2020 00:00:00 +0000</pubDate>
-      <guid>https://earnold.me/publication/hiller-2020-l-3-pilot/</guid>
+      <title>Cooperative Perception for 3D Object Detection in Driving Scenarios using Infrastructure Sensors</title>
+      <link>https://earnold.me/publication/arnold-2020-coop3dod/</link>
+      <pubDate>Fri, 16 Oct 2020 00:00:00 +0000</pubDate>
+      <guid>https://earnold.me/publication/arnold-2020-coop3dod/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Cooperative Perception for 3D Object Detection in Driving Scenarios using Infrastructure Sensors</title>
-      <link>https://earnold.me/publication/arnold-2019-coop3dod/</link>
-      <pubDate>Wed, 18 Dec 2019 00:00:00 +0000</pubDate>
-      <guid>https://earnold.me/publication/arnold-2019-coop3dod/</guid>
+      <title>The L3Pilot Data Management Toolchain for a Level 3 Vehicle Automation Pilot</title>
+      <link>https://earnold.me/publication/hiller-2020-l-3-pilot/</link>
+      <pubDate>Fri, 01 May 2020 00:00:00 +0000</pubDate>
+      <guid>https://earnold.me/publication/hiller-2020-l-3-pilot/</guid>
       <description></description>
     </item>
     

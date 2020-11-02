@@ -27,10 +27,10 @@
   
     
   
-  <meta name="description" content="The perception system of an autonomous vehicle is responsible for mapping sensor observations into a semantic description of the vehicle&#39;s environment. 3D object detection is a common function within this system and outputs a list of 3D bounding boxes around objects of interest. Various 3D object detection methods have relied on fusion of different sensor modalities to overcome limitations of individual sensors. However, occlusion, limited field-of-view and low-point density of the sensor data cannot be reliably and cost-effectively addressed by multi-modal sensing from a single point of view. Alternatively, cooperative perception incorporates information from spatially diverse sensors distributed around the environment as a way to mitigate these limitations. This paper proposes two schemes for cooperative 3D object detection. The early fusion scheme combines point clouds from multiple spatially diverse sensing points of view before detection. In contrast, the late fusion scheme fuses the independently estimated bounding boxes from multiple spatially diverse sensors. We evaluate the performance of both schemes using a synthetic cooperative dataset created in two complex driving scenarios, a T-junction and a roundabout. The evaluation show that the early fusion approach outperforms late fusion by a significant margin at the cost of higher communication bandwidth. The results demonstrate that cooperative perception can recall more than 95% of the objects as opposed to 30% for single-point sensing in the most challenging scenario. To provide practical insights into the deployment of such system, we report how the number of sensors and their configuration impact the detection performance of the system.">
+  <meta name="description" content="3D object detection is a common function within the perception system of an autonomous vehicle and outputs a list of 3D bounding boxes around objects of interest. Various 3D object detection methods have relied on fusion of different sensor modalities to overcome limitations of individual sensors. However, occlusion, limited field-of-view and low-point density of the sensor data cannot be reliably and cost-effectively addressed by multi-modal sensing from a single point of view. Alternatively, cooperative perception incorporates information from spatially diverse sensors distributed around the environment as a way to mitigate these limitations. This article proposes two schemes for cooperative 3D object detection using single modality sensors. The early fusion scheme combines point clouds from multiple spatially diverse sensing points of view before detection. In contrast, the late fusion scheme fuses the independently detected bounding boxes from multiple spatially diverse sensors. We evaluate the performance of both schemes, and their hybrid combination, using a synthetic cooperative dataset created in two complex driving scenarios, a T-junction and a roundabout. The evaluation shows that the early fusion approach outperforms late fusion by a significant margin at the cost of higher communication bandwidth. The results demonstrate that cooperative perception can recall more than 95% of the objects as opposed to 30% for single-point sensing in the most challenging scenario. To provide practical insights into the deployment of such system, we report how the number of sensors and their configuration impact the detection performance of the system.">
 
   
-  <link rel="alternate" hreflang="en-us" href="https://earnold.me/publication/arnold-2019-coop3dod/">
+  <link rel="alternate" hreflang="en-us" href="https://earnold.me/publication/arnold-2020-coop3dod/">
 
   
 
@@ -219,7 +219,7 @@
   <link rel="icon" type="image/png" href="/images/icon_hu86725dfa3481f0beabea4a23db3db448_10764_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu86725dfa3481f0beabea4a23db3db448_10764_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="https://earnold.me/publication/arnold-2019-coop3dod/">
+  <link rel="canonical" href="https://earnold.me/publication/arnold-2020-coop3dod/">
 
   
   
@@ -238,15 +238,15 @@
   <meta property="twitter:creator" content="@eduardoarnoldh">
   
   <meta property="og:site_name" content="Eduardo Arnold">
-  <meta property="og:url" content="https://earnold.me/publication/arnold-2019-coop3dod/">
+  <meta property="og:url" content="https://earnold.me/publication/arnold-2020-coop3dod/">
   <meta property="og:title" content="Cooperative Perception for 3D Object Detection in Driving Scenarios using Infrastructure Sensors | Eduardo Arnold">
-  <meta property="og:description" content="The perception system of an autonomous vehicle is responsible for mapping sensor observations into a semantic description of the vehicle&#39;s environment. 3D object detection is a common function within this system and outputs a list of 3D bounding boxes around objects of interest. Various 3D object detection methods have relied on fusion of different sensor modalities to overcome limitations of individual sensors. However, occlusion, limited field-of-view and low-point density of the sensor data cannot be reliably and cost-effectively addressed by multi-modal sensing from a single point of view. Alternatively, cooperative perception incorporates information from spatially diverse sensors distributed around the environment as a way to mitigate these limitations. This paper proposes two schemes for cooperative 3D object detection. The early fusion scheme combines point clouds from multiple spatially diverse sensing points of view before detection. In contrast, the late fusion scheme fuses the independently estimated bounding boxes from multiple spatially diverse sensors. We evaluate the performance of both schemes using a synthetic cooperative dataset created in two complex driving scenarios, a T-junction and a roundabout. The evaluation show that the early fusion approach outperforms late fusion by a significant margin at the cost of higher communication bandwidth. The results demonstrate that cooperative perception can recall more than 95% of the objects as opposed to 30% for single-point sensing in the most challenging scenario. To provide practical insights into the deployment of such system, we report how the number of sensors and their configuration impact the detection performance of the system."><meta property="og:image" content="https://earnold.me/images/icon_hu86725dfa3481f0beabea4a23db3db448_10764_512x512_fill_lanczos_center_2.png">
+  <meta property="og:description" content="3D object detection is a common function within the perception system of an autonomous vehicle and outputs a list of 3D bounding boxes around objects of interest. Various 3D object detection methods have relied on fusion of different sensor modalities to overcome limitations of individual sensors. However, occlusion, limited field-of-view and low-point density of the sensor data cannot be reliably and cost-effectively addressed by multi-modal sensing from a single point of view. Alternatively, cooperative perception incorporates information from spatially diverse sensors distributed around the environment as a way to mitigate these limitations. This article proposes two schemes for cooperative 3D object detection using single modality sensors. The early fusion scheme combines point clouds from multiple spatially diverse sensing points of view before detection. In contrast, the late fusion scheme fuses the independently detected bounding boxes from multiple spatially diverse sensors. We evaluate the performance of both schemes, and their hybrid combination, using a synthetic cooperative dataset created in two complex driving scenarios, a T-junction and a roundabout. The evaluation shows that the early fusion approach outperforms late fusion by a significant margin at the cost of higher communication bandwidth. The results demonstrate that cooperative perception can recall more than 95% of the objects as opposed to 30% for single-point sensing in the most challenging scenario. To provide practical insights into the deployment of such system, we report how the number of sensors and their configuration impact the detection performance of the system."><meta property="og:image" content="https://earnold.me/images/icon_hu86725dfa3481f0beabea4a23db3db448_10764_512x512_fill_lanczos_center_2.png">
   <meta property="twitter:image" content="https://earnold.me/images/icon_hu86725dfa3481f0beabea4a23db3db448_10764_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
   
     
-      <meta property="article:published_time" content="2019-12-18T00:00:00&#43;00:00">
+      <meta property="article:published_time" content="2020-10-16T09:14:31&#43;00:00">
     
-    <meta property="article:modified_time" content="2019-12-18T00:00:00&#43;00:00">
+    <meta property="article:modified_time" content="2020-10-16T00:00:00&#43;00:00">
   
 
   
@@ -268,12 +268,12 @@
   "@type": "Article",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://earnold.me/publication/arnold-2019-coop3dod/"
+    "@id": "https://earnold.me/publication/arnold-2020-coop3dod/"
   },
   "headline": "Cooperative Perception for 3D Object Detection in Driving Scenarios using Infrastructure Sensors",
   
-  "datePublished": "2019-12-18T00:00:00Z",
-  "dateModified": "2019-12-18T00:00:00Z",
+  "datePublished": "2020-10-16T09:14:31Z",
+  "dateModified": "2020-10-16T00:00:00Z",
   
   "author": {
     "@type": "Person",
@@ -288,7 +288,7 @@
       "url": "https://earnold.me/images/icon_hu86725dfa3481f0beabea4a23db3db448_10764_192x192_fill_lanczos_center_2.png"
     }
   },
-  "description": "The perception system of an autonomous vehicle is responsible for mapping sensor observations into a semantic description of the vehicle's environment. 3D object detection is a common function within this system and outputs a list of 3D bounding boxes around objects of interest. Various 3D object detection methods have relied on fusion of different sensor modalities to overcome limitations of individual sensors. However, occlusion, limited field-of-view and low-point density of the sensor data cannot be reliably and cost-effectively addressed by multi-modal sensing from a single point of view. Alternatively, cooperative perception incorporates information from spatially diverse sensors distributed around the environment as a way to mitigate these limitations. This paper proposes two schemes for cooperative 3D object detection. The early fusion scheme combines point clouds from multiple spatially diverse sensing points of view before detection. In contrast, the late fusion scheme fuses the independently estimated bounding boxes from multiple spatially diverse sensors. We evaluate the performance of both schemes using a synthetic cooperative dataset created in two complex driving scenarios, a T-junction and a roundabout. The evaluation show that the early fusion approach outperforms late fusion by a significant margin at the cost of higher communication bandwidth. The results demonstrate that cooperative perception can recall more than 95% of the objects as opposed to 30% for single-point sensing in the most challenging scenario. To provide practical insights into the deployment of such system, we report how the number of sensors and their configuration impact the detection performance of the system."
+  "description": "3D object detection is a common function within the perception system of an autonomous vehicle and outputs a list of 3D bounding boxes around objects of interest. Various 3D object detection methods have relied on fusion of different sensor modalities to overcome limitations of individual sensors. However, occlusion, limited field-of-view and low-point density of the sensor data cannot be reliably and cost-effectively addressed by multi-modal sensing from a single point of view. Alternatively, cooperative perception incorporates information from spatially diverse sensors distributed around the environment as a way to mitigate these limitations. This article proposes two schemes for cooperative 3D object detection using single modality sensors. The early fusion scheme combines point clouds from multiple spatially diverse sensing points of view before detection. In contrast, the late fusion scheme fuses the independently detected bounding boxes from multiple spatially diverse sensors. We evaluate the performance of both schemes, and their hybrid combination, using a synthetic cooperative dataset created in two complex driving scenarios, a T-junction and a roundabout. The evaluation shows that the early fusion approach outperforms late fusion by a significant margin at the cost of higher communication bandwidth. The results demonstrate that cooperative perception can recall more than 95% of the objects as opposed to 30% for single-point sensing in the most challenging scenario. To provide practical insights into the deployment of such system, we report how the number of sensors and their configuration impact the detection performance of the system."
 }
 </script>
 
@@ -625,7 +625,7 @@
     
       
     
-    December 2019
+    October 2020
   </span>
   
 
@@ -654,6 +654,8 @@
 
 
 
+  
+
 
 
 <div class="btn-links mb-3">
@@ -673,12 +675,16 @@
 
 
 
-<a class="btn btn-outline-primary my-1 mr-1" href="https://arxiv.org/pdf/1912.12147.pdf" target="_blank" rel="noopener">
+<a class="btn btn-outline-primary my-1 mr-1" href="https://ieeexplore.ieee.org/document/9228884" target="_blank" rel="noopener">
   PDF
 </a>
 
 
 
+<button type="button" class="btn btn-outline-primary my-1 mr-1 js-cite-modal"
+        data-filename="/publication/arnold-2020-coop3dod/cite.bib">
+  Cite
+</button>
 
 
 
@@ -691,6 +697,23 @@
 
 
 
+
+
+  
+  
+  
+    
+  
+  
+  
+  
+  
+    
+  
+  <a class="btn btn-outline-primary my-1 mr-1" href="https://arxiv.org/pdf/1912.12147.pdf" target="_blank" rel="noopener">
+    
+    Preprint
+  </a>
 
 
 </div>
@@ -705,7 +728,7 @@
 
     
     <h3>Abstract</h3>
-    <p class="pub-abstract">The perception system of an autonomous vehicle is responsible for mapping sensor observations into a semantic description of the vehicle&rsquo;s environment. 3D object detection is a common function within this system and outputs a list of 3D bounding boxes around objects of interest. Various 3D object detection methods have relied on fusion of different sensor modalities to overcome limitations of individual sensors. However, occlusion, limited field-of-view and low-point density of the sensor data cannot be reliably and cost-effectively addressed by multi-modal sensing from a single point of view. Alternatively, cooperative perception incorporates information from spatially diverse sensors distributed around the environment as a way to mitigate these limitations. This paper proposes two schemes for cooperative 3D object detection. The early fusion scheme combines point clouds from multiple spatially diverse sensing points of view before detection. In contrast, the late fusion scheme fuses the independently estimated bounding boxes from multiple spatially diverse sensors. We evaluate the performance of both schemes using a synthetic cooperative dataset created in two complex driving scenarios, a T-junction and a roundabout. The evaluation show that the early fusion approach outperforms late fusion by a significant margin at the cost of higher communication bandwidth. The results demonstrate that cooperative perception can recall more than 95% of the objects as opposed to 30% for single-point sensing in the most challenging scenario. To provide practical insights into the deployment of such system, we report how the number of sensors and their configuration impact the detection performance of the system.</p>
+    <p class="pub-abstract">3D object detection is a common function within the perception system of an autonomous vehicle and outputs a list of 3D bounding boxes around objects of interest. Various 3D object detection methods have relied on fusion of different sensor modalities to overcome limitations of individual sensors. However, occlusion, limited field-of-view and low-point density of the sensor data cannot be reliably and cost-effectively addressed by multi-modal sensing from a single point of view. Alternatively, cooperative perception incorporates information from spatially diverse sensors distributed around the environment as a way to mitigate these limitations. This article proposes two schemes for cooperative 3D object detection using single modality sensors. The early fusion scheme combines point clouds from multiple spatially diverse sensing points of view before detection. In contrast, the late fusion scheme fuses the independently detected bounding boxes from multiple spatially diverse sensors. We evaluate the performance of both schemes, and their hybrid combination, using a synthetic cooperative dataset created in two complex driving scenarios, a T-junction and a roundabout. The evaluation shows that the early fusion approach outperforms late fusion by a significant margin at the cost of higher communication bandwidth. The results demonstrate that cooperative perception can recall more than 95% of the objects as opposed to 30% for single-point sensing in the most challenging scenario. To provide practical insights into the deployment of such system, we report how the number of sensors and their configuration impact the detection performance of the system.</p>
     
 
     
@@ -729,6 +752,18 @@
     <div class="d-md-none space-below"></div>
     
 
+    
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="row">
+          <div class="col-12 col-md-3 pub-row-heading">Publication</div>
+          <div class="col-12 col-md-9"><em>IEEE Transactions on Intelligent Transportation Systems</em></div>
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+    <div class="d-md-none space-below"></div>
     
 
     <div class="space-below"></div>
