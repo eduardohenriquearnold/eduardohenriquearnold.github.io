@@ -213,4 +213,5 @@ W2 -= lr*dW2
 b2 -= lr*db2
 ```
 
+## Source code
 To check the code and results, please visit [this notebook](/notebooks/nn-scratch.html).
