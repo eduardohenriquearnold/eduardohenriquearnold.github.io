@@ -361,6 +361,7 @@ b1 -= lr*db1
 W2 -= lr*dW2
 b2 -= lr*db2
 &lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;source-code&#34;&gt;Source code&lt;/h2&gt;
 &lt;p&gt;To check the code and results, please visit 
 &lt;a href=&#34;https://earnold.me/notebooks/nn-scratch.html&#34;&gt;this notebook&lt;/a&gt;.&lt;/p&gt;
 </description>
