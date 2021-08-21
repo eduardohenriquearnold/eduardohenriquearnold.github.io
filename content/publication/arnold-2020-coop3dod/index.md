@@ -17,6 +17,7 @@ abstract: "3D object detection is a common function within the perception system
 publication: "*IEEE Transactions on Intelligent Transportation Systems*"
 
 url_pdf: https://ieeexplore.ieee.org/document/9228884
+url_code: https://github.com/eduardohenriquearnold/coop-3dod-infra
 links:
   - name: Preprint
     url: 'https://arxiv.org/pdf/1912.12147.pdf'
