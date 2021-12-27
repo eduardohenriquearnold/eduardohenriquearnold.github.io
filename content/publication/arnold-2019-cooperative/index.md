@@ -9,5 +9,9 @@ featured: false
 publication: "*2019 IEEE Intelligent Vehicles Symposium (IV)*"
 url_pdf: https://ieeexplore.ieee.org/abstract/document/8813811
 url_code: https://github.com/eduardohenriquearnold/coopObjectClassification
+url_dataset: https://wrap.warwick.ac.uk/160228/
+links:
+  - name: Preprint
+    url: 'https://wrap.warwick.ac.uk/157113/1/WRAP-Cooperative-object-classification-driving-applications-2021.pdf'
 ---
 
