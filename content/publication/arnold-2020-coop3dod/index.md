@@ -18,6 +18,7 @@ publication: "*IEEE Transactions on Intelligent Transportation Systems*"
 url_code: https://github.com/eduardohenriquearnold/coop-3dod-infra
 url_dataset: https://wrap.warwick.ac.uk/159053/
 url_pdf: https://ieeexplore.ieee.org/document/9228884
+url_code: https://github.com/eduardohenriquearnold/coop-3dod-infra
 links:
   - name: Preprint
     url: 'https://arxiv.org/pdf/1912.12147.pdf'

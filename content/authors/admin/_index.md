@@ -18,12 +18,12 @@ organizations:
   url: "https://warwick.ac.uk/"
 
 # Short bio (displayed in user profile at end of posts)
-bio: I'm a PhD candidate with the Intelligent Vehicles group at the University of Warwick. My research is focused on perception methods for autonomous driving, particularly cooperative 3D object detection. 
+bio: I'm a PhD candidate with the Intelligent Vehicles group at the University of Warwick. My research is focused on perception methods for autonomous driving.
 interests:
-- Autonomous Driving
-- Machine Learning
-- Probabilistic Modelling
 - Computer Vision
+- Machine Learning
+- 3D Deep Learning
+- Autonomous Driving
 
 education:
   courses:
@@ -67,5 +67,5 @@ email: ""
 #   Set this to `[]` or comment out if you are not using People widget.
 user_groups: []
 ---
-I'm a PhD candidate with the [Intelligent Vehicles group](https://warwick.ac.uk/fac/sci/wmg/research/cav/) at the University of Warwick. My research is focused on perception methods for autonomous driving, particularly Cooperative 3D Object Detection. 
+I'm a PhD candidate with the [Intelligent Vehicles group](https://warwick.ac.uk/fac/sci/wmg/research/cav/) at the University of Warwick. My research is focused on perception methods for autonomous driving, including cooperative 3D object detection, point cloud registration and sensor pose optimisation.
 
