@@ -47,7 +47,7 @@ social:
   link: https://twitter.com/eduardoarnoldh
 - icon: google-scholar
   icon_pack: ai
-  link: https://scholar.google.com/citations?user=IRSg76kAAAAJ
+  link: https://scholar.google.com/citations?user=AEHGoAkAAAAJ
 - icon: github
   icon_pack: fab
   link: https://github.com/eduardohenriquearnold
