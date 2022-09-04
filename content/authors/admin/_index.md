@@ -10,29 +10,30 @@ authors:
 superuser: true
 
 # Role/position
-role: PhD Canditate
+role: Machine Learning Engineer
 
 # Organizations/Affiliations
 organizations:
-- name: University of Warwick
-  url: "https://warwick.ac.uk/"
+- name: Niantic
+  url: "https://nianticlabs.com/"
 
 # Short bio (displayed in user profile at end of posts)
-bio: I'm a PhD candidate with the Intelligent Vehicles group at the University of Warwick. My research is focused on perception methods for autonomous driving.
+bio: I'm a Machine Learning Engineer at Niantic. Previously, I obtained my PhD degree at the University of Warwick, supervised by Mehrdad Dianati and Paul Jennings, and focusing on perception methods for autonomous driving.
 interests:
 - Computer Vision
 - Machine Learning
 - 3D Deep Learning
-- Autonomous Driving
+- 3D Reconstruction
+- Visual Relocalisation
 
 education:
   courses:
   - course: PhD in Machine Learning for Autonomous Driving
     institution: University of Warwick (UK)
-    year: 2017 - present
+    year: 2017 - 2021
   - course: BSc in Electrical Engineering with Honours
     institution: Federal University of Santa Catarina (Brazil)
-    year: 2017
+    year: 2011 - 2017
 
 # Social/Academic Networking
 # For available icons, see: https://sourcethemes.com/academic/docs/page-builder/#icons
@@ -67,5 +68,4 @@ email: ""
 #   Set this to `[]` or comment out if you are not using People widget.
 user_groups: []
 ---
-I'm a PhD candidate with the [Intelligent Vehicles group](https://warwick.ac.uk/fac/sci/wmg/research/cav/) at the University of Warwick. My research is focused on perception methods for autonomous driving, including cooperative 3D object detection, point cloud registration and sensor pose optimisation.
-
+I'm a Machine Learning Engineer working on visual relocalisation at [Niantic](https://nianticlabs.com/). Previously, I did my PhD at the University of Warwick, in the [Intelligent Vehicles group](https://warwick.ac.uk/fac/sci/wmg/research/cav/), and was supervised by Mehrdad Dianati and Paul Jennings. My research focused on perception methods for autonomous driving, including cooperative 3D object detection, point cloud registration and sensor pose optimisation.
