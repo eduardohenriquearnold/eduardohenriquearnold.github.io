@@ -1,93 +1,895 @@
-<!doctype html><html lang=en-us><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=generator content="Source Themes Academic 4.8.0"><meta name=author content="Eduardo Arnold"><meta name=description content="Machine Learning Engineer"><link rel=alternate hreflang=en-us href=https://earnold.me/><meta name=theme-color content="#2962ff"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin=anonymous><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-1/css/all.min.css integrity="sha256-4w9DunooKSr3MFXHXWyFER38WmPdm361bQS/2KUWZbU=" crossorigin=anonymous><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin=anonymous><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css crossorigin=anonymous title=hl-light><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/dracula.min.css crossorigin=anonymous title=hl-dark disabled><script src=https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin=anonymous async></script>
-<link rel=stylesheet href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap"><link rel=stylesheet href=/css/academic.css><link rel=alternate href=/index.xml type=application/rss+xml title="Eduardo Arnold"><link rel=manifest href=/index.webmanifest><link rel=icon type=image/png href=/images/icon_hu86725dfa3481f0beabea4a23db3db448_10764_32x32_fill_lanczos_center_3.png><link rel=apple-touch-icon type=image/png href=/images/icon_hu86725dfa3481f0beabea4a23db3db448_10764_192x192_fill_lanczos_center_3.png><link rel=canonical href=https://earnold.me/><meta property="twitter:card" content="summary"><meta property="twitter:site" content="@eduardoarnoldh"><meta property="twitter:creator" content="@eduardoarnoldh"><meta property="og:site_name" content="Eduardo Arnold"><meta property="og:url" content="https://earnold.me/"><meta property="og:title" content="Eduardo Arnold"><meta property="og:description" content="Machine Learning Engineer"><meta property="og:image" content="https://earnold.me/images/icon_hu86725dfa3481f0beabea4a23db3db448_10764_512x512_fill_lanczos_center_3.png"><meta property="twitter:image" content="https://earnold.me/images/icon_hu86725dfa3481f0beabea4a23db3db448_10764_512x512_fill_lanczos_center_3.png"><meta property="og:locale" content="en-us"><meta property="og:updated_time" content="2021-12-23T00:00:00+00:00"><script type=application/ld+json>{"@context":"https://schema.org","@type":"WebSite","url":"https://earnold.me/"}</script><title>Eduardo Arnold</title></head><body id=top data-spy=scroll data-offset=70 data-target=#navbar-main><aside class=search-results id=search><div class=container><section class=search-header><div class="row no-gutters justify-content-between mb-3"><div class=col-6><h1>Search</h1></div><div class="col-6 col-search-close"><a class=js-search href=#><i class="fas fa-times-circle text-muted" aria-hidden=true></i></a></div></div><div id=search-box></div></section><section class=section-search-results><div id=search-hits></div></section></div></aside><nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id=navbar-main><div class=container><div class="d-none d-lg-inline-flex"><a class=navbar-brand href=/>Eduardo Arnold</a></div><button type=button class=navbar-toggler data-toggle=collapse data-target=#navbar-content aria-controls=navbar aria-expanded=false aria-label="Toggle navigation">
-<span><i class="fas fa-bars"></i></span></button><div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none"><a class=navbar-brand href=/>Eduardo Arnold</a></div><div class="navbar-collapse main-menu-item collapse justify-content-end" id=navbar-content><ul class="navbar-nav d-md-inline-flex"><li class=nav-item><a class=nav-link href=/#about data-target=#about><span>Home</span></a></li><li class=nav-item><a class=nav-link href=/#experience data-target=#experience><span>Experience</span></a></li><li class=nav-item><a class=nav-link href=/#publications data-target=#publications><span>Publications</span></a></li><li class=nav-item><a class=nav-link href=/#posts data-target=#posts><span>Posts</span></a></li><li class=nav-item><a class=nav-link href=/#projects data-target=#projects><span>Projects</span></a></li><li class=nav-item><a class=nav-link href=/#talks data-target=#talks><span>Talks</span></a></li><li class=nav-item><a class=nav-link href=/#contact data-target=#contact><span>Contact</span></a></li></ul></div><ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2"></ul></div></nav><span class="js-widget-page d-none"></span><section id=about class="home-section wg-about"><div class=container><div class=row><div class="col-12 col-lg-4"><div id=profile><img class="avatar avatar-circle" src=/author/eduardo-arnold/avatar_hu0560068c008c418db3fb9e5dbdd74d76_96460_270x270_fill_q90_lanczos_center.jpg alt="Eduardo Arnold"><div class=portrait-title><h2>Eduardo Arnold</h2><h3>Machine Learning Engineer</h3><h3><a href=https://nianticlabs.com/ target=_blank rel=noopener><span>Niantic</span></a></h3></div><ul class=network-icon aria-hidden=true><li><a href=/#contact><i class="fas fa-envelope big-icon"></i></a></li><li><a href=https://twitter.com/eduardoarnoldh target=_blank rel=noopener><i class="fab fa-twitter big-icon"></i></a></li><li><a href="https://scholar.google.com/citations?user=AEHGoAkAAAAJ" target=_blank rel=noopener><i class="ai ai-google-scholar big-icon"></i></a></li><li><a href=https://github.com/eduardohenriquearnold target=_blank rel=noopener><i class="fab fa-github big-icon"></i></a></li><li><a href=https://linkedin.com/in/eduardohenriquearnold target=_blank rel=noopener><i class="fab fa-linkedin big-icon"></i></a></li></ul></div></div><div class="col-12 col-lg-8"><h1>Biography</h1><p>I&rsquo;m a Machine Learning Engineer working on visual relocalisation at
+<!doctype html><html lang=en-us>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=generator content="Source Themes Academic 4.8.0">
+<meta name=author content="Eduardo Arnold">
+<meta name=description content="Machine Learning Engineer">
+<link rel=alternate hreflang=en-us href=https://earnold.me/>
+<meta name=theme-color content="#2962ff">
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin=anonymous>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-1/css/all.min.css integrity="sha256-4w9DunooKSr3MFXHXWyFER38WmPdm361bQS/2KUWZbU=" crossorigin=anonymous>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin=anonymous>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css crossorigin=anonymous title=hl-light>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/dracula.min.css crossorigin=anonymous title=hl-dark disabled>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin=anonymous async></script>
+<link rel=stylesheet href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+<link rel=stylesheet href=/css/academic.css>
+<link rel=alternate href=/index.xml type=application/rss+xml title="Eduardo Arnold">
+<link rel=manifest href=/index.webmanifest>
+<link rel=icon type=image/png href=/images/icon_hu86725dfa3481f0beabea4a23db3db448_10764_32x32_fill_lanczos_center_3.png>
+<link rel=apple-touch-icon type=image/png href=/images/icon_hu86725dfa3481f0beabea4a23db3db448_10764_192x192_fill_lanczos_center_3.png>
+<link rel=canonical href=https://earnold.me/>
+<meta property="twitter:card" content="summary">
+<meta property="twitter:site" content="@eduardoarnoldh">
+<meta property="twitter:creator" content="@eduardoarnoldh">
+<meta property="og:site_name" content="Eduardo Arnold">
+<meta property="og:url" content="https://earnold.me/">
+<meta property="og:title" content="Eduardo Arnold">
+<meta property="og:description" content="Machine Learning Engineer"><meta property="og:image" content="https://earnold.me/images/icon_hu86725dfa3481f0beabea4a23db3db448_10764_512x512_fill_lanczos_center_3.png">
+<meta property="twitter:image" content="https://earnold.me/images/icon_hu86725dfa3481f0beabea4a23db3db448_10764_512x512_fill_lanczos_center_3.png"><meta property="og:locale" content="en-us">
+<meta property="og:updated_time" content="2022-10-23T00:00:00+00:00">
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"WebSite","url":"https://earnold.me/"}</script>
+<title>Eduardo Arnold</title>
+</head>
+<body id=top data-spy=scroll data-offset=70 data-target=#navbar-main>
+<aside class=search-results id=search>
+<div class=container>
+<section class=search-header>
+<div class="row no-gutters justify-content-between mb-3">
+<div class=col-6>
+<h1>Search</h1>
+</div>
+<div class="col-6 col-search-close">
+<a class=js-search href=#><i class="fas fa-times-circle text-muted" aria-hidden=true></i></a>
+</div>
+</div>
+<div id=search-box>
+</div>
+</section>
+<section class=section-search-results>
+<div id=search-hits>
+</div>
+</section>
+</div>
+</aside>
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id=navbar-main>
+<div class=container>
+<div class="d-none d-lg-inline-flex">
+<a class=navbar-brand href=/>Eduardo Arnold</a>
+</div>
+<button type=button class=navbar-toggler data-toggle=collapse data-target=#navbar-content aria-controls=navbar aria-expanded=false aria-label="Toggle navigation">
+<span><i class="fas fa-bars"></i></span>
+</button>
+<div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+<a class=navbar-brand href=/>Eduardo Arnold</a>
+</div>
+<div class="navbar-collapse main-menu-item collapse justify-content-end" id=navbar-content>
+<ul class="navbar-nav d-md-inline-flex">
+<li class=nav-item>
+<a class=nav-link href=/#about data-target=#about><span>Home</span></a>
+</li>
+<li class=nav-item>
+<a class=nav-link href=/#experience data-target=#experience><span>Experience</span></a>
+</li>
+<li class=nav-item>
+<a class=nav-link href=/#publications data-target=#publications><span>Publications</span></a>
+</li>
+<li class=nav-item>
+<a class=nav-link href=/#posts data-target=#posts><span>Posts</span></a>
+</li>
+<li class=nav-item>
+<a class=nav-link href=/#projects data-target=#projects><span>Projects</span></a>
+</li>
+<li class=nav-item>
+<a class=nav-link href=/#talks data-target=#talks><span>Talks</span></a>
+</li>
+<li class=nav-item>
+<a class=nav-link href=/#contact data-target=#contact><span>Contact</span></a>
+</li>
+</ul>
+</div>
+<ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+</ul>
+</div>
+</nav>
+<span class="js-widget-page d-none"></span>
+<section id=about class="home-section wg-about">
+<div class=container>
+<div class=row>
+<div class="col-12 col-lg-4">
+<div id=profile>
+<img class="avatar avatar-circle" src=/author/eduardo-arnold/avatar_hu0560068c008c418db3fb9e5dbdd74d76_96460_270x270_fill_q90_lanczos_center.jpg alt="Eduardo Arnold">
+<div class=portrait-title>
+<h2>Eduardo Arnold</h2>
+<h3>Machine Learning Engineer</h3>
+<h3>
+<a href=https://nianticlabs.com/ target=_blank rel=noopener>
+<span>Niantic</span>
+</a>
+</h3>
+</div>
+<ul class=network-icon aria-hidden=true>
+<li>
+<a href=/#contact>
+<i class="fas fa-envelope big-icon"></i>
+</a>
+</li>
+<li>
+<a href=https://twitter.com/eduardoarnoldh target=_blank rel=noopener>
+<i class="fab fa-twitter big-icon"></i>
+</a>
+</li>
+<li>
+<a href="https://scholar.google.com/citations?user=AEHGoAkAAAAJ" target=_blank rel=noopener>
+<i class="ai ai-google-scholar big-icon"></i>
+</a>
+</li>
+<li>
+<a href=https://github.com/eduardohenriquearnold target=_blank rel=noopener>
+<i class="fab fa-github big-icon"></i>
+</a>
+</li>
+<li>
+<a href=https://linkedin.com/in/eduardohenriquearnold target=_blank rel=noopener>
+<i class="fab fa-linkedin big-icon"></i>
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="col-12 col-lg-8">
+<h1>Biography</h1>
+<p>I&rsquo;m a Machine Learning Engineer working on visual relocalisation at
 <a href=https://nianticlabs.com/ target=_blank rel=noopener>Niantic</a>. Previously, I did my PhD at the University of Warwick, in the
-<a href=https://warwick.ac.uk/fac/sci/wmg/research/cav/ target=_blank rel=noopener>Intelligent Vehicles group</a>, and was supervised by Mehrdad Dianati and Paul Jennings. My research focused on perception methods for autonomous driving, including cooperative 3D object detection, point cloud registration and sensor pose optimisation.</p><div class=row><div class=col-md-5><h3>Interests</h3><ul class=ul-interests><li>Computer Vision</li><li>Machine Learning</li><li>3D Deep Learning</li><li>3D Reconstruction</li><li>Visual Relocalisation</li></ul></div><div class=col-md-7><h3>Education</h3><ul class="ul-edu fa-ul"><li><i class="fa-li fas fa-graduation-cap"></i><div class=description><p class=course>PhD in Machine Learning for Autonomous Driving, 2017 - 2021</p><p class=institution>University of Warwick (UK)</p></div></li><li><i class="fa-li fas fa-graduation-cap"></i><div class=description><p class=course>BSc in Electrical Engineering with Honours, 2011 - 2017</p><p class=institution>Federal University of Santa Catarina (Brazil)</p></div></li></ul></div></div></div></div></div></section><section id=experience class="home-section wg-experience"><div class=container><div class=row><div class="col-12 col-lg-4 section-heading"><h1>Experience</h1></div><div class="col-12 col-lg-8"><div class="row experience"><div class="col-auto text-center flex-column d-none d-sm-flex"><div class="row h-50"><div class=col>&nbsp;</div><div class=col>&nbsp;</div></div><div class=m-2><span class="badge badge-pill border exp-fill">&nbsp;</span></div><div class="row h-50"><div class="col border-right">&nbsp;</div><div class=col>&nbsp;</div></div></div><div class="col py-2"><div class=card><div class=card-body><h4 class="card-title exp-title text-muted mt-0 mb-1">Machine Learning Engineer</h4><h4 class="card-title exp-company text-muted my-0"><a href=https://nianticlabs.com/ target=_blank rel=noopener>Niantic</a></h4><div class="text-muted exp-meta">May 2022 –
+<a href=https://warwick.ac.uk/fac/sci/wmg/research/cav/ target=_blank rel=noopener>Intelligent Vehicles group</a>, and was supervised by Mehrdad Dianati and Paul Jennings. My research focused on perception methods for autonomous driving, including cooperative 3D object detection, point cloud registration and sensor pose optimisation.</p>
+<div class=row>
+<div class=col-md-5>
+<h3>Interests</h3>
+<ul class=ul-interests>
+<li>Computer Vision</li>
+<li>Machine Learning</li>
+<li>3D Deep Learning</li>
+<li>3D Reconstruction</li>
+<li>Visual Relocalisation</li>
+</ul>
+</div>
+<div class=col-md-7>
+<h3>Education</h3>
+<ul class="ul-edu fa-ul">
+<li>
+<i class="fa-li fas fa-graduation-cap"></i>
+<div class=description>
+<p class=course>PhD in Machine Learning for Autonomous Driving, 2017 - 2021</p>
+<p class=institution>University of Warwick (UK)</p>
+</div>
+</li>
+<li>
+<i class="fa-li fas fa-graduation-cap"></i>
+<div class=description>
+<p class=course>BSc in Electrical Engineering with Honours, 2011 - 2017</p>
+<p class=institution>Federal University of Santa Catarina (Brazil)</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id=experience class="home-section wg-experience">
+<div class=container>
+<div class=row>
+<div class="col-12 col-lg-4 section-heading">
+<h1>Experience</h1>
+</div>
+<div class="col-12 col-lg-8">
+<div class="row experience">
+<div class="col-auto text-center flex-column d-none d-sm-flex">
+<div class="row h-50">
+<div class=col>&nbsp;</div>
+<div class=col>&nbsp;</div>
+</div>
+<div class=m-2>
+<span class="badge badge-pill border exp-fill">&nbsp;</span>
+</div>
+<div class="row h-50">
+<div class="col border-right">&nbsp;</div>
+<div class=col>&nbsp;</div>
+</div>
+</div>
+<div class="col py-2">
+<div class=card>
+<div class=card-body>
+<h4 class="card-title exp-title text-muted mt-0 mb-1">Machine Learning Engineer</h4>
+<h4 class="card-title exp-company text-muted my-0"><a href=https://nianticlabs.com/ target=_blank rel=noopener>Niantic</a></h4>
+<div class="text-muted exp-meta">
+May 2022 –
 Present
 <span class=middot-divider></span>
-<span>London, UK</span></div><div class=card-text><ul><li>Working on visual relocalisation;</li><li>Deploying systems on cloud infrastructure using K8s and ArgoCD.</li></ul></div></div></div></div></div><div class="row experience"><div class="col-auto text-center flex-column d-none d-sm-flex"><div class="row h-50"><div class="col border-right">&nbsp;</div><div class=col>&nbsp;</div></div><div class=m-2><span class="badge badge-pill border">&nbsp;</span></div><div class="row h-50"><div class="col border-right">&nbsp;</div><div class=col>&nbsp;</div></div></div><div class="col py-2"><div class=card><div class=card-body><h4 class="card-title exp-title text-muted mt-0 mb-1">PhD Research Intern</h4><h4 class="card-title exp-company text-muted my-0"><a href=https://nianticlabs.com/ target=_blank rel=noopener>Niantic</a></h4><div class="text-muted exp-meta">Jun 2021 –
+<span>London, UK</span>
+</div>
+<div class=card-text><ul>
+<li>Working on visual relocalisation;</li>
+<li>Deploying systems on cloud infrastructure using K8s and ArgoCD.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row experience">
+<div class="col-auto text-center flex-column d-none d-sm-flex">
+<div class="row h-50">
+<div class="col border-right">&nbsp;</div>
+<div class=col>&nbsp;</div>
+</div>
+<div class=m-2>
+<span class="badge badge-pill border">&nbsp;</span>
+</div>
+<div class="row h-50">
+<div class="col border-right">&nbsp;</div>
+<div class=col>&nbsp;</div>
+</div>
+</div>
+<div class="col py-2">
+<div class=card>
+<div class=card-body>
+<h4 class="card-title exp-title text-muted mt-0 mb-1">PhD Research Intern</h4>
+<h4 class="card-title exp-company text-muted my-0"><a href=https://nianticlabs.com/ target=_blank rel=noopener>Niantic</a></h4>
+<div class="text-muted exp-meta">
+Jun 2021 –
 Jan 2022
 <span class=middot-divider></span>
-<span>London, UK</span></div><div class=card-text><ul><li>Lead the research and development of a novel method for relative camera pose estimation between a pair of images with focus on visual localisation.</li><li>Collaborated with an interdisciplinary research team.</li><li>Trained and deployed models on cloud infrastructure.</li></ul></div></div></div></div></div><div class="row experience"><div class="col-auto text-center flex-column d-none d-sm-flex"><div class="row h-50"><div class="col border-right">&nbsp;</div><div class=col>&nbsp;</div></div><div class=m-2><span class="badge badge-pill border">&nbsp;</span></div><div class="row h-50"><div class="col border-right">&nbsp;</div><div class=col>&nbsp;</div></div></div><div class="col py-2"><div class=card><div class=card-body><h4 class="card-title exp-title text-muted mt-0 mb-1">Data Study Group Researcher</h4><h4 class="card-title exp-company text-muted my-0"><a href=https://www.turing.ac.uk/collaborate-turing/data-study-groups target=_blank rel=noopener>Alan Turing Institute</a></h4><div class="text-muted exp-meta">Sep 2020 –
+<span>London, UK</span>
+</div>
+<div class=card-text><ul>
+<li>Lead the research and development of a novel method for relative camera pose estimation between a pair of images with focus on visual localisation.</li>
+<li>Collaborated with an interdisciplinary research team.</li>
+<li>Trained and deployed models on cloud infrastructure.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row experience">
+<div class="col-auto text-center flex-column d-none d-sm-flex">
+<div class="row h-50">
+<div class="col border-right">&nbsp;</div>
+<div class=col>&nbsp;</div>
+</div>
+<div class=m-2>
+<span class="badge badge-pill border">&nbsp;</span>
+</div>
+<div class="row h-50">
+<div class="col border-right">&nbsp;</div>
+<div class=col>&nbsp;</div>
+</div>
+</div>
+<div class="col py-2">
+<div class=card>
+<div class=card-body>
+<h4 class="card-title exp-title text-muted mt-0 mb-1">Data Study Group Researcher</h4>
+<h4 class="card-title exp-company text-muted my-0"><a href=https://www.turing.ac.uk/collaborate-turing/data-study-groups target=_blank rel=noopener>Alan Turing Institute</a></h4>
+<div class="text-muted exp-meta">
+Sep 2020 –
 Sep 2020
 <span class=middot-divider></span>
-<span>London, UK</span></div><div class=card-text>Worked with a team of skilled international researchers to design and evaluate machine learning models that predict long-term wind speed statistics given historical satellite data. The results of this collaboration can be used to identify suitable locations to install wind turbines.</div></div></div></div></div><div class="row experience"><div class="col-auto text-center flex-column d-none d-sm-flex"><div class="row h-50"><div class="col border-right">&nbsp;</div><div class=col>&nbsp;</div></div><div class=m-2><span class="badge badge-pill border">&nbsp;</span></div><div class="row h-50"><div class="col border-right">&nbsp;</div><div class=col>&nbsp;</div></div></div><div class="col py-2"><div class=card><div class=card-body><h4 class="card-title exp-title text-muted mt-0 mb-1">Teaching Assistant</h4><h4 class="card-title exp-company text-muted my-0"><a href=https://warwick.ac.uk/ target=_blank rel=noopener>University of Warwick</a></h4><div class="text-muted exp-meta">May 2019 –
+<span>London, UK</span>
+</div>
+<div class=card-text>Worked with a team of skilled international researchers to design and evaluate machine learning models that predict long-term wind speed statistics given historical satellite data. The results of this collaboration can be used to identify suitable locations to install wind turbines.</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row experience">
+<div class="col-auto text-center flex-column d-none d-sm-flex">
+<div class="row h-50">
+<div class="col border-right">&nbsp;</div>
+<div class=col>&nbsp;</div>
+</div>
+<div class=m-2>
+<span class="badge badge-pill border">&nbsp;</span>
+</div>
+<div class="row h-50">
+<div class="col border-right">&nbsp;</div>
+<div class=col>&nbsp;</div>
+</div>
+</div>
+<div class="col py-2">
+<div class=card>
+<div class=card-body>
+<h4 class="card-title exp-title text-muted mt-0 mb-1">Teaching Assistant</h4>
+<h4 class="card-title exp-company text-muted my-0"><a href=https://warwick.ac.uk/ target=_blank rel=noopener>University of Warwick</a></h4>
+<div class="text-muted exp-meta">
+May 2019 –
 Apr 2020
 <span class=middot-divider></span>
-<span>Coventry, United Kingdom</span></div><div class=card-text><ul><li>Prepared and delivered tutorials on PyTorch and fundamentals of machine learning;</li><li>Prepared module assessments and marked students;</li><li>Created a Dockerized Jupyterhub platform for students to run their code remotely.</li></ul></div></div></div></div></div><div class="row experience"><div class="col-auto text-center flex-column d-none d-sm-flex"><div class="row h-50"><div class="col border-right">&nbsp;</div><div class=col>&nbsp;</div></div><div class=m-2><span class="badge badge-pill border">&nbsp;</span></div><div class="row h-50"><div class=col>&nbsp;</div><div class=col>&nbsp;</div></div></div><div class="col py-2"><div class=card><div class=card-body><h4 class="card-title exp-title text-muted mt-0 mb-1">Research Assistant</h4><h4 class="card-title exp-company text-muted my-0"><a href=https://warwick.ac.uk/ target=_blank rel=noopener>University of Warwick</a></h4><div class="text-muted exp-meta">Aug 2018 –
+<span>Coventry, United Kingdom</span>
+</div>
+<div class=card-text><ul>
+<li>Prepared and delivered tutorials on PyTorch and fundamentals of machine learning;</li>
+<li>Prepared module assessments and marked students;</li>
+<li>Created a Dockerized Jupyterhub platform for students to run their code remotely.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row experience">
+<div class="col-auto text-center flex-column d-none d-sm-flex">
+<div class="row h-50">
+<div class="col border-right">&nbsp;</div>
+<div class=col>&nbsp;</div>
+</div>
+<div class=m-2>
+<span class="badge badge-pill border">&nbsp;</span>
+</div>
+<div class="row h-50">
+<div class=col>&nbsp;</div>
+<div class=col>&nbsp;</div>
+</div>
+</div>
+<div class="col py-2">
+<div class=card>
+<div class=card-body>
+<h4 class="card-title exp-title text-muted mt-0 mb-1">Research Assistant</h4>
+<h4 class="card-title exp-company text-muted my-0"><a href=https://warwick.ac.uk/ target=_blank rel=noopener>University of Warwick</a></h4>
+<div class="text-muted exp-meta">
+Aug 2018 –
 Jun 2021
 <span class=middot-divider></span>
-<span>Coventry, United Kingdom</span></div><div class=card-text><p>The L3 Pilot European Consortium studies the impact of vehicle automation with key European OEMs. My main responsibilities were:</p><ul><li>Lead the creation of a responsive online platform to support data visualisation of piloting data across the project.</li><li>Attend international meetings with key partners in the automotive sector to meet project requirements and report results.</li></ul></div></div></div></div></div></div></div></div></section><section id=publications class="home-section wg-pages"><div class=container><div class=row><div class="col-12 col-lg-4 section-heading"><h1>Recent Publications</h1></div><div class="col-12 col-lg-8"><div class=pub-list-item style=margin-bottom:1rem><i class="far fa-file-alt pub-icon" aria-hidden=true></i>
-<span class="article-metadata li-cite-author"><span>Eduardo Arnold</span>, <span>Sajjad Mozaffari</span>, <span>Mehrdad Dianati</span></span>
+<span>Coventry, United Kingdom</span>
+</div>
+<div class=card-text><p>The L3 Pilot European Consortium studies the impact of vehicle automation with key European OEMs. My main responsibilities were:</p>
+<ul>
+<li>Lead the creation of a responsive online platform to support data visualisation of piloting data across the project.</li>
+<li>Attend international meetings with key partners in the automotive sector to meet project requirements and report results.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id=publications class="home-section wg-pages">
+<div class=container>
+<div class=row>
+<div class="col-12 col-lg-4 section-heading">
+<h1>Recent Publications</h1>
+</div>
+<div class="col-12 col-lg-8">
+<div class=pub-list-item style=margin-bottom:1rem>
+<i class="far fa-file-alt pub-icon" aria-hidden=true></i>
+<span class="article-metadata li-cite-author">
+<span>Eduardo Arnold</span>, <span>Jamie Wynn</span>, <span>Sara Vicente</span>, <span>Guillermo Garcia-Hernando</span>, <span>Áron Monszpart</span>, <span>Victor Prisacariu</span>, <span>Daniyar Turmukhambetov</span>, <span>Eric Brachmann</span>
+</span>
+(2022).
+<a href=/publication/arnold-2022-mapfree/>Map-free Visual Relocalization: Metric Pose Relative to a Single Image</a>.
+ECCV 2022 - European Conference on Computer Vision.
+<p>
+<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href=https://storage.googleapis.com/niantic-lon-static/research/map-free-reloc/MapFreeReloc-ECCV22-paper.pdf target=_blank rel=noopener>
+PDF
+</a>
+<button type=button class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal" data-filename=/publication/arnold-2022-mapfree/cite.bib>
+Cite
+</button>
+<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href=https://github.com/nianticlabs/map-free-reloc target=_blank rel=noopener>
+Code
+</a>
+<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href=https://research.nianticlabs.com/mapfree-reloc-benchmark target=_blank rel=noopener>
+Dataset
+</a>
+<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href=https://arxiv.org/abs/2210.05494 target=_blank rel=noopener>
+Preprint
+</a>
+<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href=https://storage.cloud.google.com/niantic-lon-static/research/map-free-reloc/MapFreeReloc-ECCV22-video.mp4 target=_blank rel=noopener>
+Video
+</a>
+</p>
+</div>
+<div class=pub-list-item style=margin-bottom:1rem>
+<i class="far fa-file-alt pub-icon" aria-hidden=true></i>
+<span class="article-metadata li-cite-author">
+<span>Eduardo Arnold</span>, <span>Sajjad Mozaffari</span>, <span>Mehrdad Dianati</span>
+</span>
 (2021).
 <a href=/publication/arnold-2021-fastreg/>Fast and Robust Registration of Partially Overlapping Point Clouds</a>.
-<em>2021 IEEE Robotics and Automation Letters (RA-L)</em>.<p><a class="btn btn-outline-primary my-1 mr-1 btn-sm" href=https://ieeexplore.ieee.org/document/9662220 target=_blank rel=noopener>PDF</a>
+<em>2021 IEEE Robotics and Automation Letters (RA-L)</em>.
+<p>
+<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href=https://ieeexplore.ieee.org/document/9662220 target=_blank rel=noopener>
+PDF
+</a>
 <button type=button class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal" data-filename=/publication/arnold-2021-fastreg/cite.bib>
-Cite</button>
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href=https://github.com/eduardohenriquearnold/fastreg target=_blank rel=noopener>Code</a>
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href=https://github.com/eduardohenriquearnold/CODD target=_blank rel=noopener>Dataset</a>
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href=https://arxiv.org/abs/2112.09922 target=_blank rel=noopener>Preprint</a></p></div><div class=pub-list-item style=margin-bottom:1rem><i class="far fa-file-alt pub-icon" aria-hidden=true></i>
-<span class="article-metadata li-cite-author"><span>Eduardo Arnold</span>, <span>Jiaxin Chen</span>, <span>Ivan Croydon-Veleslavov</span>, <span>Anurag Deshpande</span>, <span>Tanaya Guha</span>, <span>Yixuan He</span>, <span>Ben Moseley</span>, <span>Gim Seng Ng</span>, <span>Luke Prince</span>, <span>Thomas Statham</span>, <span>Peter Strong</span></span>
+Cite
+</button>
+<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href=https://github.com/eduardohenriquearnold/fastreg target=_blank rel=noopener>
+Code
+</a>
+<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href=https://github.com/eduardohenriquearnold/CODD target=_blank rel=noopener>
+Dataset
+</a>
+<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href=https://arxiv.org/abs/2112.09922 target=_blank rel=noopener>
+Preprint
+</a>
+</p>
+</div>
+<div class=pub-list-item style=margin-bottom:1rem>
+<i class="far fa-file-alt pub-icon" aria-hidden=true></i>
+<span class="article-metadata li-cite-author">
+<span>Eduardo Arnold</span>, <span>Jiaxin Chen</span>, <span>Ivan Croydon-Veleslavov</span>, <span>Anurag Deshpande</span>, <span>Tanaya Guha</span>, <span>Yixuan He</span>, <span>Ben Moseley</span>, <span>Gim Seng Ng</span>, <span>Luke Prince</span>, <span>Thomas Statham</span>, <span>Peter Strong</span>
+</span>
 (2021).
 <a href=/publication/dsg-2020-greenvestdatastudy/>Data Study Group Final Report: Greenvest Solutions</a>.
-<em>September 2020 Alan Turing Data Study Group</em>.<p><a class="btn btn-outline-primary my-1 mr-1 btn-sm" href=https://www.turing.ac.uk/research/publications/data-study-group-final-report-greenvest-solutions target=_blank rel=noopener>PDF</a>
+<em>September 2020 Alan Turing Data Study Group</em>.
+<p>
+<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href=https://www.turing.ac.uk/research/publications/data-study-group-final-report-greenvest-solutions target=_blank rel=noopener>
+PDF
+</a>
 <button type=button class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal" data-filename=/publication/dsg-2020-greenvestdatastudy/cite.bib>
-Cite</button></p></div><div class=pub-list-item style=margin-bottom:1rem><i class="far fa-file-alt pub-icon" aria-hidden=true></i>
-<span class="article-metadata li-cite-author"><span>Eduardo Arnold</span>, <span>Mehrdad Dianati</span>, <span>Robert de Temple</span>, <span>Saber Fallah</span></span>
+Cite
+</button>
+</p>
+</div>
+<div class=pub-list-item style=margin-bottom:1rem>
+<i class="far fa-file-alt pub-icon" aria-hidden=true></i>
+<span class="article-metadata li-cite-author">
+<span>Eduardo Arnold</span>, <span>Mehrdad Dianati</span>, <span>Robert de Temple</span>, <span>Saber Fallah</span>
+</span>
 (2020).
 <a href=/publication/arnold-2020-coop3dod/>Cooperative Perception for 3D Object Detection in Driving Scenarios using Infrastructure Sensors</a>.
-<em>IEEE Transactions on Intelligent Transportation Systems</em>.<p><a class="btn btn-outline-primary my-1 mr-1 btn-sm" href=https://ieeexplore.ieee.org/document/9228884 target=_blank rel=noopener>PDF</a>
+<em>IEEE Transactions on Intelligent Transportation Systems</em>.
+<p>
+<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href=https://ieeexplore.ieee.org/document/9228884 target=_blank rel=noopener>
+PDF
+</a>
 <button type=button class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal" data-filename=/publication/arnold-2020-coop3dod/cite.bib>
-Cite</button>
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href=https://github.com/eduardohenriquearnold/coop-3dod-infra target=_blank rel=noopener>Code</a>
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href=https://wrap.warwick.ac.uk/159053/ target=_blank rel=noopener>Dataset</a>
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href=https://arxiv.org/pdf/1912.12147.pdf target=_blank rel=noopener>Preprint</a></p></div><div class=pub-list-item style=margin-bottom:1rem><i class="far fa-file-alt pub-icon" aria-hidden=true></i>
-<span class="article-metadata li-cite-author"><span>Johannes Hiller</span>, <span>Sami Koskinen</span>, <span>Riccardo Berta</span>, <span>Nisrine Osman</span>, <span>Ben Nagy</span>, <span>Francesco Bellotti</span>, <span>Ashfaqur Rahman</span>, <span>Erik Svanberg</span>, <span>Hendrik Weber</span>, <span>Eduardo H Arnold</span>, <span>others</span></span>
+Cite
+</button>
+<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href=https://github.com/eduardohenriquearnold/coop-3dod-infra target=_blank rel=noopener>
+Code
+</a>
+<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href=https://wrap.warwick.ac.uk/159053/ target=_blank rel=noopener>
+Dataset
+</a>
+<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href=https://arxiv.org/pdf/1912.12147.pdf target=_blank rel=noopener>
+Preprint
+</a>
+</p>
+</div>
+<div class=pub-list-item style=margin-bottom:1rem>
+<i class="far fa-file-alt pub-icon" aria-hidden=true></i>
+<span class="article-metadata li-cite-author">
+<span>Johannes Hiller</span>, <span>Sami Koskinen</span>, <span>Riccardo Berta</span>, <span>Nisrine Osman</span>, <span>Ben Nagy</span>, <span>Francesco Bellotti</span>, <span>Ashfaqur Rahman</span>, <span>Erik Svanberg</span>, <span>Hendrik Weber</span>, <span>Eduardo H Arnold</span>, <span> others</span>
+</span>
 (2020).
 <a href=/publication/hiller-2020-l-3-pilot/>The L3Pilot Data Management Toolchain for a Level 3 Vehicle Automation Pilot</a>.
-<em>Electronics</em>.<p><a class="btn btn-outline-primary my-1 mr-1 btn-sm" href=https://www.mdpi.com/2079-9292/9/5/809/pdf target=_blank rel=noopener>PDF</a>
+<em>Electronics</em>.
+<p>
+<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href=https://www.mdpi.com/2079-9292/9/5/809/pdf target=_blank rel=noopener>
+PDF
+</a>
 <button type=button class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal" data-filename=/publication/hiller-2020-l-3-pilot/cite.bib>
-Cite</button></p></div><div class=pub-list-item style=margin-bottom:1rem><i class="far fa-file-alt pub-icon" aria-hidden=true></i>
-<span class="article-metadata li-cite-author"><span>Eduardo Arnold</span>, <span>Omar Y Al-Jarrah</span>, <span>Mehrdad Dianati</span>, <span>Saber Fallah</span>, <span>David Oxtoby</span>, <span>Alex Mouzakitis</span></span>
-(2019).
-<a href=/publication/arnold-2019-cooperative/>Cooperative Object Classification for Driving Applications</a>.
-<em>2019 IEEE Intelligent Vehicles Symposium (IV)</em>.<p><a class="btn btn-outline-primary my-1 mr-1 btn-sm" href=https://ieeexplore.ieee.org/abstract/document/8813811 target=_blank rel=noopener>PDF</a>
-<button type=button class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal" data-filename=/publication/arnold-2019-cooperative/cite.bib>
-Cite</button>
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href=https://github.com/eduardohenriquearnold/coopObjectClassification target=_blank rel=noopener>Code</a>
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href=https://wrap.warwick.ac.uk/160228/ target=_blank rel=noopener>Dataset</a>
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href=https://wrap.warwick.ac.uk/157113/1/WRAP-Cooperative-object-classification-driving-applications-2021.pdf target=_blank rel=noopener>Preprint</a></p></div><div class=see-all><a href=/publication/>See all publications
-<i class="fas fa-angle-right"></i></a></div></div></div></div></section><section id=posts class="home-section wg-pages"><div class=container><div class=row><div class="col-12 col-lg-4 section-heading"><h1>Recent Posts</h1></div><div class="col-12 col-lg-8"><div class="media stream-item"><div class=media-body><h3 class="article-title mb-0 mt-0"><a href=/post/mayavilidar/>Real-time visualisation of simulated lidar point-clouds with Mayavi and CARLA</a></h3><a href=/post/mayavilidar/ class=summary-link><div class=article-style>Using the CARLA autonomous driving simulator to generate lidar point clouds which are then visualised in real-time using Mayavi.</div></a><div class="stream-meta article-metadata"><div class=article-metadata><span class=article-date>Nov 17, 2020</span>
+Cite
+</button>
+</p>
+</div>
+<div class=see-all>
+<a href=/publication/>
+See all publications
+<i class="fas fa-angle-right"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id=posts class="home-section wg-pages">
+<div class=container>
+<div class=row>
+<div class="col-12 col-lg-4 section-heading">
+<h1>Recent Posts</h1>
+</div>
+<div class="col-12 col-lg-8">
+<div class="media stream-item">
+<div class=media-body>
+<h3 class="article-title mb-0 mt-0">
+<a href=/post/mayavilidar/>Real-time visualisation of simulated lidar point-clouds with Mayavi and CARLA</a>
+</h3>
+<a href=/post/mayavilidar/ class=summary-link>
+<div class=article-style>
+Using the CARLA autonomous driving simulator to generate lidar point clouds which are then visualised in real-time using Mayavi.
+</div>
+</a>
+<div class="stream-meta article-metadata">
+<div class=article-metadata>
+<span class=article-date>
+Nov 17, 2020
+</span>
 <span class=middot-divider></span>
-<span class=article-reading-time>6 min read</span></div></div></div><div class=ml-3><a href=/post/mayavilidar/><img src=/post/mayavilidar/featured_hu772a287787f07fbeea24355fe3000a2c_111032_150x0_resize_lanczos_3.png alt="Real-time visualisation of simulated lidar point-clouds with Mayavi and CARLA"></a></div></div><div class="media stream-item"><div class=media-body><h3 class="article-title mb-0 mt-0"><a href=/post/timeseriesforecasting/>Forecasting sales with Gaussian Processes and Autoregressive models</a></h3><a href=/post/timeseriesforecasting/ class=summary-link><div class=article-style>Problem definition Sales forecasting is a very common problem faced by many companies. Given a history of sales of a certain product we would like to predict the demand of that product for a time window in the future.</div></a><div class="stream-meta article-metadata"><div class=article-metadata><span class=article-date>Jul 23, 2020</span>
+<span class=article-reading-time>
+6 min read
+</span>
+</div>
+</div>
+</div>
+<div class=ml-3>
+<a href=/post/mayavilidar/>
+<img src=/post/mayavilidar/featured_hu772a287787f07fbeea24355fe3000a2c_111032_150x0_resize_lanczos_3.png alt="Real-time visualisation of simulated lidar point-clouds with Mayavi and CARLA">
+</a>
+</div>
+</div>
+<div class="media stream-item">
+<div class=media-body>
+<h3 class="article-title mb-0 mt-0">
+<a href=/post/timeseriesforecasting/>Forecasting sales with Gaussian Processes and Autoregressive models</a>
+</h3>
+<a href=/post/timeseriesforecasting/ class=summary-link>
+<div class=article-style>
+Problem definition Sales forecasting is a very common problem faced by many companies. Given a history of sales of a certain product we would like to predict the demand of that product for a time window in the future.
+</div>
+</a>
+<div class="stream-meta article-metadata">
+<div class=article-metadata>
+<span class=article-date>
+Jul 23, 2020
+</span>
 <span class=middot-divider></span>
-<span class=article-reading-time>10 min read</span></div></div></div><div class=ml-3><a href=/post/timeseriesforecasting/><img src=/post/timeseriesforecasting/featured_hu367ca3d9ac98f028281c27d5a8614326_27937_150x0_resize_lanczos_3.png alt="Forecasting sales with Gaussian Processes and Autoregressive models"></a></div></div><div class="media stream-item"><div class=media-body><h3 class="article-title mb-0 mt-0"><a href=/post/bayesianlr/>Bayesian Linear Regression</a></h3><a href=/post/bayesianlr/ class=summary-link><div class=article-style>Despite the popularity of standard linear regression, its bayesian counterpart is not as well-known. In this tutorial we explore its benefits and learn how to build it from scratch in Python with NumPy.</div></a><div class="stream-meta article-metadata"><div class=article-metadata><span class=article-date>Mar 12, 2019</span>
+<span class=article-reading-time>
+10 min read
+</span>
+</div>
+</div>
+</div>
+<div class=ml-3>
+<a href=/post/timeseriesforecasting/>
+<img src=/post/timeseriesforecasting/featured_hu367ca3d9ac98f028281c27d5a8614326_27937_150x0_resize_lanczos_3.png alt="Forecasting sales with Gaussian Processes and Autoregressive models">
+</a>
+</div>
+</div>
+<div class="media stream-item">
+<div class=media-body>
+<h3 class="article-title mb-0 mt-0">
+<a href=/post/bayesianlr/>Bayesian Linear Regression</a>
+</h3>
+<a href=/post/bayesianlr/ class=summary-link>
+<div class=article-style>
+Despite the popularity of standard linear regression, its bayesian counterpart is not as well-known. In this tutorial we explore its benefits and learn how to build it from scratch in Python with NumPy.
+</div>
+</a>
+<div class="stream-meta article-metadata">
+<div class=article-metadata>
+<span class=article-date>
+Mar 12, 2019
+</span>
 <span class=middot-divider></span>
-<span class=article-reading-time>4 min read</span></div></div></div><div class=ml-3><a href=/post/bayesianlr/><img src=/post/bayesianlr/featured_hub2f5101cd8de71caf99b8c6a244da9fe_9670_150x0_resize_lanczos_3.png alt="Bayesian Linear Regression"></a></div></div><div class="media stream-item"><div class=media-body><h3 class="article-title mb-0 mt-0"><a href=/post/jupyterhub/>Deploying JupyterHub with Docker and CUDA support</a></h3><a href=/post/jupyterhub/ class=summary-link><div class=article-style>A brief summary of my experience deploying JupyterHub at our lab.</div></a><div class="stream-meta article-metadata"><div class=article-metadata><span class=article-date>Oct 9, 2017</span>
+<span class=article-reading-time>
+4 min read
+</span>
+</div>
+</div>
+</div>
+<div class=ml-3>
+<a href=/post/bayesianlr/>
+<img src=/post/bayesianlr/featured_hub2f5101cd8de71caf99b8c6a244da9fe_9670_150x0_resize_lanczos_3.png alt="Bayesian Linear Regression">
+</a>
+</div>
+</div>
+<div class="media stream-item">
+<div class=media-body>
+<h3 class="article-title mb-0 mt-0">
+<a href=/post/jupyterhub/>Deploying JupyterHub with Docker and CUDA support</a>
+</h3>
+<a href=/post/jupyterhub/ class=summary-link>
+<div class=article-style>
+A brief summary of my experience deploying JupyterHub at our lab.
+</div>
+</a>
+<div class="stream-meta article-metadata">
+<div class=article-metadata>
+<span class=article-date>
+Oct 9, 2017
+</span>
 <span class=middot-divider></span>
-<span class=article-reading-time>4 min read</span></div></div></div><div class=ml-3></div></div><div class="media stream-item"><div class=media-body><h3 class="article-title mb-0 mt-0"><a href=/post/dogsvscats/>What I have learnt from dogs and cats</a></h3><a href=/post/dogsvscats/ class=summary-link><div class=article-style>A couple of lessons discovered when exploring the Dogs vs cats image classification challenge.</div></a><div class="stream-meta article-metadata"><div class=article-metadata><span class=article-date>May 15, 2017</span>
+<span class=article-reading-time>
+4 min read
+</span>
+</div>
+</div>
+</div>
+<div class=ml-3>
+</div>
+</div>
+<div class="media stream-item">
+<div class=media-body>
+<h3 class="article-title mb-0 mt-0">
+<a href=/post/dogsvscats/>What I have learnt from dogs and cats</a>
+</h3>
+<a href=/post/dogsvscats/ class=summary-link>
+<div class=article-style>
+A couple of lessons discovered when exploring the Dogs vs cats image classification challenge.
+</div>
+</a>
+<div class="stream-meta article-metadata">
+<div class=article-metadata>
+<span class=article-date>
+May 15, 2017
+</span>
 <span class=middot-divider></span>
-<span class=article-reading-time>11 min read</span></div></div></div><div class=ml-3><a href=/post/dogsvscats/><img src=/post/dogsvscats/featured_hu47d23cd2e266bd66ad6df3261f684d7f_205006_150x0_resize_q90_lanczos.jpg alt="What I have learnt from dogs and cats"></a></div></div><div class=see-all><a href=/post/>See all posts
-<i class="fas fa-angle-right"></i></a></div></div></div></div></section><section id=projects class="home-section wg-portfolio"><div class=container><div class=row><div class="col-12 col-lg-4 section-heading"><h1>Projects</h1></div><div class="col-12 col-lg-8"><div class="isotope projects-container js-layout-masonry"><div class="project-card project-item isotope-item js-id-computer-graphics"><div class=card><a href=https://github.com/eduardohenriquearnold/raytracer target=_blank rel=noopener class="card-image hover-overlay"><img src=/project/raytracer/featured_hu534a20b62dad35df60f8eda461ea65b8_239331_550x0_resize_q90_lanczos_3.png alt class=img-responsive></a><div class=card-text><h4><a href=https://github.com/eduardohenriquearnold/raytracer target=_blank rel=noopener>Ray Tracer from Scratch</a></h4><div class=article-style><p>Created a simple ray tracer renderer from scratch using C++.</p></div></div></div></div><div class="project-card project-item isotope-item js-id-computer-vision"><div class=card><a href=https://github.com/eduardohenriquearnold/TFlow target=_blank rel=noopener class="card-image hover-overlay"><img src=/project/tflow/featured_hu8c34faa4432b0628c50d4a92ca03a4ca_240511_550x0_resize_q90_lanczos.jpg alt class=img-responsive></a><div class=card-text><h4><a href=https://github.com/eduardohenriquearnold/TFlow target=_blank rel=noopener>TFlow</a></h4><div class=article-style><p>Automatic traffic flow and density estimation based on computer vision.</p></div></div></div></div><div class="project-card project-item isotope-item js-id-computer-vision"><div class=card><a href=https://github.com/eduardohenriquearnold/sudosolver target=_blank rel=noopener class="card-image hover-overlay"><img src=/project/sudosolver/featured_hu42e011651ecb1026dab9e49ba85f7806_45018_550x0_resize_q90_lanczos.jpg alt class=img-responsive></a><div class=card-text><h4><a href=https://github.com/eduardohenriquearnold/sudosolver target=_blank rel=noopener>SudoSolver</a></h4><div class=article-style><p>A C++ Sudoku Solver and Generator.</p></div></div></div></div></div></div></div></div></section><section id=talks class="home-section wg-pages"><div class=container><div class=row><div class="col-12 col-lg-4 section-heading"><h1>Recent & Upcoming Talks</h1></div><div class="col-12 col-lg-8"><div class="media stream-item"><div class=media-body><h3 class="article-title mb-0 mt-0"><a href=/talk/iet2020/>IET Talk - Challenges and Opportunities in Connected and Autonomous Vehicles</a></h3><a href=/talk/iet2020/ class=summary-link><div class=article-style>Autonomous vehicles are set to transform the worldwide economy. This presentation will highlight the challenges and opportunities in the development and deployment of autonomous vehicles. Exploring the role of connectivity between vehicles and infrastructure is key to achieve full autonomy. Novel research in platooning, cooperative perception and trajectory negotiation will be discussed along with methods for testing and validation of autonomous driving functions.</div></a><div class="stream-meta article-metadata"><div><span>Feb 27, 2020 18:30</span>
+<span class=article-reading-time>
+11 min read
+</span>
+</div>
+</div>
+</div>
+<div class=ml-3>
+<a href=/post/dogsvscats/>
+<img src=/post/dogsvscats/featured_hu47d23cd2e266bd66ad6df3261f684d7f_205006_150x0_resize_q90_lanczos.jpg alt="What I have learnt from dogs and cats">
+</a>
+</div>
+</div>
+<div class=see-all>
+<a href=/post/>
+See all posts
+<i class="fas fa-angle-right"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id=projects class="home-section wg-portfolio">
+<div class=container>
+<div class=row>
+<div class="col-12 col-lg-4 section-heading">
+<h1>Projects</h1>
+</div>
+<div class="col-12 col-lg-8">
+<div class="isotope projects-container js-layout-masonry">
+<div class="project-card project-item isotope-item js-id-computer-graphics">
+<div class=card>
+<a href=https://github.com/eduardohenriquearnold/raytracer target=_blank rel=noopener class="card-image hover-overlay">
+<img src=/project/raytracer/featured_hu534a20b62dad35df60f8eda461ea65b8_239331_550x0_resize_q90_lanczos_3.png alt class=img-responsive>
+</a>
+<div class=card-text>
+<h4><a href=https://github.com/eduardohenriquearnold/raytracer target=_blank rel=noopener>Ray Tracer from Scratch</a></h4>
+<div class=article-style>
+<p>Created a simple ray tracer renderer from scratch using C++.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="project-card project-item isotope-item js-id-computer-vision">
+<div class=card>
+<a href=https://github.com/eduardohenriquearnold/TFlow target=_blank rel=noopener class="card-image hover-overlay">
+<img src=/project/tflow/featured_hu8c34faa4432b0628c50d4a92ca03a4ca_240511_550x0_resize_q90_lanczos.jpg alt class=img-responsive>
+</a>
+<div class=card-text>
+<h4><a href=https://github.com/eduardohenriquearnold/TFlow target=_blank rel=noopener>TFlow</a></h4>
+<div class=article-style>
+<p>Automatic traffic flow and density estimation based on computer vision.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="project-card project-item isotope-item js-id-computer-vision">
+<div class=card>
+<a href=https://github.com/eduardohenriquearnold/sudosolver target=_blank rel=noopener class="card-image hover-overlay">
+<img src=/project/sudosolver/featured_hu42e011651ecb1026dab9e49ba85f7806_45018_550x0_resize_q90_lanczos.jpg alt class=img-responsive>
+</a>
+<div class=card-text>
+<h4><a href=https://github.com/eduardohenriquearnold/sudosolver target=_blank rel=noopener>SudoSolver</a></h4>
+<div class=article-style>
+<p>A C++ Sudoku Solver and Generator.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id=talks class="home-section wg-pages">
+<div class=container>
+<div class=row>
+<div class="col-12 col-lg-4 section-heading">
+<h1>Recent & Upcoming Talks</h1>
+</div>
+<div class="col-12 col-lg-8">
+<div class="media stream-item">
+<div class=media-body>
+<h3 class="article-title mb-0 mt-0">
+<a href=/talk/iet2020/>IET Talk - Challenges and Opportunities in Connected and Autonomous Vehicles</a>
+</h3>
+<a href=/talk/iet2020/ class=summary-link>
+<div class=article-style>
+Autonomous vehicles are set to transform the worldwide economy. This presentation will highlight the challenges and opportunities in the development and deployment of autonomous vehicles. Exploring the role of connectivity between vehicles and infrastructure is key to achieve full autonomy. Novel research in platooning, cooperative perception and trajectory negotiation will be discussed along with methods for testing and validation of autonomous driving functions.
+</div>
+</a>
+<div class="stream-meta article-metadata">
+<div>
+<span>
+Feb 27, 2020 18:30
+</span>
 <span class=middot-divider></span>
-<span>International Digital Laboratory (IDL), WMG , University of Warwick, Coventry, CV4 7AL</span></div></div><div class=btn-links><a class="btn btn-outline-primary my-1 mr-1 btn-sm" href=/presentations/IET-ChallengesAndOpportunitiesCooperativeDriving.pdf target=_blank rel=noopener>Slides</a></div></div><div class=ml-3></div></div><div class="media stream-item"><div class=media-body><h3 class="article-title mb-0 mt-0"><a href=/talk/brumai2019/>Cooperative perception for 3D object detection in challenging driving scenarios using infrastructure sensors</a></h3><a href=/talk/brumai2019/ class=summary-link><div class=article-style>This presentation provides an introduction to the challenges in the perception domain of autonomous vehicles and provides solutions based on cooperation among vehicles and infrastructure, particularly focusing on 3D object detection.</div></a><div class="stream-meta article-metadata"><div><span>Nov 8, 2019 18:30</span>
+<span>International Digital Laboratory (IDL), WMG , University of Warwick, Coventry, CV4 7AL</span>
+</div>
+</div>
+<div class=btn-links>
+<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href=/presentations/IET-ChallengesAndOpportunitiesCooperativeDriving.pdf target=_blank rel=noopener>
+Slides
+</a>
+</div>
+</div>
+<div class=ml-3>
+</div>
+</div>
+<div class="media stream-item">
+<div class=media-body>
+<h3 class="article-title mb-0 mt-0">
+<a href=/talk/brumai2019/>Cooperative perception for 3D object detection in challenging driving scenarios using infrastructure sensors</a>
+</h3>
+<a href=/talk/brumai2019/ class=summary-link>
+<div class=article-style>
+This presentation provides an introduction to the challenges in the perception domain of autonomous vehicles and provides solutions based on cooperation among vehicles and infrastructure, particularly focusing on 3D object detection.
+</div>
+</a>
+<div class="stream-meta article-metadata">
+<div>
+<span>
+Nov 8, 2019 18:30
+</span>
 <span class=middot-divider></span>
-<span>BrumAI Meetup - Birmingham Tech Edition - Birmingham, UK</span></div></div><div class=btn-links></div></div><div class=ml-3></div></div><div class="media stream-item"><div class=media-body><h3 class="article-title mb-0 mt-0"><a href=/talk/dsfloripa2019/>Detecting people using depth frames and deep classifiers</a></h3><a href=/talk/dsfloripa2019/ class=summary-link><div class=article-style>A short talk about a project I took part during my internship at Instituto SENAI de Tecnologia and which was also my final year project for my undergraduate program. My contribution was to create an automatic human detection system for complex industrial environments.</div></a><div class="stream-meta article-metadata"><div><span>Apr 6, 2017 18:00</span>
+<span>BrumAI Meetup - Birmingham Tech Edition - Birmingham, UK</span>
+</div>
+</div>
+<div class=btn-links>
+</div>
+</div>
+<div class=ml-3>
+</div>
+</div>
+<div class="media stream-item">
+<div class=media-body>
+<h3 class="article-title mb-0 mt-0">
+<a href=/talk/dsfloripa2019/>Detecting people using depth frames and deep classifiers</a>
+</h3>
+<a href=/talk/dsfloripa2019/ class=summary-link>
+<div class=article-style>
+A short talk about a project I took part during my internship at Instituto SENAI de Tecnologia and which was also my final year project for my undergraduate program. My contribution was to create an automatic human detection system for complex industrial environments.
+</div>
+</a>
+<div class="stream-meta article-metadata">
+<div>
+<span>
+Apr 6, 2017 18:00
+</span>
 <span class=middot-divider></span>
-<span>DataScience Floripa Meetup - Florianópolis, Brazil</span></div></div><div class=btn-links><a class="btn btn-outline-primary my-1 mr-1 btn-sm" href=https://github.com/eduardohenriquearnold/tcc/blob/obj/obj/presentation.pdf target=_blank rel=noopener>Slides</a>
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://www.youtube.com/watch?v=KjEfY1CByiE" target=_blank rel=noopener>Video</a></div></div><div class=ml-3></div></div><div class="media stream-item"><div class=media-body><h3 class="article-title mb-0 mt-0"><a href=/talk/tdc2016/>Computer vision with Python and OpenCV</a></h3><a href=/talk/tdc2016/ class=summary-link><div class=article-style>A short presentation showing how to develop a simple augmented reality application with Python and OpenCV.</div></a><div class="stream-meta article-metadata"><div><span>May 12, 2016 00:00</span>
+<span>DataScience Floripa Meetup - Florianópolis, Brazil</span>
+</div>
+</div>
+<div class=btn-links>
+<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href=https://github.com/eduardohenriquearnold/tcc/blob/obj/obj/presentation.pdf target=_blank rel=noopener>
+Slides
+</a>
+<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://www.youtube.com/watch?v=KjEfY1CByiE" target=_blank rel=noopener>
+Video
+</a>
+</div>
+</div>
+<div class=ml-3>
+</div>
+</div>
+<div class="media stream-item">
+<div class=media-body>
+<h3 class="article-title mb-0 mt-0">
+<a href=/talk/tdc2016/>Computer vision with Python and OpenCV</a>
+</h3>
+<a href=/talk/tdc2016/ class=summary-link>
+<div class=article-style>
+A short presentation showing how to develop a simple augmented reality application with Python and OpenCV.
+</div>
+</a>
+<div class="stream-meta article-metadata">
+<div>
+<span>
+May 12, 2016 00:00
+</span>
 <span class=middot-divider></span>
-<span>The Developers Conference - Florianópolis, Brazil.</span></div></div><div class=btn-links><a class="btn btn-outline-primary my-1 mr-1 btn-sm" href=http://eduardohenriquearnold.github.io/tdcfloripa2016/ target=_blank rel=noopener>Slides</a>
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://www.youtube.com/watch?v=lmJxGmOAtq8" target=_blank rel=noopener>Video</a></div></div><div class=ml-3></div></div></div></div></div></section><section id=contact class="home-section wg-contact"><div class=container><div class="row contact-widget"><div class="col-12 col-lg-4 section-heading"><h1>Contact</h1></div><div class="col-12 col-lg-8"><ul class=fa-ul><li><i class="fa-li fab fa-twitter fa-2x" aria-hidden=true></i>
-<a href=https://twitter.com/eduardoarnoldh target=_blank rel=noopener>DM Me</a></li></ul></div></div></div></section><script src=https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin=anonymous></script>
+<span>The Developers Conference - Florianópolis, Brazil.</span>
+</div>
+</div>
+<div class=btn-links>
+<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href=http://eduardohenriquearnold.github.io/tdcfloripa2016/ target=_blank rel=noopener>
+Slides
+</a>
+<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://www.youtube.com/watch?v=lmJxGmOAtq8" target=_blank rel=noopener>
+Video
+</a>
+</div>
+</div>
+<div class=ml-3>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id=contact class="home-section wg-contact">
+<div class=container>
+<div class="row contact-widget">
+<div class="col-12 col-lg-4 section-heading">
+<h1>Contact</h1>
+</div>
+<div class="col-12 col-lg-8">
+<ul class=fa-ul>
+<li>
+<i class="fa-li fab fa-twitter fa-2x" aria-hidden=true></i>
+<a href=https://twitter.com/eduardoarnoldh target=_blank rel=noopener>DM Me</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin=anonymous></script>
 <script src=https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin=anonymous></script>
 <script src=https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin=anonymous></script>
 <script src=https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin=anonymous></script>
 <script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js integrity="sha256-eOgo0OtLL4cdq7RdwRUiGKLX9XsIJ7nGhWEKbohmVAQ=" crossorigin=anonymous></script>
 <script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/languages/r.min.js></script>
-<script>const code_highlighting=!0</script><script>const isSiteThemeDark=!1</script><script src=/js/academic.min.a0f52cd61d0242fd8ed5d785d9bff037.js></script><div class=container><footer class=site-footer><p class=powered-by></p><p class=powered-by>Powered by the
+<script>const code_highlighting=!0</script>
+<script>const isSiteThemeDark=!1</script>
+<script src=/js/academic.min.f30a8b5a880e824aab9653942c89109b.js></script>
+<div class=container>
+<footer class=site-footer>
+<p class=powered-by>
+</p>
+<p class=powered-by>
+Powered by the
 <a href=https://sourcethemes.com/academic/ target=_blank rel=noopener>Academic theme</a> for
 <a href=https://gohugo.io target=_blank rel=noopener>Hugo</a>.
-<span class=float-right aria-hidden=true><a href=# class=back-to-top><span class=button_icon><i class="fas fa-chevron-up fa-2x"></i></span></a></span></p></footer></div><div id=modal class="modal fade" role=dialog><div class=modal-dialog><div class=modal-content><div class=modal-header><h5 class=modal-title>Cite</h5><button type=button class=close data-dismiss=modal aria-label=Close>
-<span aria-hidden=true>&#215;</span></button></div><div class=modal-body><pre><code class="tex hljs"></code></pre></div><div class=modal-footer><a class="btn btn-outline-primary my-1 js-copy-cite" href=# target=_blank><i class="fas fa-copy"></i> Copy</a>
-<a class="btn btn-outline-primary my-1 js-download-cite" href=# target=_blank><i class="fas fa-download"></i> Download</a><div id=modal-error></div></div></div></div></div></body></html>
+<span class=float-right aria-hidden=true>
+<a href=# class=back-to-top>
+<span class=button_icon>
+<i class="fas fa-chevron-up fa-2x"></i>
+</span>
+</a>
+</span>
+</p>
+</footer>
+</div>
+<div id=modal class="modal fade" role=dialog>
+<div class=modal-dialog>
+<div class=modal-content>
+<div class=modal-header>
+<h5 class=modal-title>Cite</h5>
+<button type=button class=close data-dismiss=modal aria-label=Close>
+<span aria-hidden=true>&#215;</span>
+</button>
+</div>
+<div class=modal-body>
+<pre><code class="tex hljs"></code></pre>
+</div>
+<div class=modal-footer>
+<a class="btn btn-outline-primary my-1 js-copy-cite" href=# target=_blank>
+<i class="fas fa-copy"></i> Copy
+</a>
+<a class="btn btn-outline-primary my-1 js-download-cite" href=# target=_blank>
+<i class="fas fa-download"></i> Download
+</a>
+<div id=modal-error></div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

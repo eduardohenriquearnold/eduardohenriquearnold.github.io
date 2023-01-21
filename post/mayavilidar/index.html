@@ -1,22 +1,140 @@
-<!doctype html><html lang=en-us><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=generator content="Source Themes Academic 4.8.0"><meta name=author content="Eduardo Arnold"><meta name=description content="Using the CARLA autonomous driving simulator to generate lidar point clouds which are then visualised in real-time using Mayavi.
-"><link rel=alternate hreflang=en-us href=https://earnold.me/post/mayavilidar/><meta name=theme-color content="#2962ff"><script src=/js/mathjax-config.js></script>
-<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin=anonymous><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-1/css/all.min.css integrity="sha256-4w9DunooKSr3MFXHXWyFER38WmPdm361bQS/2KUWZbU=" crossorigin=anonymous><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin=anonymous><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css crossorigin=anonymous title=hl-light><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/dracula.min.css crossorigin=anonymous title=hl-dark disabled><script src=https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin=anonymous async></script>
+<!doctype html><html lang=en-us>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=generator content="Source Themes Academic 4.8.0">
+<meta name=author content="Eduardo Arnold">
+<meta name=description content="Using the CARLA autonomous driving simulator to generate lidar point clouds which are then visualised in real-time using Mayavi.
+">
+<link rel=alternate hreflang=en-us href=https://earnold.me/post/mayavilidar/>
+<meta name=theme-color content="#2962ff">
+<script src=/js/mathjax-config.js></script>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin=anonymous>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-1/css/all.min.css integrity="sha256-4w9DunooKSr3MFXHXWyFER38WmPdm361bQS/2KUWZbU=" crossorigin=anonymous>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin=anonymous>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css crossorigin=anonymous title=hl-light>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/dracula.min.css crossorigin=anonymous title=hl-dark disabled>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin=anonymous async></script>
 <script src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js integrity crossorigin=anonymous async></script>
-<link rel=stylesheet href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap"><link rel=stylesheet href=/css/academic.css><link rel=manifest href=/index.webmanifest><link rel=icon type=image/png href=/images/icon_hu86725dfa3481f0beabea4a23db3db448_10764_32x32_fill_lanczos_center_3.png><link rel=apple-touch-icon type=image/png href=/images/icon_hu86725dfa3481f0beabea4a23db3db448_10764_192x192_fill_lanczos_center_3.png><link rel=canonical href=https://earnold.me/post/mayavilidar/><meta property="twitter:card" content="summary_large_image"><meta property="twitter:site" content="@eduardoarnoldh"><meta property="twitter:creator" content="@eduardoarnoldh"><meta property="og:site_name" content="Eduardo Arnold"><meta property="og:url" content="https://earnold.me/post/mayavilidar/"><meta property="og:title" content="Real-time visualisation of simulated lidar point-clouds with Mayavi and CARLA | Eduardo Arnold"><meta property="og:description" content="Using the CARLA autonomous driving simulator to generate lidar point clouds which are then visualised in real-time using Mayavi.
-"><meta property="og:image" content="https://earnold.me/post/mayavilidar/featured.png"><meta property="twitter:image" content="https://earnold.me/post/mayavilidar/featured.png"><meta property="og:locale" content="en-us"><meta property="article:published_time" content="2020-11-17T15:54:00-03:00"><meta property="article:modified_time" content="2020-11-17T15:54:00-03:00"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://earnold.me/post/mayavilidar/"},"headline":"Real-time visualisation of simulated lidar point-clouds with Mayavi and CARLA","image":["https://earnold.me/post/mayavilidar/featured.png"],"datePublished":"2020-11-17T15:54:00-03:00","dateModified":"2020-11-17T15:54:00-03:00","author":{"@type":"Person","name":"Eduardo Arnold"},"publisher":{"@type":"Organization","name":"Eduardo Arnold","logo":{"@type":"ImageObject","url":"https://earnold.me/images/icon_hu86725dfa3481f0beabea4a23db3db448_10764_192x192_fill_lanczos_center_3.png"}},"description":"Using the CARLA autonomous driving simulator to generate lidar point clouds which are then visualised in real-time using Mayavi.\n"}</script><title>Real-time visualisation of simulated lidar point-clouds with Mayavi and CARLA | Eduardo Arnold</title></head><body id=top data-spy=scroll data-offset=70 data-target=#TableOfContents><aside class=search-results id=search><div class=container><section class=search-header><div class="row no-gutters justify-content-between mb-3"><div class=col-6><h1>Search</h1></div><div class="col-6 col-search-close"><a class=js-search href=#><i class="fas fa-times-circle text-muted" aria-hidden=true></i></a></div></div><div id=search-box></div></section><section class=section-search-results><div id=search-hits></div></section></div></aside><nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id=navbar-main><div class=container><div class="d-none d-lg-inline-flex"><a class=navbar-brand href=/>Eduardo Arnold</a></div><button type=button class=navbar-toggler data-toggle=collapse data-target=#navbar-content aria-controls=navbar aria-expanded=false aria-label="Toggle navigation">
-<span><i class="fas fa-bars"></i></span></button><div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none"><a class=navbar-brand href=/>Eduardo Arnold</a></div><div class="navbar-collapse main-menu-item collapse justify-content-end" id=navbar-content><ul class="navbar-nav d-md-inline-flex"><li class=nav-item><a class=nav-link href=/#about><span>Home</span></a></li><li class=nav-item><a class=nav-link href=/#experience><span>Experience</span></a></li><li class=nav-item><a class=nav-link href=/#publications><span>Publications</span></a></li><li class=nav-item><a class=nav-link href=/#posts><span>Posts</span></a></li><li class=nav-item><a class=nav-link href=/#projects><span>Projects</span></a></li><li class=nav-item><a class=nav-link href=/#talks><span>Talks</span></a></li><li class=nav-item><a class=nav-link href=/#contact><span>Contact</span></a></li></ul></div><ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2"></ul></div></nav><article class=article><div class="article-container pt-3"><h1>Real-time visualisation of simulated lidar point-clouds with Mayavi and CARLA</h1><div class=article-metadata><span class=article-date>Nov 17, 2020</span>
+<link rel=stylesheet href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+<link rel=stylesheet href=/css/academic.css>
+<link rel=manifest href=/index.webmanifest>
+<link rel=icon type=image/png href=/images/icon_hu86725dfa3481f0beabea4a23db3db448_10764_32x32_fill_lanczos_center_3.png>
+<link rel=apple-touch-icon type=image/png href=/images/icon_hu86725dfa3481f0beabea4a23db3db448_10764_192x192_fill_lanczos_center_3.png>
+<link rel=canonical href=https://earnold.me/post/mayavilidar/>
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:site" content="@eduardoarnoldh">
+<meta property="twitter:creator" content="@eduardoarnoldh">
+<meta property="og:site_name" content="Eduardo Arnold">
+<meta property="og:url" content="https://earnold.me/post/mayavilidar/">
+<meta property="og:title" content="Real-time visualisation of simulated lidar point-clouds with Mayavi and CARLA | Eduardo Arnold">
+<meta property="og:description" content="Using the CARLA autonomous driving simulator to generate lidar point clouds which are then visualised in real-time using Mayavi.
+"><meta property="og:image" content="https://earnold.me/post/mayavilidar/featured.png">
+<meta property="twitter:image" content="https://earnold.me/post/mayavilidar/featured.png"><meta property="og:locale" content="en-us">
+<meta property="article:published_time" content="2020-11-17T15:54:00-03:00">
+<meta property="article:modified_time" content="2020-11-17T15:54:00-03:00">
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://earnold.me/post/mayavilidar/"},"headline":"Real-time visualisation of simulated lidar point-clouds with Mayavi and CARLA","image":["https://earnold.me/post/mayavilidar/featured.png"],"datePublished":"2020-11-17T15:54:00-03:00","dateModified":"2020-11-17T15:54:00-03:00","author":{"@type":"Person","name":"Eduardo Arnold"},"publisher":{"@type":"Organization","name":"Eduardo Arnold","logo":{"@type":"ImageObject","url":"https://earnold.me/images/icon_hu86725dfa3481f0beabea4a23db3db448_10764_192x192_fill_lanczos_center_3.png"}},"description":"Using the CARLA autonomous driving simulator to generate lidar point clouds which are then visualised in real-time using Mayavi.\n"}</script>
+<title>Real-time visualisation of simulated lidar point-clouds with Mayavi and CARLA | Eduardo Arnold</title>
+</head>
+<body id=top data-spy=scroll data-offset=70 data-target=#TableOfContents>
+<aside class=search-results id=search>
+<div class=container>
+<section class=search-header>
+<div class="row no-gutters justify-content-between mb-3">
+<div class=col-6>
+<h1>Search</h1>
+</div>
+<div class="col-6 col-search-close">
+<a class=js-search href=#><i class="fas fa-times-circle text-muted" aria-hidden=true></i></a>
+</div>
+</div>
+<div id=search-box>
+</div>
+</section>
+<section class=section-search-results>
+<div id=search-hits>
+</div>
+</section>
+</div>
+</aside>
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id=navbar-main>
+<div class=container>
+<div class="d-none d-lg-inline-flex">
+<a class=navbar-brand href=/>Eduardo Arnold</a>
+</div>
+<button type=button class=navbar-toggler data-toggle=collapse data-target=#navbar-content aria-controls=navbar aria-expanded=false aria-label="Toggle navigation">
+<span><i class="fas fa-bars"></i></span>
+</button>
+<div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+<a class=navbar-brand href=/>Eduardo Arnold</a>
+</div>
+<div class="navbar-collapse main-menu-item collapse justify-content-end" id=navbar-content>
+<ul class="navbar-nav d-md-inline-flex">
+<li class=nav-item>
+<a class=nav-link href=/#about><span>Home</span></a>
+</li>
+<li class=nav-item>
+<a class=nav-link href=/#experience><span>Experience</span></a>
+</li>
+<li class=nav-item>
+<a class=nav-link href=/#publications><span>Publications</span></a>
+</li>
+<li class=nav-item>
+<a class=nav-link href=/#posts><span>Posts</span></a>
+</li>
+<li class=nav-item>
+<a class=nav-link href=/#projects><span>Projects</span></a>
+</li>
+<li class=nav-item>
+<a class=nav-link href=/#talks><span>Talks</span></a>
+</li>
+<li class=nav-item>
+<a class=nav-link href=/#contact><span>Contact</span></a>
+</li>
+</ul>
+</div>
+<ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+</ul>
+</div>
+</nav>
+<article class=article>
+<div class="article-container pt-3">
+<h1>Real-time visualisation of simulated lidar point-clouds with Mayavi and CARLA</h1>
+<div class=article-metadata>
+<span class=article-date>
+Nov 17, 2020
+</span>
 <span class=middot-divider></span>
-<span class=article-reading-time>6 min read</span></div></div><div class="article-header article-container featured-image-wrapper mt-4 mb-4" style=max-width:720px;max-height:368px><div style=position:relative><img src=/post/mayavilidar/featured_hu772a287787f07fbeea24355fe3000a2c_111032_720x0_resize_lanczos_3.png alt class=featured-image></div></div><div class=article-container><div class=article-style><p>This post shows how to visualise lidar point-clouds obtained from
+<span class=article-reading-time>
+6 min read
+</span>
+</div>
+</div>
+<div class="article-header article-container featured-image-wrapper mt-4 mb-4" style=max-width:720px;max-height:368px>
+<div style=position:relative>
+<img src=/post/mayavilidar/featured_hu772a287787f07fbeea24355fe3000a2c_111032_720x0_resize_lanczos_3.png alt class=featured-image>
+</div>
+</div>
+<div class=article-container>
+<div class=article-style>
+<p>This post shows how to visualise lidar point-clouds obtained from
 <a href=https://carla.org/ target=_blank rel=noopener>CARLA</a> in real-time using the animation functionality from
 <a href=https://docs.enthought.com/mayavi/mayavi/index.html target=_blank rel=noopener>Mayavi</a>.
-Although this post uses real-time data from CARLA, one can easily change the source of information to real sensors or simply replay recorded sensor data.</p><h2 id=motivation>Motivation</h2><p>CARLA provides a lidar visualisation script using
+Although this post uses real-time data from CARLA, one can easily change the source of information to real sensors or simply replay recorded sensor data.</p>
+<h2 id=motivation>Motivation</h2>
+<p>CARLA provides a lidar visualisation script using
 <a href=http://www.open3d.org/ target=_blank rel=noopener>Open3D</a> available
 <a href=https://github.com/carla-simulator/carla/blob/dev/PythonAPI/examples/open3d_lidar.py target=_blank rel=noopener>here</a>.
 However, I personally found Open3D to have quite a long dependency list since it is a library for manipulating 3D data including an extensive list of algorithms.
 So I would rather use a tool created specifically for 3D data visualisation - enters Mayavi.
 Mayavi has a much smaller dependency list and is widely used to plot point clouds in the autonomous driving domain - usually adding bounding boxes to represent objects.
 However it comes with some perks, namely when creating visualisations for a continuous and asynchronous data stream.
-Since I could not find a better reference for this problem I decided to share my solution in this post.</p><h2 id=carla-setup>CARLA Setup</h2><p>Firstly, let&rsquo;s set up the CARLA end to receive the data. This section assumes prior knowledge of the CARLA simulation environment and is partly adapted from <code>PythonAPI/open3d_lidar.py</code></p><p>The first step is connecting with the CARLA server and setting up the synchronous mode, which will ensure that we get consistent point clouds.</p><pre><code class=language-python>import carla
+Since I could not find a better reference for this problem I decided to share my solution in this post.</p>
+<h2 id=carla-setup>CARLA Setup</h2>
+<p>Firstly, let&rsquo;s set up the CARLA end to receive the data. This section assumes prior knowledge of the CARLA simulation environment and is partly adapted from <code>PythonAPI/open3d_lidar.py</code></p>
+<p>The first step is connecting with the CARLA server and setting up the synchronous mode, which will ensure that we get consistent point clouds.</p>
+<pre><code class=language-python>import carla
 
 client = carla.Client('localhost', 2000)
 client.set_timeout(2.0)
@@ -33,13 +151,17 @@ try:
 	settings.synchronous_mode = True
 	settings.no_rendering_mode = arg.no_rendering
 	world.apply_settings(settings)
-</code></pre><p>Next we spawn an ego-vehicle into our simulated world using a random starting position and a random blueprint (vehicle model):</p><pre><code class=language-python>blueprint_library = world.get_blueprint_library()
+</code></pre>
+<p>Next we spawn an ego-vehicle into our simulated world using a random starting position and a random blueprint (vehicle model):</p>
+<pre><code class=language-python>blueprint_library = world.get_blueprint_library()
 vehicle_bp = blueprint_library.filter(arg.filter)[0]
 vehicle_transform = random.choice(world.get_map().get_spawn_points())
 vehicle = world.spawn_actor(vehicle_bp, vehicle_transform)
 vehicle.set_autopilot(arg.no_autopilot)
-</code></pre><p>We must now create our ray-cast lidar sensor and set-up some parameters (a complete list of sensor parameters is available
-<a href=https://carla.readthedocs.io/en/latest/ref_sensors/#lidar-sensor target=_blank rel=noopener>here</a>):</p><pre><code class=language-python>lidar_bp = blueprint_library.find('sensor.lidar.ray_cast')
+</code></pre>
+<p>We must now create our ray-cast lidar sensor and set-up some parameters (a complete list of sensor parameters is available
+<a href=https://carla.readthedocs.io/en/latest/ref_sensors/#lidar-sensor target=_blank rel=noopener>here</a>):</p>
+<pre><code class=language-python>lidar_bp = blueprint_library.find('sensor.lidar.ray_cast')
 lidar_bp.set_attribute('noise_stddev', '0.2')
 lidar_bp.set_attribute('channels', str(64))                    #number of lasers, normally 64 or 128 (on newer lidar models).
 lidar_bp.set_attribute('range', str(100))                      #range in meters
@@ -48,17 +170,26 @@ lidar_bp.set_attribute('rotation_frequency', str(1.0 / delta)) #ensures we will 
 lidar_transform = carla.Transform(carla.Location(x=-0.5, z=1.8))
 lidar = world.spawn_actor(lidar_bp, lidar_transform, attach_to=vehicle)
 lidar.listen(lidar_callback)
-</code></pre><p>The last line sets up the callback function that gets called everytime new data (point clouds) arrives, but we still do not know what this function should look like.</p><p>The simulation runs in synchronous mode in such a way that we must send a <code>world.tick()</code> event at every iteration step so that the simulation can run another loop iteration, updating the physical models and generating new sensor data. This prevents us getting flooded with data if our processing pipeline runs much slower than the simulation itself.
+</code></pre>
+<p>The last line sets up the callback function that gets called everytime new data (point clouds) arrives, but we still do not know what this function should look like.</p>
+<p>The simulation runs in synchronous mode in such a way that we must send a <code>world.tick()</code> event at every iteration step so that the simulation can run another loop iteration, updating the physical models and generating new sensor data. This prevents us getting flooded with data if our processing pipeline runs much slower than the simulation itself.
 Although the simulation runs in synchronous mode, the data is still transfered in an ansynchronous manner, which we receive through the callback function <code>lidar_callback(data)</code>.
-To make sure the simulation runs continuously we create an infinite loop as</p><pre><code class=language-python>while True:
+To make sure the simulation runs continuously we create an infinite loop as</p>
+<pre><code class=language-python>while True:
 	time.sleep(0.005)
 	world.tick()
-</code></pre><p>We still need to figure out what the <code>lidar_callback</code> function looks like. This will depend on how we visualise our data, so now we dive into the Mayavi part!</p><h2 id=mayavi>Mayavi</h2><p>Given a set of points <code>pts</code> with shape <code>[N,3]</code> where $N$ is the number of points and an optional set of intensities for each given point, one can visualise the point cloud using</p><pre><code class=language-python>from mayavi import mlab
+</code></pre>
+<p>We still need to figure out what the <code>lidar_callback</code> function looks like. This will depend on how we visualise our data, so now we dive into the Mayavi part!</p>
+<h2 id=mayavi>Mayavi</h2>
+<p>Given a set of points <code>pts</code> with shape <code>[N,3]</code> where $N$ is the number of points and an optional set of intensities for each given point, one can visualise the point cloud using</p>
+<pre><code class=language-python>from mayavi import mlab
 
 #given a set of points pts [N,3] and a set of intensities [N,]
 mlab.points3d(pts[:,0], pts[:,1], pts[:,2], intensity, mode='point')
 mlab.show()
-</code></pre><p>Given this, one could create the lidar callback function as</p><pre><code class=language-python>def lidar_callback(data):
+</code></pre>
+<p>Given this, one could create the lidar callback function as</p>
+<pre><code class=language-python>def lidar_callback(data):
   data = np.copy(np.frombuffer(point_cloud.raw_data, dtype=np.dtype('f4')))
   data = np.reshape(data, (int(data.shape[0] / 4), 4))
 
@@ -74,12 +205,15 @@ mlab.show()
 
   mlab.points3d(points[:,0], points[:,1], points[:,2], intensity, mode='point')
   mlab.show()
-</code></pre><p>This creates a static visualisation each time a new packet of data arrives, which is quite inefficient and does not allow the user to interect with the data (i.e. change viewing angles).
+</code></pre>
+<p>This creates a static visualisation each time a new packet of data arrives, which is quite inefficient and does not allow the user to interect with the data (i.e. change viewing angles).
 Mayavi provides a
 <a href=https://docs.enthought.com/mayavi/mayavi/mlab_animating.html target=_blank rel=noopener>animation guide</a> that shows how to create visualisations that change with time.
-However it assumes that the data is updated in synchronous intervals which is not the case when we obtain the data with a asynchronous callback function from an external source such as a simulation tool or a real sensor.</p><p>One way to solve this is to create a visualisation within the main thread scope (required by Mayavi) and update this visualisation once we get any callback with new data.
+However it assumes that the data is updated in synchronous intervals which is not the case when we obtain the data with a asynchronous callback function from an external source such as a simulation tool or a real sensor.</p>
+<p>One way to solve this is to create a visualisation within the main thread scope (required by Mayavi) and update this visualisation once we get any callback with new data.
 This solution however requires calling <code>mlab.show()</code> on the main thread, which blocks the execution of code until the Mayavi visualisation screen is closed and means that we can no longer keep sending the <code>world.tick()</code> signals back to the simulator.
-To overcome this limitation we create a secondary thread that is responsible for sending the <code>world.tick()</code> updates, while at the same time creating an empty Mayavi visualisation window:</p><pre><code class=language-python>import threading
+To overcome this limitation we create a secondary thread that is responsible for sending the <code>world.tick()</code> updates, while at the same time creating an empty Mayavi visualisation window:</p>
+<pre><code class=language-python>import threading
 
 def carlaEventLoop(world):
   while True:
@@ -91,7 +225,9 @@ loopThread.start()
 
 vis = mlab.points3d(0, 0, 0, 0, mode='point', figure=fig)
 mlab.show()
-</code></pre><p>Now one could implement the lidar callback function as</p><pre><code class=language-python>def lidar_callback(data, vis):
+</code></pre>
+<p>Now one could implement the lidar callback function as</p>
+<pre><code class=language-python>def lidar_callback(data, vis):
   data = np.copy(np.frombuffer(point_cloud.raw_data, dtype=np.dtype('f4')))
   data = np.reshape(data, (int(data.shape[0] / 4), 4))
 
@@ -110,9 +246,12 @@ mlab.show()
 
 #To register this callback we use a lambda function to mask the vis variable with the empty visualisation created previously
 lidar.listen(lambda data: lidar_callback(data, vis))
-</code></pre><p>This formulation tends to work most of the time, but occasionally fails with VTK errors such as <code>Source array too small, requested tuple at index 11719, but there are only 11625 tuples in the array.</code>.
-The error seems related to the frequency of updates created by the callback function. Although I did not have time to investigate why exactly this issue arises, I was able to come up with an alternative error-free solution.</p><p>The alternative solution consists of creating a buffer that stores the most recent point cloud received through the callback function, but only updating the Mayavi visualisation in synchronous intervals.
-The main part of the code (after creating the sensors and vehicle) looks like:</p><pre><code class=language-python>def lidar_callback(data, buf):
+</code></pre>
+<p>This formulation tends to work most of the time, but occasionally fails with VTK errors such as <code>Source array too small, requested tuple at index 11719, but there are only 11625 tuples in the array.</code>.
+The error seems related to the frequency of updates created by the callback function. Although I did not have time to investigate why exactly this issue arises, I was able to come up with an alternative error-free solution.</p>
+<p>The alternative solution consists of creating a buffer that stores the most recent point cloud received through the callback function, but only updating the Mayavi visualisation in synchronous intervals.
+The main part of the code (after creating the sensors and vehicle) looks like:</p>
+<pre><code class=language-python>def lidar_callback(data, buf):
   data = np.copy(np.frombuffer(point_cloud.raw_data, dtype=np.dtype('f4')))
   data = np.reshape(data, (int(data.shape[0] / 4), 4))
 
@@ -161,17 +300,105 @@ def main():
   #start visualisation loop in the main-thread, blocking other executions
   anim()
   mlab.show()
-</code></pre><h2 id=visualisation-results>Visualisation results</h2><p>Using the default lidar noise parameters for point dropout and Gaussian noise parameters we can now visualise the point clouds coming from the CARLA simulator in real time directly in the Mayavi interface:</p><p><img src=lidar.gif alt="lidar point cloud result"></p><h2 id=source-code>Source code</h2><p>You may find the complete code for this post in
-<a href=/notebooks/mayavi_lidar.py>mayavi_lidar.py</a>.</p></div><div class=article-tags><a class="badge badge-light" href=/tag/simulation/>simulation</a>
-<a class="badge badge-light" href=/tag/computer-vision/>computer vision</a></div><div class="media author-card content-widget-hr"><img class="avatar mr-3 avatar-circle" src=/author/eduardo-arnold/avatar_hu0560068c008c418db3fb9e5dbdd74d76_96460_270x270_fill_q90_lanczos_center.jpg alt="Eduardo Arnold"><div class=media-body><h5 class=card-title><a href=https://earnold.me/>Eduardo Arnold</a></h5><h6 class=card-subtitle>Machine Learning Engineer</h6><p class=card-text>I&rsquo;m a Machine Learning Engineer at Niantic. Previously, I obtained my PhD degree at the University of Warwick, supervised by Mehrdad Dianati and Paul Jennings, and focusing on perception methods for autonomous driving.</p><ul class=network-icon aria-hidden=true><li><a href=/#contact><i class="fas fa-envelope"></i></a></li><li><a href=https://twitter.com/eduardoarnoldh target=_blank rel=noopener><i class="fab fa-twitter"></i></a></li><li><a href="https://scholar.google.com/citations?user=AEHGoAkAAAAJ" target=_blank rel=noopener><i class="ai ai-google-scholar"></i></a></li><li><a href=https://github.com/eduardohenriquearnold target=_blank rel=noopener><i class="fab fa-github"></i></a></li><li><a href=https://linkedin.com/in/eduardohenriquearnold target=_blank rel=noopener><i class="fab fa-linkedin"></i></a></li></ul></div></div></div></article><script src=https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin=anonymous></script>
+</code></pre>
+<h2 id=visualisation-results>Visualisation results</h2>
+<p>Using the default lidar noise parameters for point dropout and Gaussian noise parameters we can now visualise the point clouds coming from the CARLA simulator in real time directly in the Mayavi interface:</p>
+<p><img src=lidar.gif alt="lidar point cloud result"></p>
+<h2 id=source-code>Source code</h2>
+<p>You may find the complete code for this post in
+<a href=/notebooks/mayavi_lidar.py>mayavi_lidar.py</a>.</p>
+</div>
+<div class=article-tags>
+<a class="badge badge-light" href=/tag/simulation/>simulation</a>
+<a class="badge badge-light" href=/tag/computer-vision/>computer vision</a>
+</div>
+<div class="media author-card content-widget-hr">
+<img class="avatar mr-3 avatar-circle" src=/author/eduardo-arnold/avatar_hu0560068c008c418db3fb9e5dbdd74d76_96460_270x270_fill_q90_lanczos_center.jpg alt="Eduardo Arnold">
+<div class=media-body>
+<h5 class=card-title><a href=https://earnold.me/>Eduardo Arnold</a></h5>
+<h6 class=card-subtitle>Machine Learning Engineer</h6>
+<p class=card-text>I&rsquo;m a Machine Learning Engineer at Niantic. Previously, I obtained my PhD degree at the University of Warwick, supervised by Mehrdad Dianati and Paul Jennings, and focusing on perception methods for autonomous driving.</p>
+<ul class=network-icon aria-hidden=true>
+<li>
+<a href=/#contact>
+<i class="fas fa-envelope"></i>
+</a>
+</li>
+<li>
+<a href=https://twitter.com/eduardoarnoldh target=_blank rel=noopener>
+<i class="fab fa-twitter"></i>
+</a>
+</li>
+<li>
+<a href="https://scholar.google.com/citations?user=AEHGoAkAAAAJ" target=_blank rel=noopener>
+<i class="ai ai-google-scholar"></i>
+</a>
+</li>
+<li>
+<a href=https://github.com/eduardohenriquearnold target=_blank rel=noopener>
+<i class="fab fa-github"></i>
+</a>
+</li>
+<li>
+<a href=https://linkedin.com/in/eduardohenriquearnold target=_blank rel=noopener>
+<i class="fab fa-linkedin"></i>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</article>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin=anonymous></script>
 <script src=https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin=anonymous></script>
 <script src=https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin=anonymous></script>
 <script src=https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin=anonymous></script>
 <script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js integrity="sha256-eOgo0OtLL4cdq7RdwRUiGKLX9XsIJ7nGhWEKbohmVAQ=" crossorigin=anonymous></script>
 <script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/languages/r.min.js></script>
-<script>const code_highlighting=!0</script><script>const isSiteThemeDark=!1</script><script src=/js/academic.min.a0f52cd61d0242fd8ed5d785d9bff037.js></script><div class=container><footer class=site-footer><p class=powered-by></p><p class=powered-by>Powered by the
+<script>const code_highlighting=!0</script>
+<script>const isSiteThemeDark=!1</script>
+<script src=/js/academic.min.f30a8b5a880e824aab9653942c89109b.js></script>
+<div class=container>
+<footer class=site-footer>
+<p class=powered-by>
+</p>
+<p class=powered-by>
+Powered by the
 <a href=https://sourcethemes.com/academic/ target=_blank rel=noopener>Academic theme</a> for
 <a href=https://gohugo.io target=_blank rel=noopener>Hugo</a>.
-<span class=float-right aria-hidden=true><a href=# class=back-to-top><span class=button_icon><i class="fas fa-chevron-up fa-2x"></i></span></a></span></p></footer></div><div id=modal class="modal fade" role=dialog><div class=modal-dialog><div class=modal-content><div class=modal-header><h5 class=modal-title>Cite</h5><button type=button class=close data-dismiss=modal aria-label=Close>
-<span aria-hidden=true>&#215;</span></button></div><div class=modal-body><pre><code class="tex hljs"></code></pre></div><div class=modal-footer><a class="btn btn-outline-primary my-1 js-copy-cite" href=# target=_blank><i class="fas fa-copy"></i> Copy</a>
-<a class="btn btn-outline-primary my-1 js-download-cite" href=# target=_blank><i class="fas fa-download"></i> Download</a><div id=modal-error></div></div></div></div></div></body></html>
+<span class=float-right aria-hidden=true>
+<a href=# class=back-to-top>
+<span class=button_icon>
+<i class="fas fa-chevron-up fa-2x"></i>
+</span>
+</a>
+</span>
+</p>
+</footer>
+</div>
+<div id=modal class="modal fade" role=dialog>
+<div class=modal-dialog>
+<div class=modal-content>
+<div class=modal-header>
+<h5 class=modal-title>Cite</h5>
+<button type=button class=close data-dismiss=modal aria-label=Close>
+<span aria-hidden=true>&#215;</span>
+</button>
+</div>
+<div class=modal-body>
+<pre><code class="tex hljs"></code></pre>
+</div>
+<div class=modal-footer>
+<a class="btn btn-outline-primary my-1 js-copy-cite" href=# target=_blank>
+<i class="fas fa-copy"></i> Copy
+</a>
+<a class="btn btn-outline-primary my-1 js-download-cite" href=# target=_blank>
+<i class="fas fa-download"></i> Download
+</a>
+<div id=modal-error></div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

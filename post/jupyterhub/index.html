@@ -1,35 +1,240 @@
-<!doctype html><html lang=en-us><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=generator content="Source Themes Academic 4.8.0"><meta name=author content="Eduardo Arnold"><meta name=description content="A brief summary of my experience deploying JupyterHub at our lab.
-"><link rel=alternate hreflang=en-us href=https://earnold.me/post/jupyterhub/><meta name=theme-color content="#2962ff"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin=anonymous><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-1/css/all.min.css integrity="sha256-4w9DunooKSr3MFXHXWyFER38WmPdm361bQS/2KUWZbU=" crossorigin=anonymous><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin=anonymous><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css crossorigin=anonymous title=hl-light><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/dracula.min.css crossorigin=anonymous title=hl-dark disabled><script src=https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin=anonymous async></script>
-<link rel=stylesheet href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap"><link rel=stylesheet href=/css/academic.css><link rel=manifest href=/index.webmanifest><link rel=icon type=image/png href=/images/icon_hu86725dfa3481f0beabea4a23db3db448_10764_32x32_fill_lanczos_center_3.png><link rel=apple-touch-icon type=image/png href=/images/icon_hu86725dfa3481f0beabea4a23db3db448_10764_192x192_fill_lanczos_center_3.png><link rel=canonical href=https://earnold.me/post/jupyterhub/><meta property="twitter:card" content="summary"><meta property="twitter:site" content="@eduardoarnoldh"><meta property="twitter:creator" content="@eduardoarnoldh"><meta property="og:site_name" content="Eduardo Arnold"><meta property="og:url" content="https://earnold.me/post/jupyterhub/"><meta property="og:title" content="Deploying JupyterHub with Docker and CUDA support | Eduardo Arnold"><meta property="og:description" content="A brief summary of my experience deploying JupyterHub at our lab.
-"><meta property="og:image" content="https://earnold.me/images/icon_hu86725dfa3481f0beabea4a23db3db448_10764_512x512_fill_lanczos_center_3.png"><meta property="twitter:image" content="https://earnold.me/images/icon_hu86725dfa3481f0beabea4a23db3db448_10764_512x512_fill_lanczos_center_3.png"><meta property="og:locale" content="en-us"><meta property="article:published_time" content="2017-10-09T09:44:42-02:00"><meta property="article:modified_time" content="2017-10-09T09:44:42-02:00"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://earnold.me/post/jupyterhub/"},"headline":"Deploying JupyterHub with Docker and CUDA support","datePublished":"2017-10-09T09:44:42-02:00","dateModified":"2017-10-09T09:44:42-02:00","author":{"@type":"Person","name":"Eduardo Arnold"},"publisher":{"@type":"Organization","name":"Eduardo Arnold","logo":{"@type":"ImageObject","url":"https://earnold.me/images/icon_hu86725dfa3481f0beabea4a23db3db448_10764_192x192_fill_lanczos_center_3.png"}},"description":"A brief summary of my experience deploying JupyterHub at our lab.\n"}</script><title>Deploying JupyterHub with Docker and CUDA support | Eduardo Arnold</title></head><body id=top data-spy=scroll data-offset=70 data-target=#TableOfContents><aside class=search-results id=search><div class=container><section class=search-header><div class="row no-gutters justify-content-between mb-3"><div class=col-6><h1>Search</h1></div><div class="col-6 col-search-close"><a class=js-search href=#><i class="fas fa-times-circle text-muted" aria-hidden=true></i></a></div></div><div id=search-box></div></section><section class=section-search-results><div id=search-hits></div></section></div></aside><nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id=navbar-main><div class=container><div class="d-none d-lg-inline-flex"><a class=navbar-brand href=/>Eduardo Arnold</a></div><button type=button class=navbar-toggler data-toggle=collapse data-target=#navbar-content aria-controls=navbar aria-expanded=false aria-label="Toggle navigation">
-<span><i class="fas fa-bars"></i></span></button><div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none"><a class=navbar-brand href=/>Eduardo Arnold</a></div><div class="navbar-collapse main-menu-item collapse justify-content-end" id=navbar-content><ul class="navbar-nav d-md-inline-flex"><li class=nav-item><a class=nav-link href=/#about><span>Home</span></a></li><li class=nav-item><a class=nav-link href=/#experience><span>Experience</span></a></li><li class=nav-item><a class=nav-link href=/#publications><span>Publications</span></a></li><li class=nav-item><a class=nav-link href=/#posts><span>Posts</span></a></li><li class=nav-item><a class=nav-link href=/#projects><span>Projects</span></a></li><li class=nav-item><a class=nav-link href=/#talks><span>Talks</span></a></li><li class=nav-item><a class=nav-link href=/#contact><span>Contact</span></a></li></ul></div><ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2"></ul></div></nav><article class=article><div class="article-container pt-3"><h1>Deploying JupyterHub with Docker and CUDA support</h1><div class=article-metadata><span class=article-date>Oct 9, 2017</span>
+<!doctype html><html lang=en-us>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=generator content="Source Themes Academic 4.8.0">
+<meta name=author content="Eduardo Arnold">
+<meta name=description content="A brief summary of my experience deploying JupyterHub at our lab.
+">
+<link rel=alternate hreflang=en-us href=https://earnold.me/post/jupyterhub/>
+<meta name=theme-color content="#2962ff">
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin=anonymous>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-1/css/all.min.css integrity="sha256-4w9DunooKSr3MFXHXWyFER38WmPdm361bQS/2KUWZbU=" crossorigin=anonymous>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin=anonymous>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css crossorigin=anonymous title=hl-light>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/dracula.min.css crossorigin=anonymous title=hl-dark disabled>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin=anonymous async></script>
+<link rel=stylesheet href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+<link rel=stylesheet href=/css/academic.css>
+<link rel=manifest href=/index.webmanifest>
+<link rel=icon type=image/png href=/images/icon_hu86725dfa3481f0beabea4a23db3db448_10764_32x32_fill_lanczos_center_3.png>
+<link rel=apple-touch-icon type=image/png href=/images/icon_hu86725dfa3481f0beabea4a23db3db448_10764_192x192_fill_lanczos_center_3.png>
+<link rel=canonical href=https://earnold.me/post/jupyterhub/>
+<meta property="twitter:card" content="summary">
+<meta property="twitter:site" content="@eduardoarnoldh">
+<meta property="twitter:creator" content="@eduardoarnoldh">
+<meta property="og:site_name" content="Eduardo Arnold">
+<meta property="og:url" content="https://earnold.me/post/jupyterhub/">
+<meta property="og:title" content="Deploying JupyterHub with Docker and CUDA support | Eduardo Arnold">
+<meta property="og:description" content="A brief summary of my experience deploying JupyterHub at our lab.
+"><meta property="og:image" content="https://earnold.me/images/icon_hu86725dfa3481f0beabea4a23db3db448_10764_512x512_fill_lanczos_center_3.png">
+<meta property="twitter:image" content="https://earnold.me/images/icon_hu86725dfa3481f0beabea4a23db3db448_10764_512x512_fill_lanczos_center_3.png"><meta property="og:locale" content="en-us">
+<meta property="article:published_time" content="2017-10-09T09:44:42-02:00">
+<meta property="article:modified_time" content="2017-10-09T09:44:42-02:00">
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://earnold.me/post/jupyterhub/"},"headline":"Deploying JupyterHub with Docker and CUDA support","datePublished":"2017-10-09T09:44:42-02:00","dateModified":"2017-10-09T09:44:42-02:00","author":{"@type":"Person","name":"Eduardo Arnold"},"publisher":{"@type":"Organization","name":"Eduardo Arnold","logo":{"@type":"ImageObject","url":"https://earnold.me/images/icon_hu86725dfa3481f0beabea4a23db3db448_10764_192x192_fill_lanczos_center_3.png"}},"description":"A brief summary of my experience deploying JupyterHub at our lab.\n"}</script>
+<title>Deploying JupyterHub with Docker and CUDA support | Eduardo Arnold</title>
+</head>
+<body id=top data-spy=scroll data-offset=70 data-target=#TableOfContents>
+<aside class=search-results id=search>
+<div class=container>
+<section class=search-header>
+<div class="row no-gutters justify-content-between mb-3">
+<div class=col-6>
+<h1>Search</h1>
+</div>
+<div class="col-6 col-search-close">
+<a class=js-search href=#><i class="fas fa-times-circle text-muted" aria-hidden=true></i></a>
+</div>
+</div>
+<div id=search-box>
+</div>
+</section>
+<section class=section-search-results>
+<div id=search-hits>
+</div>
+</section>
+</div>
+</aside>
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id=navbar-main>
+<div class=container>
+<div class="d-none d-lg-inline-flex">
+<a class=navbar-brand href=/>Eduardo Arnold</a>
+</div>
+<button type=button class=navbar-toggler data-toggle=collapse data-target=#navbar-content aria-controls=navbar aria-expanded=false aria-label="Toggle navigation">
+<span><i class="fas fa-bars"></i></span>
+</button>
+<div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+<a class=navbar-brand href=/>Eduardo Arnold</a>
+</div>
+<div class="navbar-collapse main-menu-item collapse justify-content-end" id=navbar-content>
+<ul class="navbar-nav d-md-inline-flex">
+<li class=nav-item>
+<a class=nav-link href=/#about><span>Home</span></a>
+</li>
+<li class=nav-item>
+<a class=nav-link href=/#experience><span>Experience</span></a>
+</li>
+<li class=nav-item>
+<a class=nav-link href=/#publications><span>Publications</span></a>
+</li>
+<li class=nav-item>
+<a class=nav-link href=/#posts><span>Posts</span></a>
+</li>
+<li class=nav-item>
+<a class=nav-link href=/#projects><span>Projects</span></a>
+</li>
+<li class=nav-item>
+<a class=nav-link href=/#talks><span>Talks</span></a>
+</li>
+<li class=nav-item>
+<a class=nav-link href=/#contact><span>Contact</span></a>
+</li>
+</ul>
+</div>
+<ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+</ul>
+</div>
+</nav>
+<article class=article>
+<div class="article-container pt-3">
+<h1>Deploying JupyterHub with Docker and CUDA support</h1>
+<div class=article-metadata>
+<span class=article-date>
+Oct 9, 2017
+</span>
 <span class=middot-divider></span>
-<span class=article-reading-time>4 min read</span></div></div><div class=article-container><div class=article-style><p>People doing research nowadays can benefit a lot from using
-<a href=http://jupyter.org/ target=_blank rel=noopener>Jupyter notebooks</a>. It is the case specially with machine learning and data science, where experimentation is frequent and code changes rapidly, as well as new insights are drawn from data and previous experience. In these cases it is useful to have proper documentation of the decision making process and some history of previous attempts to solve a problem.</p><p>At
+<span class=article-reading-time>
+4 min read
+</span>
+</div>
+</div>
+<div class=article-container>
+<div class=article-style>
+<p>People doing research nowadays can benefit a lot from using
+<a href=http://jupyter.org/ target=_blank rel=noopener>Jupyter notebooks</a>. It is the case specially with machine learning and data science, where experimentation is frequent and code changes rapidly, as well as new insights are drawn from data and previous experience. In these cases it is useful to have proper documentation of the decision making process and some history of previous attempts to solve a problem.</p>
+<p>At
 <a href=http://lcs.ufsc.br/ target=_blank rel=noopener>LCS</a> we have a server with fair computing capabilities, including a GTX 1060 GPU. We were looking for a solution that allowed to share this server&rsquo;s resources without a big overhead on the user end, such as having each user installing packages and configuring their environment. The solution we envisioned was to deploy our own
-<a href=https://github.com/jupyterhub/jupyterhub target=_blank rel=noopener>JupyterHub</a> instance on the server, with the additional challenge of sharing the GPU.</p><p>Simply put, the JupyterHub service spawns a single-user Jupyter notebook for each user that connects to the server, allowing an easy solution for resource sharing, environment configuration and user isolation. There are many options that must be configured, such as the authentication service and spawner used. Since lately I have been using Docker for service isolation I was glad to know that there was a builtin spawner that created a Docker container for each user.</p><p>The default configuration required the JupyterHub service to be installed on the host machine and provided no isolation from other services/processes. There is the option to create a container with JupyterHub and use the Docker spawner, but it requires a Docker container to launch other containers, quite an inception, huh? To do that we share the Docker socket with the JupyterHub container so that it has access to the host Docker service, enabling it to launch other containers. Although it is not the best solution security-wise, it is the best we could do at the time.</p><p>This solution seemed like a lot of hassle to put a service online. Fortunately, the team behind JupyterHub did a great job and provided a
-<a href=https://github.com/jupyterhub/jupyterhub-deploy-docker target=_blank rel=noopener>reference deployment</a> for a single host using Docker. It is important to note that this is not intended to be used in production, since it does not scale well for a very large number of users, in which case it would be recommended to use a kubernetes based deployment. Despite of that, as we are a small research group, this single host solution should be enough.</p><p>The reference deployment uses docker-compose to make the service easy to setup and manage. After configuring a Github application for user authentication and the <strong>Let&rsquo;s Encrypt</strong> SSL keys (using
+<a href=https://github.com/jupyterhub/jupyterhub target=_blank rel=noopener>JupyterHub</a> instance on the server, with the additional challenge of sharing the GPU.</p>
+<p>Simply put, the JupyterHub service spawns a single-user Jupyter notebook for each user that connects to the server, allowing an easy solution for resource sharing, environment configuration and user isolation. There are many options that must be configured, such as the authentication service and spawner used. Since lately I have been using Docker for service isolation I was glad to know that there was a builtin spawner that created a Docker container for each user.</p>
+<p>The default configuration required the JupyterHub service to be installed on the host machine and provided no isolation from other services/processes. There is the option to create a container with JupyterHub and use the Docker spawner, but it requires a Docker container to launch other containers, quite an inception, huh? To do that we share the Docker socket with the JupyterHub container so that it has access to the host Docker service, enabling it to launch other containers. Although it is not the best solution security-wise, it is the best we could do at the time.</p>
+<p>This solution seemed like a lot of hassle to put a service online. Fortunately, the team behind JupyterHub did a great job and provided a
+<a href=https://github.com/jupyterhub/jupyterhub-deploy-docker target=_blank rel=noopener>reference deployment</a> for a single host using Docker. It is important to note that this is not intended to be used in production, since it does not scale well for a very large number of users, in which case it would be recommended to use a kubernetes based deployment. Despite of that, as we are a small research group, this single host solution should be enough.</p>
+<p>The reference deployment uses docker-compose to make the service easy to setup and manage. After configuring a Github application for user authentication and the <strong>Let&rsquo;s Encrypt</strong> SSL keys (using
 <a href=https://github.com/jupyterhub/jupyterhub-deploy-docker/tree/master/examples/letsencrypt target=_blank rel=noopener>this script</a>), I was able to have a working service in a couple of hours. It should have taken less time, but I had to deal with
 a problem using the docker-compose file specific to the <strong>Let&rsquo;s Encrypt</strong> configuration, check
-<a href=https://github.com/jupyterhub/jupyterhub-deploy-docker/pull/48 target=_blank rel=noopener>here</a>.</p><p>So we now have a working version of JupyterHub, but we still need to make the host GPU available inside the notebook container, which turns out to be the greatest challenge. There is a quite useful wrapper to do so called
+<a href=https://github.com/jupyterhub/jupyterhub-deploy-docker/pull/48 target=_blank rel=noopener>here</a>.</p>
+<p>So we now have a working version of JupyterHub, but we still need to make the host GPU available inside the notebook container, which turns out to be the greatest challenge. There is a quite useful wrapper to do so called
 <a href=https://github.com/NVIDIA/nvidia-docker target=_blank rel=noopener>nvidia-docker</a>. Although we cannot use it directly this time since the JupyterHub&rsquo;s Docker spawner plugin directly calls Docker through the API. Following Andrea Zonca&rsquo;s
-<a href=https://zonca.github.io/2016/10/dockerspawner-cuda.html target=_blank rel=noopener>blog post</a> we can configure the spawner to share the GPU resources.</p><p>First of all, we need to get the correct flags for the specific driver and devices:</p><pre><code>curl -s localhost:3476/docker/cli
-</code></pre><p>Which in our machine outputs</p><pre><code>--volume-driver=nvidia-docker --volume=nvidia_driver_384.59:/usr/local/nvidia:ro --device=/dev/nvidiactl --device=/dev/nvidia-uvm --device=/dev/nvidia0
-</code></pre><p>We then add these options to the spawner configuration in <code>jupyterhub_config.py</code>, which will cause the same effect as spawning the containers using the <code>nvidia-docker</code> wrapper:</p><pre><code>c.DockerSpawner.read_only_volumes = {&quot;nvidia_driver_384.59&quot;:&quot;/usr/local/nvidia&quot;}
+<a href=https://zonca.github.io/2016/10/dockerspawner-cuda.html target=_blank rel=noopener>blog post</a> we can configure the spawner to share the GPU resources.</p>
+<p>First of all, we need to get the correct flags for the specific driver and devices:</p>
+<pre><code>curl -s localhost:3476/docker/cli
+</code></pre>
+<p>Which in our machine outputs</p>
+<pre><code>--volume-driver=nvidia-docker --volume=nvidia_driver_384.59:/usr/local/nvidia:ro --device=/dev/nvidiactl --device=/dev/nvidia-uvm --device=/dev/nvidia0
+</code></pre>
+<p>We then add these options to the spawner configuration in <code>jupyterhub_config.py</code>, which will cause the same effect as spawning the containers using the <code>nvidia-docker</code> wrapper:</p>
+<pre><code>c.DockerSpawner.read_only_volumes = {&quot;nvidia_driver_384.59&quot;:&quot;/usr/local/nvidia&quot;}
 c.DockerSpawner.extra_host_config = { &quot;devices&quot;:[&quot;/dev/nvidiactl&quot;,&quot;/dev/nvidia-uvm&quot;,&quot;/dev/nvidia0&quot;] }
-</code></pre><p>Please note that some of this configuration options are overwritten later in the file, so other than adding these lines you should make sure they remain active. You can also check my own version of the
-<a href=https://github.com/eduardohenriquearnold/jupyterhub-deploy-docker/blob/master/jupyterhub_config.py target=_blank rel=noopener>jupyterhub_config.py</a> file.</p><p>Finally, the last step is to create our personalized notebook container image including all the required packages used in our research. Since we want CUDA support, we must use a CUDA enabled image as base, such as the one supported by NVIDIA <code>nvidia/cuda:8.0-cudnn6-devel-ubuntu16.04</code>. A notebook image must have a start script that will be called upon container creation to start the Jupyter notebook server. I have modified the base image to be based on the NVIDIA CUDA image, as seen
+</code></pre>
+<p>Please note that some of this configuration options are overwritten later in the file, so other than adding these lines you should make sure they remain active. You can also check my own version of the
+<a href=https://github.com/eduardohenriquearnold/jupyterhub-deploy-docker/blob/master/jupyterhub_config.py target=_blank rel=noopener>jupyterhub_config.py</a> file.</p>
+<p>Finally, the last step is to create our personalized notebook container image including all the required packages used in our research. Since we want CUDA support, we must use a CUDA enabled image as base, such as the one supported by NVIDIA <code>nvidia/cuda:8.0-cudnn6-devel-ubuntu16.04</code>. A notebook image must have a start script that will be called upon container creation to start the Jupyter notebook server. I have modified the base image to be based on the NVIDIA CUDA image, as seen
 <a href=https://github.com/eduardohenriquearnold/docker-stacks/tree/master/cuda-notebook target=_blank rel=noopener>here</a>. I have also created a specific image for our lab, inheriting from this image and containing software libraries such as OpenCV, PyTorch, TensorFlow and Keras, you can check it
-<a href=https://github.com/eduardohenriquearnold/docker-stacks/tree/master/deeptools-notebook target=_blank rel=noopener>here</a>.</p><p>To check that everything worked as expected and the GPU is accessible from within the container you input the following on a Jupyter notebook command cell: <code>!nvidia-smi</code>. It should return the status of GPU. We now have a nice platform to develop our models and share computing resources.</p></div><div class=article-tags><a class="badge badge-light" href=/tag/devops/>devops</a>
-<a class="badge badge-light" href=/tag/docker/>docker</a></div><div class="media author-card content-widget-hr"><img class="avatar mr-3 avatar-circle" src=/author/eduardo-arnold/avatar_hu0560068c008c418db3fb9e5dbdd74d76_96460_270x270_fill_q90_lanczos_center.jpg alt="Eduardo Arnold"><div class=media-body><h5 class=card-title><a href=https://earnold.me/>Eduardo Arnold</a></h5><h6 class=card-subtitle>Machine Learning Engineer</h6><p class=card-text>I&rsquo;m a Machine Learning Engineer at Niantic. Previously, I obtained my PhD degree at the University of Warwick, supervised by Mehrdad Dianati and Paul Jennings, and focusing on perception methods for autonomous driving.</p><ul class=network-icon aria-hidden=true><li><a href=/#contact><i class="fas fa-envelope"></i></a></li><li><a href=https://twitter.com/eduardoarnoldh target=_blank rel=noopener><i class="fab fa-twitter"></i></a></li><li><a href="https://scholar.google.com/citations?user=AEHGoAkAAAAJ" target=_blank rel=noopener><i class="ai ai-google-scholar"></i></a></li><li><a href=https://github.com/eduardohenriquearnold target=_blank rel=noopener><i class="fab fa-github"></i></a></li><li><a href=https://linkedin.com/in/eduardohenriquearnold target=_blank rel=noopener><i class="fab fa-linkedin"></i></a></li></ul></div></div></div></article><script src=https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin=anonymous></script>
+<a href=https://github.com/eduardohenriquearnold/docker-stacks/tree/master/deeptools-notebook target=_blank rel=noopener>here</a>.</p>
+<p>To check that everything worked as expected and the GPU is accessible from within the container you input the following on a Jupyter notebook command cell: <code>!nvidia-smi</code>. It should return the status of GPU. We now have a nice platform to develop our models and share computing resources.</p>
+</div>
+<div class=article-tags>
+<a class="badge badge-light" href=/tag/devops/>devops</a>
+<a class="badge badge-light" href=/tag/docker/>docker</a>
+</div>
+<div class="media author-card content-widget-hr">
+<img class="avatar mr-3 avatar-circle" src=/author/eduardo-arnold/avatar_hu0560068c008c418db3fb9e5dbdd74d76_96460_270x270_fill_q90_lanczos_center.jpg alt="Eduardo Arnold">
+<div class=media-body>
+<h5 class=card-title><a href=https://earnold.me/>Eduardo Arnold</a></h5>
+<h6 class=card-subtitle>Machine Learning Engineer</h6>
+<p class=card-text>I&rsquo;m a Machine Learning Engineer at Niantic. Previously, I obtained my PhD degree at the University of Warwick, supervised by Mehrdad Dianati and Paul Jennings, and focusing on perception methods for autonomous driving.</p>
+<ul class=network-icon aria-hidden=true>
+<li>
+<a href=/#contact>
+<i class="fas fa-envelope"></i>
+</a>
+</li>
+<li>
+<a href=https://twitter.com/eduardoarnoldh target=_blank rel=noopener>
+<i class="fab fa-twitter"></i>
+</a>
+</li>
+<li>
+<a href="https://scholar.google.com/citations?user=AEHGoAkAAAAJ" target=_blank rel=noopener>
+<i class="ai ai-google-scholar"></i>
+</a>
+</li>
+<li>
+<a href=https://github.com/eduardohenriquearnold target=_blank rel=noopener>
+<i class="fab fa-github"></i>
+</a>
+</li>
+<li>
+<a href=https://linkedin.com/in/eduardohenriquearnold target=_blank rel=noopener>
+<i class="fab fa-linkedin"></i>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</article>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin=anonymous></script>
 <script src=https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin=anonymous></script>
 <script src=https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin=anonymous></script>
 <script src=https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin=anonymous></script>
 <script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js integrity="sha256-eOgo0OtLL4cdq7RdwRUiGKLX9XsIJ7nGhWEKbohmVAQ=" crossorigin=anonymous></script>
 <script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/languages/r.min.js></script>
-<script>const code_highlighting=!0</script><script>const isSiteThemeDark=!1</script><script src=/js/academic.min.a0f52cd61d0242fd8ed5d785d9bff037.js></script><div class=container><footer class=site-footer><p class=powered-by></p><p class=powered-by>Powered by the
+<script>const code_highlighting=!0</script>
+<script>const isSiteThemeDark=!1</script>
+<script src=/js/academic.min.f30a8b5a880e824aab9653942c89109b.js></script>
+<div class=container>
+<footer class=site-footer>
+<p class=powered-by>
+</p>
+<p class=powered-by>
+Powered by the
 <a href=https://sourcethemes.com/academic/ target=_blank rel=noopener>Academic theme</a> for
 <a href=https://gohugo.io target=_blank rel=noopener>Hugo</a>.
-<span class=float-right aria-hidden=true><a href=# class=back-to-top><span class=button_icon><i class="fas fa-chevron-up fa-2x"></i></span></a></span></p></footer></div><div id=modal class="modal fade" role=dialog><div class=modal-dialog><div class=modal-content><div class=modal-header><h5 class=modal-title>Cite</h5><button type=button class=close data-dismiss=modal aria-label=Close>
-<span aria-hidden=true>&#215;</span></button></div><div class=modal-body><pre><code class="tex hljs"></code></pre></div><div class=modal-footer><a class="btn btn-outline-primary my-1 js-copy-cite" href=# target=_blank><i class="fas fa-copy"></i> Copy</a>
-<a class="btn btn-outline-primary my-1 js-download-cite" href=# target=_blank><i class="fas fa-download"></i> Download</a><div id=modal-error></div></div></div></div></div></body></html>
+<span class=float-right aria-hidden=true>
+<a href=# class=back-to-top>
+<span class=button_icon>
+<i class="fas fa-chevron-up fa-2x"></i>
+</span>
+</a>
+</span>
+</p>
+</footer>
+</div>
+<div id=modal class="modal fade" role=dialog>
+<div class=modal-dialog>
+<div class=modal-content>
+<div class=modal-header>
+<h5 class=modal-title>Cite</h5>
+<button type=button class=close data-dismiss=modal aria-label=Close>
+<span aria-hidden=true>&#215;</span>
+</button>
+</div>
+<div class=modal-body>
+<pre><code class="tex hljs"></code></pre>
+</div>
+<div class=modal-footer>
+<a class="btn btn-outline-primary my-1 js-copy-cite" href=# target=_blank>
+<i class="fas fa-copy"></i> Copy
+</a>
+<a class="btn btn-outline-primary my-1 js-download-cite" href=# target=_blank>
+<i class="fas fa-download"></i> Download
+</a>
+<div id=modal-error></div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
