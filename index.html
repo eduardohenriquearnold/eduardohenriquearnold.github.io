@@ -5,7 +5,7 @@
 <meta http-equiv=x-ua-compatible content="IE=edge">
 <meta name=generator content="Source Themes Academic 4.8.0">
 <meta name=author content="Eduardo Arnold">
-<meta name=description content="Machine Learning Engineer">
+<meta name=description content="Lead Computer Vision Engineer">
 <link rel=alternate hreflang=en-us href=https://earnold.me/>
 <meta name=theme-color content="#2962ff">
 <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin=anonymous>
@@ -27,7 +27,7 @@
 <meta property="og:site_name" content="Eduardo Arnold">
 <meta property="og:url" content="https://earnold.me/">
 <meta property="og:title" content="Eduardo Arnold">
-<meta property="og:description" content="Machine Learning Engineer"><meta property="og:image" content="https://earnold.me/images/icon_hu86725dfa3481f0beabea4a23db3db448_10764_512x512_fill_lanczos_center_3.png">
+<meta property="og:description" content="Lead Computer Vision Engineer"><meta property="og:image" content="https://earnold.me/images/icon_hu86725dfa3481f0beabea4a23db3db448_10764_512x512_fill_lanczos_center_3.png">
 <meta property="twitter:image" content="https://earnold.me/images/icon_hu86725dfa3481f0beabea4a23db3db448_10764_512x512_fill_lanczos_center_3.png"><meta property="og:locale" content="en-us">
 <meta property="og:updated_time" content="2022-10-23T00:00:00+00:00">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"WebSite","url":"https://earnold.me/"}</script>
@@ -77,15 +77,6 @@
 <a class=nav-link href=/#publications data-target=#publications><span>Publications</span></a>
 </li>
 <li class=nav-item>
-<a class=nav-link href=/#posts data-target=#posts><span>Posts</span></a>
-</li>
-<li class=nav-item>
-<a class=nav-link href=/#projects data-target=#projects><span>Projects</span></a>
-</li>
-<li class=nav-item>
-<a class=nav-link href=/#talks data-target=#talks><span>Talks</span></a>
-</li>
-<li class=nav-item>
 <a class=nav-link href=/#contact data-target=#contact><span>Contact</span></a>
 </li>
 </ul>
@@ -103,10 +94,10 @@
 <img class="avatar avatar-circle" src=/author/eduardo-arnold/avatar_hu0560068c008c418db3fb9e5dbdd74d76_96460_270x270_fill_q90_lanczos_center.jpg alt="Eduardo Arnold">
 <div class=portrait-title>
 <h2>Eduardo Arnold</h2>
-<h3>Machine Learning Engineer</h3>
+<h3>Lead Computer Vision Engineer</h3>
 <h3>
-<a href=https://nianticlabs.com/ target=_blank rel=noopener>
-<span>Niantic</span>
+<a href=https://www.cartesian.systems/ target=_blank rel=noopener>
+<span>Cartesian</span>
 </a>
 </h3>
 </div>
@@ -141,18 +132,18 @@
 </div>
 <div class="col-12 col-lg-8">
 <h1>Biography</h1>
-<p>I&rsquo;m a Machine Learning Engineer working on visual relocalisation at
-<a href=https://nianticlabs.com/ target=_blank rel=noopener>Niantic</a>. Previously, I did my PhD at the University of Warwick, in the
-<a href=https://warwick.ac.uk/fac/sci/wmg/research/cav/ target=_blank rel=noopener>Intelligent Vehicles group</a>, and was supervised by Mehrdad Dianati and Paul Jennings. My research focused on perception methods for autonomous driving, including cooperative 3D object detection, point cloud registration and sensor pose optimisation.</p>
+<p>I&rsquo;m a lead computer vision engineer at
+<a href=https://www.cartesian.systems/ target=_blank rel=noopener>Cartesian</a> where I work on visual relocalisation, structure-from-motion and general 3D vision. I was previously at
+<a href=https://nianticlabs.com/ target=_blank rel=noopener>Niantic</a> also working on visual relocalization and SLAM. I hold a PhD from the University of Warwick (UK) in the
+<a href=https://warwick.ac.uk/fac/sci/wmg/research/cav/ target=_blank rel=noopener>Intelligent Vehicles group</a>. My research focused on 3D vision for autonomous driving, including cooperative 3D object detection, point cloud registration and sensor pose optimisation.</p>
 <div class=row>
 <div class=col-md-5>
 <h3>Interests</h3>
 <ul class=ul-interests>
-<li>Computer Vision</li>
-<li>Machine Learning</li>
-<li>3D Deep Learning</li>
-<li>3D Reconstruction</li>
+<li>3D Computer Vision</li>
+<li>Structure-from-Motion</li>
 <li>Visual Relocalisation</li>
+<li>SLAM and Visual-Odometry</li>
 </ul>
 </div>
 <div class=col-md-7>
@@ -203,17 +194,60 @@
 <div class="col py-2">
 <div class=card>
 <div class=card-body>
+<h4 class="card-title exp-title text-muted mt-0 mb-1">Lead Computer Vision Engineer</h4>
+<h4 class="card-title exp-company text-muted my-0"><a href=https://www.cartesian.systems/ target=_blank rel=noopener>Cartesian</a></h4>
+<div class="text-muted exp-meta">
+Feb 2024 –
+Present
+<span class=middot-divider></span>
+<span>Cambridge, USA</span>
+</div>
+<div class=card-text><ul>
+<li>Optimized a Structure-from-Motion pipeline resulting in a reduction of mapping times from 655min to 102min, a 6-fold speed up.</li>
+<li>Created benchmark tool that creates ground-truth maps and quantify the quality of mapping and localization with high accuracy.</li>
+<li>Wrote new production visual re-localization pipeline with PyTorch resulting in 3x faster, 10x higher throughput, using 100x less memory than previous baseline and saving more than 95% in cloud compute costs.</li>
+<li>Designed and implemented an end-to-end mapping pipeline that process raw data into production-ready SfM maps using Ray workflows on Azure Kubernetes Service (AKS).</li>
+<li>Trained a global feature model (NetVLAD) for image retrieval in specific data domains, resulting in 10% improvement in localization performance.</li>
+<li>Designed and implemented a system architecture using REDIS, Helm and K8s to allow scaling the re-localization service to a very large number of simultaneous requests across thousands of maps, whilst maintaining QoS.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row experience">
+<div class="col-auto text-center flex-column d-none d-sm-flex">
+<div class="row h-50">
+<div class="col border-right">&nbsp;</div>
+<div class=col>&nbsp;</div>
+</div>
+<div class=m-2>
+<span class="badge badge-pill border">&nbsp;</span>
+</div>
+<div class="row h-50">
+<div class="col border-right">&nbsp;</div>
+<div class=col>&nbsp;</div>
+</div>
+</div>
+<div class="col py-2">
+<div class=card>
+<div class=card-body>
 <h4 class="card-title exp-title text-muted mt-0 mb-1">Machine Learning Engineer</h4>
 <h4 class="card-title exp-company text-muted my-0"><a href=https://nianticlabs.com/ target=_blank rel=noopener>Niantic</a></h4>
 <div class="text-muted exp-meta">
 May 2022 –
-Present
+Dec 2023
 <span class=middot-divider></span>
 <span>London, UK</span>
 </div>
 <div class=card-text><ul>
-<li>Working on visual relocalisation;</li>
-<li>Deploying systems on cloud infrastructure using K8s and ArgoCD.</li>
+<li>Ran several state-of-the-art SLAM methods on internal datasets and devised an evaluation protocol to compare them.</li>
+<li>Designed and developed a localization pipeline to align scans to a large scale reference reconstruction in challenging environments.</li>
+<li>Created a renderer that process >100bi points in less than 20s.</li>
+<li>Helped adding Lidar-based terms to COLMAP, reducing re-projection median errors from 60px to 3px.</li>
+<li>Trained and evaluated different NERF variants using aerial views.</li>
+<li>Performed Camera-IMU calibration which helped to identify time-sync issues.</li>
+<li>Created multiple Argo/K8s workflows to process data at scale using cloud infrastructure (GCP).</li>
 </ul>
 </div>
 </div>
@@ -245,42 +279,15 @@ Jan 2022
 <span class=middot-divider></span>
 <span>London, UK</span>
 </div>
-<div class=card-text><ul>
-<li>Lead the research and development of a novel method for relative camera pose estimation between a pair of images with focus on visual localisation.</li>
-<li>Collaborated with an interdisciplinary research team.</li>
-<li>Trained and deployed models on cloud infrastructure.</li>
+<div class=card-text><p>Used computer vision and machine learning techniques for augmented reality applications;</p>
+<ul>
+<li>Created a new benchmark and dataset for visual re-localization with a team of skilled researchers;</li>
+<li>Trained and evaluated several families of visual localisation methods on this benchmark;</li>
+<li>Used cloud infrastructure to train and evaluate deep learning models;</li>
+<li>Presented research outcomes to a cross-disciplinary audience;</li>
+<li>Paper published at ECCV 2022</li>
 </ul>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div class="row experience">
-<div class="col-auto text-center flex-column d-none d-sm-flex">
-<div class="row h-50">
-<div class="col border-right">&nbsp;</div>
-<div class=col>&nbsp;</div>
-</div>
-<div class=m-2>
-<span class="badge badge-pill border">&nbsp;</span>
-</div>
-<div class="row h-50">
-<div class="col border-right">&nbsp;</div>
-<div class=col>&nbsp;</div>
-</div>
-</div>
-<div class="col py-2">
-<div class=card>
-<div class=card-body>
-<h4 class="card-title exp-title text-muted mt-0 mb-1">Data Study Group Researcher</h4>
-<h4 class="card-title exp-company text-muted my-0"><a href=https://www.turing.ac.uk/collaborate-turing/data-study-groups target=_blank rel=noopener>Alan Turing Institute</a></h4>
-<div class="text-muted exp-meta">
-Sep 2020 –
-Sep 2020
-<span class=middot-divider></span>
-<span>London, UK</span>
-</div>
-<div class=card-text>Worked with a team of skilled international researchers to design and evaluate machine learning models that predict long-term wind speed statistics given historical satellite data. The results of this collaboration can be used to identify suitable locations to install wind turbines.</div>
 </div>
 </div>
 </div>
@@ -491,338 +498,6 @@ See all publications
 </div>
 </div>
 </section>
-<section id=posts class="home-section wg-pages">
-<div class=container>
-<div class=row>
-<div class="col-12 col-lg-4 section-heading">
-<h1>Recent Posts</h1>
-</div>
-<div class="col-12 col-lg-8">
-<div class="media stream-item">
-<div class=media-body>
-<h3 class="article-title mb-0 mt-0">
-<a href=/post/mayavilidar/>Real-time visualisation of simulated lidar point-clouds with Mayavi and CARLA</a>
-</h3>
-<a href=/post/mayavilidar/ class=summary-link>
-<div class=article-style>
-Using the CARLA autonomous driving simulator to generate lidar point clouds which are then visualised in real-time using Mayavi.
-</div>
-</a>
-<div class="stream-meta article-metadata">
-<div class=article-metadata>
-<span class=article-date>
-Nov 17, 2020
-</span>
-<span class=middot-divider></span>
-<span class=article-reading-time>
-6 min read
-</span>
-</div>
-</div>
-</div>
-<div class=ml-3>
-<a href=/post/mayavilidar/>
-<img src=/post/mayavilidar/featured_hu772a287787f07fbeea24355fe3000a2c_111032_150x0_resize_lanczos_3.png alt="Real-time visualisation of simulated lidar point-clouds with Mayavi and CARLA">
-</a>
-</div>
-</div>
-<div class="media stream-item">
-<div class=media-body>
-<h3 class="article-title mb-0 mt-0">
-<a href=/post/timeseriesforecasting/>Forecasting sales with Gaussian Processes and Autoregressive models</a>
-</h3>
-<a href=/post/timeseriesforecasting/ class=summary-link>
-<div class=article-style>
-Problem definition Sales forecasting is a very common problem faced by many companies. Given a history of sales of a certain product we would like to predict the demand of that product for a time window in the future.
-</div>
-</a>
-<div class="stream-meta article-metadata">
-<div class=article-metadata>
-<span class=article-date>
-Jul 23, 2020
-</span>
-<span class=middot-divider></span>
-<span class=article-reading-time>
-10 min read
-</span>
-</div>
-</div>
-</div>
-<div class=ml-3>
-<a href=/post/timeseriesforecasting/>
-<img src=/post/timeseriesforecasting/featured_hu367ca3d9ac98f028281c27d5a8614326_27937_150x0_resize_lanczos_3.png alt="Forecasting sales with Gaussian Processes and Autoregressive models">
-</a>
-</div>
-</div>
-<div class="media stream-item">
-<div class=media-body>
-<h3 class="article-title mb-0 mt-0">
-<a href=/post/bayesianlr/>Bayesian Linear Regression</a>
-</h3>
-<a href=/post/bayesianlr/ class=summary-link>
-<div class=article-style>
-Despite the popularity of standard linear regression, its bayesian counterpart is not as well-known. In this tutorial we explore its benefits and learn how to build it from scratch in Python with NumPy.
-</div>
-</a>
-<div class="stream-meta article-metadata">
-<div class=article-metadata>
-<span class=article-date>
-Mar 12, 2019
-</span>
-<span class=middot-divider></span>
-<span class=article-reading-time>
-4 min read
-</span>
-</div>
-</div>
-</div>
-<div class=ml-3>
-<a href=/post/bayesianlr/>
-<img src=/post/bayesianlr/featured_hub2f5101cd8de71caf99b8c6a244da9fe_9670_150x0_resize_lanczos_3.png alt="Bayesian Linear Regression">
-</a>
-</div>
-</div>
-<div class="media stream-item">
-<div class=media-body>
-<h3 class="article-title mb-0 mt-0">
-<a href=/post/jupyterhub/>Deploying JupyterHub with Docker and CUDA support</a>
-</h3>
-<a href=/post/jupyterhub/ class=summary-link>
-<div class=article-style>
-A brief summary of my experience deploying JupyterHub at our lab.
-</div>
-</a>
-<div class="stream-meta article-metadata">
-<div class=article-metadata>
-<span class=article-date>
-Oct 9, 2017
-</span>
-<span class=middot-divider></span>
-<span class=article-reading-time>
-4 min read
-</span>
-</div>
-</div>
-</div>
-<div class=ml-3>
-</div>
-</div>
-<div class="media stream-item">
-<div class=media-body>
-<h3 class="article-title mb-0 mt-0">
-<a href=/post/dogsvscats/>What I have learnt from dogs and cats</a>
-</h3>
-<a href=/post/dogsvscats/ class=summary-link>
-<div class=article-style>
-A couple of lessons discovered when exploring the Dogs vs cats image classification challenge.
-</div>
-</a>
-<div class="stream-meta article-metadata">
-<div class=article-metadata>
-<span class=article-date>
-May 15, 2017
-</span>
-<span class=middot-divider></span>
-<span class=article-reading-time>
-11 min read
-</span>
-</div>
-</div>
-</div>
-<div class=ml-3>
-<a href=/post/dogsvscats/>
-<img src=/post/dogsvscats/featured_hu47d23cd2e266bd66ad6df3261f684d7f_205006_150x0_resize_q90_lanczos.jpg alt="What I have learnt from dogs and cats">
-</a>
-</div>
-</div>
-<div class=see-all>
-<a href=/post/>
-See all posts
-<i class="fas fa-angle-right"></i>
-</a>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id=projects class="home-section wg-portfolio">
-<div class=container>
-<div class=row>
-<div class="col-12 col-lg-4 section-heading">
-<h1>Projects</h1>
-</div>
-<div class="col-12 col-lg-8">
-<div class="isotope projects-container js-layout-masonry">
-<div class="project-card project-item isotope-item js-id-computer-graphics">
-<div class=card>
-<a href=https://github.com/eduardohenriquearnold/raytracer target=_blank rel=noopener class="card-image hover-overlay">
-<img src=/project/raytracer/featured_hu534a20b62dad35df60f8eda461ea65b8_239331_550x0_resize_q90_lanczos_3.png alt class=img-responsive>
-</a>
-<div class=card-text>
-<h4><a href=https://github.com/eduardohenriquearnold/raytracer target=_blank rel=noopener>Ray Tracer from Scratch</a></h4>
-<div class=article-style>
-<p>Created a simple ray tracer renderer from scratch using C++.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="project-card project-item isotope-item js-id-computer-vision">
-<div class=card>
-<a href=https://github.com/eduardohenriquearnold/TFlow target=_blank rel=noopener class="card-image hover-overlay">
-<img src=/project/tflow/featured_hu8c34faa4432b0628c50d4a92ca03a4ca_240511_550x0_resize_q90_lanczos.jpg alt class=img-responsive>
-</a>
-<div class=card-text>
-<h4><a href=https://github.com/eduardohenriquearnold/TFlow target=_blank rel=noopener>TFlow</a></h4>
-<div class=article-style>
-<p>Automatic traffic flow and density estimation based on computer vision.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="project-card project-item isotope-item js-id-computer-vision">
-<div class=card>
-<a href=https://github.com/eduardohenriquearnold/sudosolver target=_blank rel=noopener class="card-image hover-overlay">
-<img src=/project/sudosolver/featured_hu42e011651ecb1026dab9e49ba85f7806_45018_550x0_resize_q90_lanczos.jpg alt class=img-responsive>
-</a>
-<div class=card-text>
-<h4><a href=https://github.com/eduardohenriquearnold/sudosolver target=_blank rel=noopener>SudoSolver</a></h4>
-<div class=article-style>
-<p>A C++ Sudoku Solver and Generator.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id=talks class="home-section wg-pages">
-<div class=container>
-<div class=row>
-<div class="col-12 col-lg-4 section-heading">
-<h1>Recent & Upcoming Talks</h1>
-</div>
-<div class="col-12 col-lg-8">
-<div class="media stream-item">
-<div class=media-body>
-<h3 class="article-title mb-0 mt-0">
-<a href=/talk/iet2020/>IET Talk - Challenges and Opportunities in Connected and Autonomous Vehicles</a>
-</h3>
-<a href=/talk/iet2020/ class=summary-link>
-<div class=article-style>
-Autonomous vehicles are set to transform the worldwide economy. This presentation will highlight the challenges and opportunities in the development and deployment of autonomous vehicles. Exploring the role of connectivity between vehicles and infrastructure is key to achieve full autonomy. Novel research in platooning, cooperative perception and trajectory negotiation will be discussed along with methods for testing and validation of autonomous driving functions.
-</div>
-</a>
-<div class="stream-meta article-metadata">
-<div>
-<span>
-Feb 27, 2020 18:30
-</span>
-<span class=middot-divider></span>
-<span>International Digital Laboratory (IDL), WMG , University of Warwick, Coventry, CV4 7AL</span>
-</div>
-</div>
-<div class=btn-links>
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href=/presentations/IET-ChallengesAndOpportunitiesCooperativeDriving.pdf target=_blank rel=noopener>
-Slides
-</a>
-</div>
-</div>
-<div class=ml-3>
-</div>
-</div>
-<div class="media stream-item">
-<div class=media-body>
-<h3 class="article-title mb-0 mt-0">
-<a href=/talk/brumai2019/>Cooperative perception for 3D object detection in challenging driving scenarios using infrastructure sensors</a>
-</h3>
-<a href=/talk/brumai2019/ class=summary-link>
-<div class=article-style>
-This presentation provides an introduction to the challenges in the perception domain of autonomous vehicles and provides solutions based on cooperation among vehicles and infrastructure, particularly focusing on 3D object detection.
-</div>
-</a>
-<div class="stream-meta article-metadata">
-<div>
-<span>
-Nov 8, 2019 18:30
-</span>
-<span class=middot-divider></span>
-<span>BrumAI Meetup - Birmingham Tech Edition - Birmingham, UK</span>
-</div>
-</div>
-<div class=btn-links>
-</div>
-</div>
-<div class=ml-3>
-</div>
-</div>
-<div class="media stream-item">
-<div class=media-body>
-<h3 class="article-title mb-0 mt-0">
-<a href=/talk/dsfloripa2019/>Detecting people using depth frames and deep classifiers</a>
-</h3>
-<a href=/talk/dsfloripa2019/ class=summary-link>
-<div class=article-style>
-A short talk about a project I took part during my internship at Instituto SENAI de Tecnologia and which was also my final year project for my undergraduate program. My contribution was to create an automatic human detection system for complex industrial environments.
-</div>
-</a>
-<div class="stream-meta article-metadata">
-<div>
-<span>
-Apr 6, 2017 18:00
-</span>
-<span class=middot-divider></span>
-<span>DataScience Floripa Meetup - Florianópolis, Brazil</span>
-</div>
-</div>
-<div class=btn-links>
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href=https://github.com/eduardohenriquearnold/tcc/blob/obj/obj/presentation.pdf target=_blank rel=noopener>
-Slides
-</a>
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://www.youtube.com/watch?v=KjEfY1CByiE" target=_blank rel=noopener>
-Video
-</a>
-</div>
-</div>
-<div class=ml-3>
-</div>
-</div>
-<div class="media stream-item">
-<div class=media-body>
-<h3 class="article-title mb-0 mt-0">
-<a href=/talk/tdc2016/>Computer vision with Python and OpenCV</a>
-</h3>
-<a href=/talk/tdc2016/ class=summary-link>
-<div class=article-style>
-A short presentation showing how to develop a simple augmented reality application with Python and OpenCV.
-</div>
-</a>
-<div class="stream-meta article-metadata">
-<div>
-<span>
-May 12, 2016 00:00
-</span>
-<span class=middot-divider></span>
-<span>The Developers Conference - Florianópolis, Brazil.</span>
-</div>
-</div>
-<div class=btn-links>
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href=http://eduardohenriquearnold.github.io/tdcfloripa2016/ target=_blank rel=noopener>
-Slides
-</a>
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://www.youtube.com/watch?v=lmJxGmOAtq8" target=_blank rel=noopener>
-Video
-</a>
-</div>
-</div>
-<div class=ml-3>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
 <section id=contact class="home-section wg-contact">
 <div class=container>
 <div class="row contact-widget">
@@ -832,8 +507,8 @@ Video
 <div class="col-12 col-lg-8">
 <ul class=fa-ul>
 <li>
-<i class="fa-li fab fa-twitter fa-2x" aria-hidden=true></i>
-<a href=https://twitter.com/eduardoarnoldh target=_blank rel=noopener>DM Me</a>
+<i class="fa-li fab fa-linkedin fa-2x" aria-hidden=true></i>
+<a href=https://www.linkedin.com/in/eduardohenriquearnold/ target=_blank rel=noopener>DM Me</a>
 </li>
 </ul>
 </div>
