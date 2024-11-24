@@ -44,17 +44,6 @@ date_format = "Jan 2006"
   """
 
 [[experience]]
-  title = "Data Study Group Researcher"
-  company = "Alan Turing Institute"
-  company_url = "https://www.turing.ac.uk/collaborate-turing/data-study-groups"
-  location = "London, UK"
-  date_start = "2020-09-01"
-  date_end = "2020-09-30"
-  description = """
-  Worked with a team of skilled international researchers to design and evaluate machine learning models that predict long-term wind speed statistics given historical satellite data. The results of this collaboration can be used to identify suitable locations to install wind turbines.
-  """
-
-[[experience]]
   title = "PhD Research Intern"
   company = "Niantic"
   company_url = "https://nianticlabs.com/"
@@ -62,9 +51,12 @@ date_format = "Jan 2006"
   date_start = "2021-06-01"
   date_end = "2022-01-01"
   description = """
-  * Lead the research and development of a novel method for relative camera pose estimation between a pair of images with focus on visual localisation.
-  * Collaborated with an interdisciplinary research team.
-  * Trained and deployed models on cloud infrastructure.
+  Used computer vision and machine learning techniques for augmented reality applications; 
+  * Created a new benchmark and dataset for visual re-localization with a team of skilled researchers;
+  * Trained and evaluated several families of visual localisation methods on this benchmark;
+  * Used cloud infrastructure to train and evaluate deep learning models;
+  * Presented research outcomes to a cross-disciplinary audience;
+  * Paper published at ECCV 2022
   """
 
 [[experience]]
@@ -73,10 +65,31 @@ date_format = "Jan 2006"
   company_url = "https://nianticlabs.com/"
   location = "London, UK"
   date_start = "2022-05-01"
+  date_end = "2023-12-01"
+  description = """
+  * Ran several state-of-the-art SLAM methods on internal datasets and devised an evaluation protocol to compare them.
+  * Designed and developed a localization pipeline to align scans to a large scale reference reconstruction in challenging environments.
+  * Created a renderer that process >100bi points in less than 20s.
+  * Helped adding Lidar-based terms to COLMAP, reducing re-projection median errors from 60px to 3px.
+  * Trained and evaluated different NERF variants using aerial views.
+  * Performed Camera-IMU calibration which helped to identify time-sync issues.
+  * Created multiple Argo/K8s workflows to process data at scale using cloud infrastructure (GCP).
+  """
+
+[[experience]]
+  title = "Lead Computer Vision Engineer"
+  company = "Cartesian"
+  company_url = "https://www.cartesian.systems/"
+  location = "Cambridge, USA"
+  date_start = "2024-02-01"
   date_end = ""
   description = """
-  * Working on visual relocalisation;
-  * Deploying systems on cloud infrastructure using K8s and ArgoCD.
+  * Optimized a Structure-from-Motion pipeline resulting in a reduction of mapping times from 655min to 102min, a 6-fold speed up.
+  * Created benchmark tool that creates ground-truth maps and quantify the quality of mapping and localization with high accuracy.
+  * Wrote new production visual re-localization pipeline with PyTorch resulting in 3x faster, 10x higher throughput, using 100x less memory than previous baseline and saving more than 95% in cloud compute costs.
+  * Designed and implemented an end-to-end mapping pipeline that process raw data into production-ready SfM maps using Ray workflows on Azure Kubernetes Service (AKS).
+  * Trained a global feature model (NetVLAD) for image retrieval in specific data domains, resulting in 10% improvement in localization performance.
+  * Designed and implemented a system architecture using REDIS, Helm and K8s to allow scaling the re-localization service to a very large number of simultaneous requests across thousands of maps, whilst maintaining QoS.
   """
 
 +++
