@@ -10,15 +10,15 @@ authors:
 superuser: true
 
 # Role/position
-role: Lead Computer Vision Engineer
+role: Sr. Computer Vision Engineer
 
 # Organizations/Affiliations
 organizations:
-- name: Cartesian
-  url: "https://www.cartesian.systems/"
+- name: Hover 
+  url: "https://hover.to/"
 
 # Short bio (displayed in user profile at end of posts)
-bio: I'm a lead computer vision engineer at Cartesian. I also hold a PhD degree at the University of Warwick on 3D perception methods for autonomous driving.
+bio: I'm a Sr. computer vision engineer at Hover. I also hold a PhD degree at the University of Warwick on 3D perception methods for autonomous driving.
 interests:
 - 3D Computer Vision
 - Structure-from-Motion
@@ -42,6 +42,9 @@ social:
 - icon: envelope
   icon_pack: fas
   link: '#contact'
+- icon: bluesky
+  icon_pack: fab
+  link: https://bsky.app/profile/eduardoarnoldh.bsky.social
 - icon: twitter
   icon_pack: fab
   link: https://twitter.com/eduardoarnoldh
@@ -67,4 +70,4 @@ email: ""
 #   Set this to `[]` or comment out if you are not using People widget.
 user_groups: []
 ---
-I'm a lead computer vision engineer at [Cartesian](https://www.cartesian.systems/) where I work on visual relocalisation, structure-from-motion and general 3D vision. I was previously at [Niantic](https://nianticlabs.com/) also working on visual relocalization and SLAM. I hold a PhD from the University of Warwick (UK) in the [Intelligent Vehicles group](https://warwick.ac.uk/fac/sci/wmg/research/cav/). My research focused on 3D vision for autonomous driving, including cooperative 3D object detection, point cloud registration and sensor pose optimisation.
+I'm a Sr. Computer Vision engineer at [Hover](https://hover.to/) where I work on 3D reconstruction, structure-from-motion and general 3D vision. I was previously at [Niantic](https://nianticlabs.com/) also working on visual relocalization and 3D reconstruction. I hold a PhD from the University of Warwick (UK) in the [Intelligent Vehicles group](https://warwick.ac.uk/fac/sci/wmg/research/cav/). My research focused on 3D vision for autonomous driving, including cooperative 3D object detection, point cloud registration and sensor pose optimisation.

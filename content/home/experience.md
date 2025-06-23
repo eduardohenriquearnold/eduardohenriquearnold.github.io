@@ -79,10 +79,10 @@ date_format = "Jan 2006"
 [[experience]]
   title = "Lead Computer Vision Engineer"
   company = "Cartesian"
-  company_url = "https://www.cartesian.systems/"
+  company_url = "https://cartesian.systems/"
   location = "Cambridge, USA"
   date_start = "2024-02-01"
-  date_end = ""
+  date_end = "2025-05-30"
   description = """
   * Optimized a Structure-from-Motion pipeline resulting in a reduction of mapping times from 655min to 102min, a 6-fold speed up.
   * Created benchmark tool that creates ground-truth maps and quantify the quality of mapping and localization with high accuracy.
@@ -90,6 +90,17 @@ date_format = "Jan 2006"
   * Designed and implemented an end-to-end mapping pipeline that process raw data into production-ready SfM maps using Ray workflows on Azure Kubernetes Service (AKS).
   * Trained a global feature model (NetVLAD) for image retrieval in specific data domains, resulting in 10% improvement in localization performance.
   * Designed and implemented a system architecture using REDIS, Helm and K8s to allow scaling the re-localization service to a very large number of simultaneous requests across thousands of maps, whilst maintaining QoS.
+  """
+
+[[experience]]
+  title = "Sr Computer Vision Engineer"
+  company = "Hover"
+  company_url = "https://hover.to/"
+  location = "Cambridge, USA"
+  date_start = "2025-05-31"
+  date_end = ""
+  description = """
+  * 3D reconstruction and 3D vision.
   """
 
 +++
